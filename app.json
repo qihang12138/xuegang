@@ -1,5 +1,9 @@
 {
     "pages": [
+        "pages/orderPick/orderPick",
+        "pages/orderRefund/orderRefund",
+        "pages/orderEvaluate/orderEvaluate",
+        "pages/orderWait/orderWait",
         "pages/orderDone/orderDone",
         "pages/retail/retail",
         "pages/my/my",
@@ -29,6 +33,7 @@
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
+        "van-button": "./vant/button/index",
         "van-cell": "./vant/cell/index",
         "van-switch": "./vant/switch/index",
         "van-area": "./vant/area/index",

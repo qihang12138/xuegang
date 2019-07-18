@@ -1,0 +1,10 @@
+<block wx:for="{{3}}" wx:key="index">
+<view class="order">
+  <navigator url="">
+    <order></order>
+  </navigator>
+  <view class="btns">
+    <van-button type="default" custom-class="btn" size="mini">查看订单</van-button>
+  </view>
+</view>
+</block>

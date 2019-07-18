@@ -14,7 +14,7 @@ Component({
         },
         state: {
             type: String,
-            value: '交易成功'
+            value: ''
         },
         price: {
             type: String,

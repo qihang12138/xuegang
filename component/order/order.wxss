@@ -1,6 +1,7 @@
 .order {
     display: flex;
     padding: 35rpx 30rpx;
+    background: #fff;
 }
 
 .order-img {

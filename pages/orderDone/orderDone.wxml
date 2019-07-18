@@ -1,5 +1,5 @@
 <block wx:for="{{3}}" wx:key="index">
   <navigator url="">
-    <order></order>
+    <order state="交易成功"></order>
   </navigator>
 </block>
