@@ -1,0 +1,20 @@
+<view class="order">
+  <image class="order-img" src="{{src}}"></image>
+  <view class="order-cont">
+    <view class="order-msg">
+      <view class="order-name">{{name}}</view>
+      <view class="order-state">{{state}}</view>
+    </view>
+    <view class="order-msg">
+      <view class="order-size">
+        <text class="order-price">{{price}}</text>
+        元/
+        <text class="order-unit">{{unit}}</text>
+      </view>
+      <view class="order-size">
+        X
+        <text class="order-num">{{num}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/orderDone/orderDone",
         "pages/retail/retail",
         "pages/my/my",
         "pages/receiving/receiving",
@@ -40,6 +41,7 @@
         "van-stepper": "./vant/stepper/index",
         "option": "./component/option/option",
         "my-btn": "./component/btn/btn",
-        "commodity": "./component/commodity/commodity"
+        "commodity": "./component/commodity/commodity",
+        "order": "./component/order/order"
     }
 }
