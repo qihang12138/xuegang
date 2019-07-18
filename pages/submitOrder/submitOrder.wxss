@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    padding: 17rpx 30rpx;
+    font-size: 14px;
+    background: #3C93FF;
+    color: #fff;
+}
+
+.header-text {
+    flex: 1;
+    text-align: right;
+}

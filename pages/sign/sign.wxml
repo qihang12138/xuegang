@@ -1,0 +1,7 @@
+<view class="sign">
+  <view class="sign-btn">
+    <view>立即签到</view>
+    <view class="sign-num">10积分</view>
+  </view>
+  <view>明天可领20积分</view>
+</view>

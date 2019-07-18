@@ -1,0 +1,15 @@
+.image {
+    padding: 114rpx 0 54rpx;
+    text-align: center;
+}
+
+.image-img {
+    width: 280rpx;
+    height: 280rpx;
+}
+
+.hint {
+    text-align: center;
+    font-size: 13px;
+    color: #8c8c8c;
+}

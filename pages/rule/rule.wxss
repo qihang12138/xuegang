@@ -1,0 +1,9 @@
+.rule {
+    padding: 25rpx 0 40rpx;
+    text-align: center;
+    font-size: 15px;
+}
+
+.rule-cont {
+    padding: 0 30rpx;
+}

@@ -1,0 +1,40 @@
+<!-- 提示 -->
+<view class="hint">根据国家规定，跑腿需要实名认证</view>
+
+<!-- 拍照 -->
+<view class="photos">
+  <view class="photos-hint">请拍摄并上传你的身份证照片</view>
+  <view class="photos-front"></view>
+  <view class="photos-contrary"></view>
+</view>
+  
+<!-- 要求 -->
+<view class="require">
+  <view class="require-hint">拍摄身份证要求：</view>
+  <view class="require-text">
+    <view>大陆公民持有的本人有效二代身份证；</view>
+    拍摄时确保身份证
+    <text class="require-red">边框完整，字体清晰，亮度均匀；</text>  
+  </view>
+  <view class="require-cont">
+    <view class="require-item">
+      <image class="require-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png"/>
+      <view>标准</view>
+    </view>
+    <view class="require-item">
+      <image class="require-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png"/>
+      <view>边框缺失</view>
+    </view>
+    <view class="require-item">
+      <image class="require-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png"/>
+      <view>边框缺失</view>
+    </view>
+    <view class="require-item">
+      <image class="require-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png"/>
+      <view>反光强烈</view>
+    </view>
+  </view>
+</view>
+
+<!-- 提交按钮 -->
+<my-btn btn="btn"></my-btn>

@@ -1,0 +1,29 @@
+<!-- 搜索商品 -->
+<view class="search">
+  <input type="text" placeholder="请输入商品关键字" class="search-input" />
+  <button class="search-btn"></button>
+</view>
+<!-- 商品列表 -->
+<view class="commodity">
+  <view class="commodity-list">
+    <view class="commodity-brand on">伊利</view>
+    <view class="commodity-brand" wx:for="{{6}}">蒙牛</view>
+  </view>
+  <!-- 商品内容 -->
+  <view class="commodity-kind">
+    <block wx:for="{{5}}">
+      <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+        <view class="commodity-cont">
+          <image class="commodity-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png"></image>
+          <view class="commodity-msg">
+            <view class="commodity-name">
+              <view>伊利纯牛奶无菌砖早餐谷粒多红黑</view>
+              <view>250ml*16盒</view>
+            </view>
+            <view class="commodity-price">¥48.80</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

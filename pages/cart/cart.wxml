@@ -1,0 +1,24 @@
+<view class="commodity">
+  <van-checkbox value="{{ checked }}" bind:change="checked" class="commodity-checkbox"></van-checkbox>
+  <image class="commodity-img" src="https://s2.ax1x.com/2019/07/17/ZL0gpT.png"/>
+  <view>
+    <view class="commodity-name">新鲜的福建书峰琵琶</view>
+      <view>
+        <text class="commodity-price">¥16.00</text>
+        元/包
+      </view>
+  </view>
+  <van-stepper value="{{stepper}}" class="commodity-stepper"/>
+</view>
+
+<!-- 底部 -->
+<view class="footer">
+  <van-checkbox value="{{ checked }}" bind:change="checked" class="commodity-checkbox"></van-checkbox>
+  <text class="footer-all">全选</text>
+  <text>删除</text>
+  <view class="footer-total">
+    合计:
+    <text class="footer-price">¥0</text>
+  </view>
+  <view class="footer-balance">去结算</view>
+</view>  

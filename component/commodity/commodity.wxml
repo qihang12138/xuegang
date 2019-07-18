@@ -1,0 +1,17 @@
+<!-- <view class="commoditys"> -->
+    <view class="commodity">
+      <navigator url="">
+        <image class="commodity-img" src="{{src}}" />
+        <view class="commodity-name">{{name}}</view>
+        <view class="commodity-weight">
+          净含量
+          <text>{{weight}}</text>
+        </view>
+        <view class="commodity-price">
+          <text class="commodity-price-new">{{priceNew}}</text>
+          <text class="commodity-price-old">{{priceOld}}</text>
+          <view class="commodity-cart"></view>
+        </view>
+      </navigator>
+    </view>
+  <!-- </view> -->

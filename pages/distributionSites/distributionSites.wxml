@@ -1,0 +1,15 @@
+<view class="hint">选择离你最近的配送站</view>
+
+<!-- 配送点 -->
+<view class="list">
+  <block wx:for="{{3}}">
+    <view class="list-item">
+      <view class="list-item-name">汉飞城市公园二期 提货点</view>
+      <view class="list-item-site">金水区国基路柳西路瀚海晴洲北门口优米脆皮炸鸡饭</view>
+      <view class="list-item-right">
+        <view>0.4km</view>
+        <button class="list-item-btn">确定</button>
+      </view>
+    </view>
+  </block>
+</view>

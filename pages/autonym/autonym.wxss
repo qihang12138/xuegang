@@ -1,0 +1,89 @@
+page {
+    background: #f5f5f5;
+}
+
+
+/* 提示 */
+
+.hint {
+    padding: 25rpx 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #EF7522;
+    background: #FDFCEA;
+}
+
+
+/* 拍照 */
+
+.photos {
+    background: #fff;
+    padding: 30rpx;
+}
+
+.photos-hint {
+    padding-bottom: 30rpx;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.photos-front,
+.photos-contrary {
+    display: inline-block;
+    width: 324rpx;
+    height: 280rpx;
+}
+
+.photos-front {
+    padding-right: 42rpx;
+    background: url('https://s2.ax1x.com/2019/07/15/ZoFuee.png') no-repeat 0 0/324rpx 280rpx;
+}
+
+.photos-contrary {
+    background: url('https://s2.ax1x.com/2019/07/15/ZoFuee.png') no-repeat 0 0/324rpx 280rpx;
+}
+
+
+/* 要求 */
+
+.require {
+    padding: 40rpx 30rpx;
+    margin-top: 30rpx;
+    background: #fff;
+}
+
+.require-text {
+    padding: 30rpx 0 66rpx;
+    font-size: 13px;
+    color: #919191;
+}
+
+.require-red {
+    font-size: 13px;
+    color: #E73146;
+}
+
+.require-cont {
+    display: flex;
+}
+
+.require-item {
+    flex: 1;
+    text-align: center;
+}
+
+.require-img {
+    width: 160rpx;
+    height: 116rpx;
+}
+
+
+/* 按钮 */
+
+.btn {
+    position: fixed;
+    bottom: 66rpx;
+    left: 30rpx;
+}

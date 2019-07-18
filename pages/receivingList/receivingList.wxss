@@ -1,0 +1,51 @@
+page {
+    background: #f5f5f5;
+}
+
+.list {
+    position: relative;
+    padding: 30rpx;
+    margin-bottom: 20rpx;
+    font-size: 14px;
+    color: #505050;
+    background: #fff;
+}
+
+.list-site {
+    padding-top: 10rpx;
+}
+
+.list-edit {
+    position: absolute;
+    right: 30rpx;
+    top: 52rpx;
+    padding-left: 40rpx;
+    color: #5a5a5a;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADF0lEQVRIS6WWX0jTURTH99vcGJusZtBT0qCCJUiNXupNQhiyhn9gT5H00D+ISFB8qNRMewiCHnuMsh5CBGWb4JtPUfbQQ2iCIPggRVBb4tzm5tbnjN9Pxry637YfXM7v/jnne77nnnPv1drb271+vz9SKBT69/b2zhWLRbumaUWL4mOOqdK3bLVaB2dmZpZYplyrq2vGvBYIBO75fL4hlH0A2ZC5Kspi4xftYTKZjC0uLuYVPmk9PT2ncaytqalpDafWtb6+vq+wucTgLgrfAVpF7orblQaEEU1oreXz+XexWGxTBRIOh9tsNtsz5q5gez6TyTwSoD8w8aK/RHuAB+s7OztFj8ejip5la2vLwtzu9PR0SsFc6+7uPs/4JM6E9Pm3/I/IRIIfF2AfQB+Mx+MJJUL1Qa2MyTVZjuNxxJjD4ViRWP6l42JwinAM1wlUAmEvJnQmghPF+bFoNLoimAaQm85UOp0eXlhYEOBavspwlUBwfHRubu7HftbpjOoFKoHAQjY+rIdrHvm4HETGG2GkYhIjXKNGuMrDUi+Qck8qw9UokOlwNQJ0IIUxdmi4IpFISzabvUA2JmoJnQEybmy8gBCukcqNFyYdHR1Or9d7k/khur/NAmm9vb1+lCZRKi/GJyoQAers7Dzmdrufk5G30cuYAVIyyeVyYxT3slEnlYVH2RxnTNL+Fi1bDcgaCoXa7Ha7hKvE5KhwlYMJEEzGhVFVoGAw2OJ0Ol+w8IZ+mh+6JypGpoHYlxOcfy858oMofebQHVEVYyWI9GtiRHraUqnUGUJ3FkYrs7OzG4ftSUOMypT3r2SV97UwavSaOIAl6d3c3PyUibtGMshF5yL+77k9B3kDJM16fdS6rq4uDxfeBGvuEPaMnFty/0gqfgLsPlf5xvb2dpGqrgsvkUhYYKJRZ6dIolccP1ex/U/q6BsWL9JJI7/QlvEgi7TWg6Q/XuxIeTtcprn5XxWgAQwP0GmVB04pnppWQB54BZkF1t9/DqQFRj9dLtdrOcNOYqCfwevIVprNrMEq6wrY3GQrPlIeb/4D72s0JKOheyoAAAAASUVORK5CYII=') no-repeat 0 center/26rpx 26rpx;
+}
+
+.list-on::after {
+    margin-left: 20rpx;
+    padding: 0 8rpx;
+    border-radius: 10rpx;
+    content: '默认';
+    color: #fff;
+    background: #3C93FF;
+}
+
+
+/* 按钮 */
+
+.btn {
+    position: fixed;
+    bottom: 65rpx;
+    left: 30rpx;
+    opacity: 0.7;
+    border-radius: 6rpx;
+    width: 690rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #fff;
+    background: #3C93FF;
+}

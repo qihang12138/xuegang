@@ -1,0 +1,69 @@
+<!-- 地址 -->
+<view class="location">
+  <navigator url="">
+    <view class="location-site">郑州</view>
+  </navigator>
+  <navigator class="delivery" url="">
+    <text>还未选择配送地点</text>
+    <text>[切换]</text>
+  </navigator>
+</view>
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" class="swiper">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <navigator url="">
+        <image src="{{item}}" class="slide-image"/>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 搜索商品 -->
+<input type="text" placeholder="搜索商品" class="search" />
+<!-- 分类栏 -->
+<view class="sort">
+  <view class="sort-son" wx:for="{{4}}">
+    <navigator url="">
+      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="sort-img" />
+      <view>冰淇淋</view>
+    </navigator>
+  </view>
+</view>
+<!-- 公告栏 -->
+<view class="notice">
+  <view class="notice-cont">
+    次日下午可以到团长处领取商品，每日下单时间：0:00-ajhdlkjasjhdklajskldjaskldjklashdjkhasiujdhjioqawjdikojlhnasjkdhjkaskjldj
+  </view>
+</view>
+<!-- 广告图 -->
+<navigator url="">
+  <image class="banner" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" />
+</navigator>
+<!-- 店铺推荐 -->
+<view class="shop">
+  <view class="shop-header">
+    <view class="line"></view>
+    <view class="shop-tit">店铺首推</view>
+    <view class="line"></view>
+  </view>
+  <view class="shop-hint">今日店铺首推爆款 赶紧抢购吧</view>
+  <navigator url="">
+    <image class="shop-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" />
+  </navigator>
+</view>
+<!-- 爆款团购 -->
+<view class="hot">
+  <view class="shop-header">
+    <view class="line"></view>
+    <view class="shop-tit">爆款团购</view>
+    <view class="line"></view>
+  </view>
+  <view class="shop-hint">各种品类商品 优美价廉 赶紧抢购吧</view>
+  <view class="commoditys">
+    <block wx:for="{{4}}">
+      <commodity></commodity>
+    </block>
+  </view>
+  
+    
+</view>

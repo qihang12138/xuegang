@@ -1,0 +1,16 @@
+<view class="list">
+    <view class="list-on">测试 xxxxxxxxxxxxx</view>
+    <view class="list-site">河南省郑州市金水区测试测试测试地址</view>
+    <navigator class="list-edit" url="">编辑</navigator>
+  </view>
+<block wx:for="{{2}}" wx:key="index">
+  <view class="list">
+    <view>测试 xxxxxxxxxxxxx</view>
+    <view class="list-site">河南省郑州市金水区测试测试测试地址</view>
+    <navigator class="list-edit" url="">编辑</navigator>
+  </view>
+</block>
+
+<!-- 按钮 -->
+<navigator class="btn" url="../receiving/receiving">新建地址</navigator>
+  

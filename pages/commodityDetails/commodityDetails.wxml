@@ -1,0 +1,63 @@
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 商品简介 -->
+<view class="brief">
+  <view class="brief-name">新鲜的福建书峰琵琶</view>
+  <view class="brief-price">
+    <view class="brief-price-new">¥36.00</view>
+    <view class="brief-price-old">¥29.9</view>
+  </view>
+  <view class="brief-info">
+    <view class="brief-info-express">快递:<text>免运费</text></view>
+    <view class="brief-info-surplus">剩余<text>123</text>份</view>
+    <view class="brief-info-sold">已售<text>456</text>份</view>
+  </view>
+  <view class="brief-collect">收藏宝贝</view>
+</view>
+
+<!-- 优惠 -->
+<view class="discounts">
+  <view class="discounts-box">
+    <view class="discounts-tit">优惠</view>
+    <view class="discounts-tickets">店铺优惠券</view>
+    <block wx:for="{{2}}">
+      <view class="discounts-ticket">满99减5</view>
+    </block>
+  </view>
+  <view class="discounts-get">领券</view>
+</view>
+
+<!-- 选项卡 -->
+<option one="商品详情" two="用户评价" three="购买记录" option-pad="option-pad"></option>
+
+<!-- 商品详情/富文本 -->
+<rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+
+<!-- 底部 -->
+<view class="footer">
+  <view class="footer-service">
+    <navigator url="" class="footer-nav">
+     客服
+    </navigator>
+    </view>
+  <view class="footer-cart">
+    <navigator url="" class="footer-nav">
+      购物车
+    </navigator>
+  </view>
+  <view class="footer-add">加入购物车</view>
+  <view class="footer-buy">
+    <navigator url="">
+      购买
+    </navigator>
+  </view>
+    
+</view>

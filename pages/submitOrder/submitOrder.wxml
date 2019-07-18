@@ -1,0 +1,12 @@
+<view class="header">
+  <text>自提点</text>
+  <text class="header-text">汉飞城市公园第二期 提货点</text>
+</view>
+
+<!-- 收货信息 -->
+<view class="msg">
+
+</view>
+
+<!-- 配送时间 -->
+<view class="time"></view>

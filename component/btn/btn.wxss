@@ -1,0 +1,7 @@
+.submit {
+    width: 690rpx;
+    height: 80rpx;
+    font-size: 14px;
+    color: #fffefe;
+    background: #3C93FF;
+}

@@ -1,0 +1,8 @@
+<!-- 选项卡 -->
+<view class="options option-wp">
+  <view class="option">
+    <text class="option-text option-on option-pad">{{one}}</text>
+  </view>
+  <view class="option"><text class="option-text option-pad">{{two}}</text></view>
+  <view class="option"><text class="option-text option-pad">{{three}}</text></view>
+</view>

@@ -1,0 +1,24 @@
+page {
+    background: #f5f5f5;
+}
+
+.sign {
+    padding: 54rpx 0 30rpx;
+    text-align: center;
+    font-size: 15px;
+    background: #fff;
+}
+
+.sign-btn {
+    margin: 0 auto 40rpx;
+    padding-top: 90rpx;
+    width: 240rpx;
+    height: 150rpx;
+    font-size: 18px;
+    color: #fff;
+    background: url('https://s2.ax1x.com/2019/07/18/ZO4NDI.png') no-repeat center/240rpx 240rpx;
+}
+
+.sign-num {
+    font-size: 12px;
+}

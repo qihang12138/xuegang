@@ -1,0 +1,31 @@
+<!-- 选项卡 -->
+<option one="申请团长" two="申请零售通" three="申请供应商" option-pad="option-pad" option-wp="option-wp"></option>
+<!-- 提交信息 -->
+<view class="msg">
+  <view class="msg-item">
+    <view class="msg-key">姓名</view>
+    <input type="text" value="" placeholder="请输入姓名" />
+  </view>
+  <view class="msg-item">
+    <view class="msg-key">社区名字</view>
+    <input type="text" value="" placeholder="请输入社区名" />
+  </view>
+  <view class="msg-item">
+    <view class="msg-key">社区地址</view>
+    <input type="text" value="" placeholder="请输入社区地址" />
+  </view>
+  <view class="msg-item">
+    <view class="msg-key">联系方式</view>
+    <input type="text" value="" placeholder="请输入联系方式" />
+  </view>
+  <navigator url="">
+    <view class="msg-item msg-autonym">
+        <view class="msg-key">实名认证</view>
+    </view>
+  </navigator>
+</view>
+<!-- 提示 -->
+<view class="hint">申请成功后，我们将以最快的速度给您回应；想要查看进
+度可以拨打电话0371-123456789</view>
+<!-- 提交按钮 -->
+<my-btn></my-btn>

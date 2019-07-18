@@ -1,0 +1,6 @@
+<view class="commoditys">
+  <block wx:for="{{8}}" wx:key="index">
+    <commodity></commodity>
+  </block>
+</view>
+  
