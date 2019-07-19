@@ -1,0 +1,33 @@
+<van-tabs animated>
+  <van-tab title="线下优惠券">
+    <block wx:for="{{2}}">
+      <view class="order">
+        <image class="order-img" src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png"></image>
+        <view class="order-cont">
+          <view class="order-msg">
+            <view class="order-name">测试测试测试测试测试测试</view>
+          </view>
+          <view class="order-msg">
+            <view class="order-size">
+              <text class="order-price">¥29.90</text>
+              元/
+              <text class="order-unit">包</text>
+            </view>
+            <view class="order-size">
+              X
+              <text class="order-num">1</text>
+            </view>
+          </view>
+          <van-button plain type="danger" size="mini">立减15</van-button>
+        </view>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="线上优惠券" tab-class="on">
+    <view class="p30">
+      <block wx:for="{{2}}">
+        <ticket money="3"></ticket>
+      </block>
+    </view>
+  </van-tab>
+</van-tabs>

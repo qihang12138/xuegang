@@ -1,0 +1,6 @@
+<block wx:for="{{2}}">
+  <navigator class="line">
+    <order></order>
+  </navigator>
+</block>
+  

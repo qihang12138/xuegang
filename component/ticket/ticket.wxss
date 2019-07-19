@@ -1,0 +1,30 @@
+.ticket {
+    display: flex;
+    align-items: center;
+    padding-left: 30rpx;
+    margin-bottom: 20rpx;
+    height: 154rpx;
+    width: 660rpx;
+    color: #FF3824;
+    background: url('https://s2.ax1x.com/2019/07/19/ZvDnoQ.png') no-repeat 0/690rpx 154rpx;
+}
+
+.ticket-money {
+    display: inline-block;
+    padding-right: 10rpx;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ticket-left {
+    flex: 1;
+    font-size: 12px;
+}
+
+.ticket-right {
+    line-height: 154rpx;
+    height: 154rpx;
+    width: 204rpx;
+    text-align: center;
+    font-size: 14px;
+}

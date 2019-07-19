@@ -1,0 +1,33 @@
+.order {
+    display: flex;
+    padding: 35rpx 30rpx;
+    background: #fff;
+}
+
+.order-img {
+    padding-right: 25rpx;
+    width: 138rpx;
+    height: 138rpx;
+}
+
+.order-cont {
+    flex: 1;
+    padding-top: 5rpx;
+}
+
+.order-msg {
+    display: flex;
+    font-size: 13px;
+}
+
+.order-name {
+    width: 320rpx;
+}
+
+.order-size {
+    padding: 5rpx 30rpx 5rpx 0;
+}
+
+.order-price {
+    color: #FF3824;
+}

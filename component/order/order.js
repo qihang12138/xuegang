@@ -18,7 +18,7 @@ Component({
         },
         price: {
             type: String,
-            value: "¥29.90"
+            value: "29.90"
         },
         unit: {
             type: String,

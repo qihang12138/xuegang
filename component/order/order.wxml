@@ -7,7 +7,7 @@
     </view>
     <view class="order-msg">
       <view class="order-size">
-        <text class="order-price">{{price}}</text>
+        <text class="order-price">¥{{price}}</text>
         元/
         <text class="order-unit">{{unit}}</text>
       </view>

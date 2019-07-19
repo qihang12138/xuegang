@@ -1,0 +1,16 @@
+<view class="personal flex-box">
+  <view class="flex-item">
+    <view class="personal-name">
+      姓名:
+      <text>张三</text>
+    </view>
+    <view>
+      电话:
+      <text>123456789123</text>
+    </view>
+  </view>
+  <view class="edit-btn"></view>
+</view>
+<view class="fixed-bottom">
+  <button class="my-btn">+个人信息</button>
+</view>
