@@ -1,0 +1,29 @@
+<view class="box-sizing succeed {{bol?'bg-green':'bg-red'}}">
+  <view>退款{{bol?'成功':'失败'}}</view>
+  <view class="succeed-time">2019年1月11日 10:12</view>
+</view>
+
+<view wx:if="{{bol}}" class="border-bottom flex-box p30 bg-fff font-14">
+  <view>退款金额</view>
+  <view class="flex-item money">¥114.00</view>
+</view>
+<view class="p30 bg-fff font-14">退款金额</view>
+<van-card
+  desc="颜色分类：黑色；尺码：均码"
+  title="测试测试测试测试测测试"
+  thumb="https://s2.ax1x.com/2019/07/19/ZjbfmD.png"
+/>
+<view class="cause refund bg-fff">
+  <view class="refund-line">
+    退款原因:
+    <text>多拍/错拍/不想要</text>
+  </view>
+  <view class="refund-line">
+    退款金额: ¥
+    <text>114.00</text>
+  </view>
+  <view class="refund-line">
+    申请时间: 
+    <text>2018-2-11 10:11</text>
+  </view>
+</view>
