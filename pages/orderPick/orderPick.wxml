@@ -1,0 +1,11 @@
+<block wx:for="{{3}}" wx:key="index">
+<view class="order">
+  <navigator url="">
+    <order state="等待买家取货"></order>
+  </navigator>
+  <view class="btns">
+    <van-button type="default" custom-class="btn" size="mini">退款</van-button>
+    <view class="code">取货二维码</view>
+  </view>
+</view>
+</block>

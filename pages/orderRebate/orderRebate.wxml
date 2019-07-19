@@ -1,0 +1,25 @@
+<view class="commodity">
+  <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="commodity-img"></image>
+  <view class="commodity-msg">
+    <view class="commodity-name">测试测试测试测试测试测试测试测试测测试测试测试测试测试测试测试</view>
+    <view class="commodity-size">200g</view>
+  </view>
+</view>
+
+<van-cell title="退款原因" is-link value="{{cause}}" bind:click="cause"/>
+
+<!-- 退款 -->
+<view class="rebate">
+  退款金额
+  <text class="rebate-price">¥29.90</text>
+</view>
+<view class="remark">
+  备注
+  <input type="text" class="remark-input"/>
+</view>
+
+<!-- 按钮 -->
+<button class="btn">提交</button>
+
+<!-- 弹出层 -->
+<van-action-sheet show="{{ show }}" actions= "{{ actions }}" bind:close="onClose" bind:select="onSelect" title="请选择退款原因"/>

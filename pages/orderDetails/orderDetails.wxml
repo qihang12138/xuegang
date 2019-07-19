@@ -1,0 +1,91 @@
+<!-- 取货信息 -->
+<view class="public">
+  <view class="tit">取货信息</view>
+  <view class="msg">
+    <view class="pick">
+      取货二维码:
+      <view class="pick-code"></view>
+    </view>
+    <view class="pick">
+      <view>
+        取货人:
+        <text class="line-text">张三</text>
+      </view>
+      <view class="line-right">
+        电话:
+        <text class="line-text">12345678945</text>
+      </view>
+    </view>
+    <view class="pick">
+      订单号:
+      <text class="line-text">123456</text>
+    </view>
+    <view class="pick">
+      订单时间:
+      <text class="line-text">2019-07-19 12:00</text>
+    </view>
+  </view>
+</view>
+
+<!-- 自提站点 -->
+<view class="public site">
+  <view class="tit">自提站点</view>
+  <view class="line">
+    自提地址
+    <view class="line-right">金水区 汉飞城市二期</view>
+  </view>
+  <view class="line">
+    联系人
+    <view class="line-right">张三</view>
+  </view>
+  <view class="line">
+    电话
+    <view class="line-right tel">12345678945</view>
+  </view>
+</view>
+
+<!-- 商品信息 -->
+<view class="public">
+  <view class="tit">商品信息</view>
+  <view class="line">
+    山东新鲜水果
+    <view class="line-right">¥1.68/份×1</view>
+  </view>
+</view>
+
+<!-- 费用详情 -->
+<view class="public cost">
+  <view class="tit">费用详情</view>
+  <view class="pick">
+    商品金额
+    <view class="line-right">¥1.68</view>
+  </view>
+  <view class="pick">
+    优惠
+    <view class="line-right">-¥0.00</view>
+  </view>
+  <view class="pick">
+    运费
+    <view class="line-right">¥0.00</view>
+  </view>
+  <view class="pick">
+    积分
+    <view class="line-right">¥0.00</view>
+  </view>
+  <view class="pick">
+    应付
+    <view class="line-right">¥1.00</view>
+  </view>
+</view>
+
+<!-- 备注 -->
+<view class="public remark">
+  <view class="tit">备注</view>
+  <view class="remark-text">无备注</view>
+</view>
+
+<!-- 实付款 -->
+<view class="payment">
+  实付款
+  <view class="payment-text">¥1.00</view>
+</view>

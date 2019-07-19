@@ -7,11 +7,19 @@ page {
 }
 
 .btns {
+    display: flex;
+    align-items: center;
     position: absolute;
-    left: 480rpx;
+    left: 430rpx;
     top: 145rpx;
 }
 
 .btn {
-    margin-right: 30rpx;
+    margin-right: 17rpx;
+}
+
+.code {
+    padding-right: 57rpx;
+    font-size: 12px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAFCElEQVRYR6WYV6yVRRRGL/beFRtCYhcbxoJGEXyQgLFFjQ0Ee8GSaKzYxRLgxULAjthjrLE/SJRIESyJ/cWgEVtQotFYwLLWzWwyd5z/nHt0ki9zpu3/m9ll9pw+XV1dW4HBYEVg+TvVZdUnG5/L74UN83ahf1fwVy/l/cm8uQo/FswAqzQILrtdOBY8BDYAw9KEmdQ/gOvBeLBCL+X9wbyTJDIKPAheAApbr0HAz/TvnOafSX0XOAC8keYPoZ4Fbgfnpvpb6tUq8jz1X8HhYB8wWiIngIdT53NtdjGQ8Q/A2WAa2BvMS2sU+FbqP516TfBbG3mXM36THHIiJ9LxCFgfbJ0J0Ha+AF+D/cCb4CxwZwORqfSfAbZMazaj1g5VqUXb+RD8Dq4DV5dERtOh3q3vz4hIVtZXgf2Bxx9EaqoJIv2Z9yW4AVwBwgkk5IbeTmNXNhE5mYH7MiL+nAQuqRBZh7490tx3qH8CJZGJ9F1cyAs1SrKRyBgGpxcLb6GtPssTKaZ1N0siN9N3WTFR25rf7kTUr/rPy200LqgQGUTfK2nicOp3K0Rupe/8Qt6+tI1FLU9E4ccDdaphrQ5eBK9WiBhDXksfOYha9y9P5GD6RgLdVcM3bjhnURORQ9IHC/I9mtvT+gSE+67Fb13aoicYazzN08CqYFkrYYxpO9pQt/vqtnqLdvAMWKlhsda+F1BN4TXO3TDN/z592N06fhT4BsTVUIr1tM8Dnv6onEgb8j2GT6Gli6vr2WlEl5yTdlh6STvZ3UQGAOOBtuD90OrScxdLwevgswYiO9G/G/C01mjBwG+rOgPbrKZja7eDGDeM754a71H/0tuF5bwgYljXt72kNDp3vQ3oVxEepxbGWco0Ahs3JOZFGKE9n+fpa/h9gffTkiBiKvAY0Op3ALqWt7Fu11TCJsrxyXRcBFTddonI2tTj0uaMHd8l6HXHgcdLIh6ti78Cxo4RHRC5hrnahyfl+pChCPMWvcpyKHgeuGlV24OIqjH+qxqveVWzLVA1LsiLQUmDfh/kNrGEtrlM3EuuWRlosBIxvnja5j/mMAZOVWMasVw1xbd63cwzNCOoMcVU4qkkQdXadoPeU5LVZv7lmarG/PIY4DHZjlyzZOOYAnQ57cl7JU8DzGG0i7wcQeNp8CMwLzHMV4vCa7dt0/zoj1Qxz9B2ZNDwbzGyGoUld2AioF24CY31Y2CENmGaABbkGdqNdDwLWoX4PRmfAmpEzGN0RdXwBIikutzUkXR4lYR6umXlRP7LpZefSHzwUn54xxwGtAfzVg3cS9DvXQt0iDuAbm09PycSqaLWrEtpK7I2+LwEamlAjYhu7JOio1Ij0klilBM5lS+bhxqsTLQtqsfL0diiLS5O/RtRPwBMIVTpzBqRTlLFJmON0zAvuTs18ntNI/0U+ObxOfNojUgnyXPtXaOXeBILgC+/C4F28jLQfQ1mes9HYFNwNHiyRkRbmZ52oY04p+k5UTsRveqc9NE8DQgviReh99nmNSL5A8ub1+Ji3flz0O6BZRQ1XHsCuqQPMWWuCzYGGvsm6cO+jbwiot3jRHyH/p8np4bo3aNN+KhXLUPBvWlTkjGFsF8VGWltL1dN+Qh3B7USj3BVV3uExxqTYWOJRU+6p0FedOscM9R/p39LGF9cXP4tEYJ11Qj1W/Db/15aFd83iyQSf9RoC035agiKi88keWGbD3Q0/A9AAHuhkDmowwAAAABJRU5ErkJggg==') no-repeat right center/34rpx 34rpx;
 }

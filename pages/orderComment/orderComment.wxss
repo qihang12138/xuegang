@@ -1,0 +1,51 @@
+page {
+    background: #f5f5f5;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    padding: 15rpx 30rpx;
+    margin: 20rpx 0;
+    font-size: 13px;
+    background: #fff;
+}
+
+.comment-img {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.comment-tit {
+    padding: 0 20rpx;
+}
+
+.comment-text {
+    padding-left: 40rpx;
+    color: #8c8c8c;
+}
+
+
+/* 文字评价 */
+
+.text {
+    padding: 30rpx;
+    width: 750rpx;
+    height: 280rpx;
+    font-size: 13px;
+    background: #fff;
+}
+
+
+/* 提交评价 */
+
+.btn {
+    position: fixed;
+    bottom: 400rpx;
+    left: 30rpx;
+    opacity: .7;
+    width: 690rpx;
+    font-size: 18px;
+    color: #fff;
+    background: #3C93FF;
+}
