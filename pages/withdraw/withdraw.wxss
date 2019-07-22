@@ -1,0 +1,35 @@
+.withdraw {
+    border-top: 1rpx solid #f5f5f5;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.withdraw-text {
+    min-width: 150rpx;
+    padding-right: 50rpx;
+}
+
+
+/* 提现账户 */
+
+.withdraw-account {
+    margin: 20rpx 0;
+}
+
+
+/* 提现按钮 */
+
+.withdraw-btn {
+    margin: 25rpx 25rpx 80rpx;
+    color: #fff;
+    background: #05BF02;
+}
+
+
+/* 提示 */
+
+.withdraw-hint {
+    padding: 0 0 10rpx 46rpx;
+    font-size: 12px;
+    color: #8c8c8c;
+}

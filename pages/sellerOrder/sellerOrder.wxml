@@ -1,0 +1,10 @@
+<view class="line"></view>
+<block wx:for="{{2}}" wx:key="index">
+  <van-card num="2" tag="{{tag}}" price="10.00" desc="地址: 汉飞城市公园二期" title="测试测试测试测试" thumb="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" custom-class="card">
+    <view slot="footer">
+      <van-button size="mini">{{leftBtn}}</van-button>
+      <van-button size="mini" wx:if="{{fales}}" custom-class="btn">{{centerBtn}}</van-button>
+      <van-button size="mini" custom-class="btn">{{rightBtn}}</van-button>
+    </view>
+  </van-card>
+</block>

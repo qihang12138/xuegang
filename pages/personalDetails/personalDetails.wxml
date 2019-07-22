@@ -1,0 +1,14 @@
+<view class="bg-fff msg">
+  <view class="flex-box msg-header flex-align border-bottom">
+    <view class="color-8c flex-item">头像</view>
+    <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="msg-img"></image>
+  </view>
+  <view class="flex-box msg-item flex-align border-bottom">
+    <view class="color-8c flex-item">用户名</view>
+    <view>设置昵称</view>
+  </view>
+  <view class="flex-box msg-item flex-align">
+    <view class="color-8c flex-item">手机号</view>
+    <view>12345678912</view>
+  </view>
+</view>

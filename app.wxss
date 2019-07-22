@@ -2,6 +2,7 @@
 
 page {
     background: #f5f5f5;
+    color: #333;
 }
 
 .box-sizing {
@@ -10,6 +11,10 @@ page {
 
 .p30 {
     padding: 30rpx;
+}
+
+.m10 {
+    margin: 10rpx 0;
 }
 
 .fixed-bottom {
@@ -35,6 +40,14 @@ page {
     display: flex;
 }
 
+.flex-align {
+    align-items: center;
+}
+
+.flex-right {
+    text-align: right;
+}
+
 .flex-item {
     flex: 1;
 }
@@ -53,6 +66,10 @@ page {
 
 .font-14 {
     font-size: 14px;
+}
+
+.color-8c {
+    color: #8c8c8c;
 }
 
 

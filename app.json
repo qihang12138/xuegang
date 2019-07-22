@@ -1,5 +1,12 @@
 {
     "pages": [
+        "pages/withdrawRecord/withdrawRecord",
+        "pages/withdrawCentre/withdrawCentre",
+        "pages/withdraw/withdraw",
+        "pages/task/task",
+        "pages/personalDetails/personalDetails",
+        "pages/sellerOrderDetails/sellerOrderDetails",
+        "pages/sellerOrder/sellerOrder",
         "pages/commodityImg/commodityImg",
         "pages/refund/refund",
         "pages/personalAdd/personalAdd",

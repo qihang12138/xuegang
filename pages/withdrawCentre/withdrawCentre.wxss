@@ -1,0 +1,22 @@
+.withdraw {
+    text-align: center;
+}
+
+.withdraw-img {
+    margin: 50rpx 0;
+    height: 238rpx;
+    width: 238rpx;
+}
+
+.withdraw-money {
+    font-size: 30px;
+}
+
+
+/* 提现按钮 */
+
+.withdraw-btn {
+    margin: 25rpx 25rpx;
+    color: #fff;
+    background: #05BF02;
+}

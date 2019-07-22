@@ -1,0 +1,14 @@
+<view class="withdraw">
+  <image src="https://s2.ax1x.com/2019/07/22/eCL3H1.png" class="withdraw-img"></image>
+  <view class="withdraw-money">¥0.00</view>
+</view>
+<!-- 提现按钮 -->
+<button class="withdraw-btn">提现</button>
+
+<!-- 提现记录 -->
+<van-cell
+  is-link
+  title="提现记录"
+  link-type="navigateTo"
+  url="/pages/withdrawRecord/withdrawRecord"
+/>

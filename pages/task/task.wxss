@@ -1,0 +1,41 @@
+.task {
+    margin: 20rpx 0 40rpx;
+    font-size: 15px;
+}
+
+.task-text {
+    padding-right: 40rpx;
+    min-width: 120rpx;
+    text-align: center;
+}
+
+.flex-item {
+    font-size: 13px;
+}
+
+
+/* 规则 */
+
+.rule {
+    padding: 0 85rpx;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* 任务进度 */
+
+.task-item {
+    position: relative;
+    padding: 40rpx 30rpx;
+}
+
+.task-line {
+    padding-bottom: 10rpx;
+}
+
+.task-btn {
+    position: absolute!important;
+    bottom: 30rpx!important;
+    right: 40rpx!important;
+}

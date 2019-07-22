@@ -1,0 +1,66 @@
+<van-tabs animated>
+  <van-tab title="发布任务">
+    <view class="task bg-fff">
+      <view class="flex-box p30 border-bottom">
+        <view class="task-text">货物名称</view>
+        <input class="flex-item" placeholder="请输入名称" />
+      </view>
+      <view class="flex-box p30 border-bottom">
+        <view class="task-text">取货地址</view>
+        <input class="flex-item" placeholder="请输入取货地址" />
+      </view>
+      <view class="flex-box p30 border-bottom">
+        <view class="task-text">送达地址</view>
+        <input class="flex-item" placeholder="请输入送达地址" />
+      </view>
+      <view class="flex-box p30 border-bottom">
+        <view class="task-text">联系方式</view>
+        <input class="flex-item" placeholder="请输入联系方式" />
+      </view>
+      <view class="flex-box p30 border-bottom">
+        <view class="task-text">送达时间</view>
+        <input class="flex-item" placeholder="请输入送达时间" />
+      </view>
+      <view class="flex-box p30 border-bottom">
+        <view class="task-text">金额</view>
+        <input class="flex-item" placeholder="请输入金额" />
+      </view>
+      <view class="flex-box p30">
+        <view class="task-text">备注</view>
+        <input class="flex-item" placeholder="请输入备注" />
+      </view>
+    </view>
+    <!-- 规则 -->
+    <view class="color-8c rule">
+      <view>费用规则如下：白天（8:00-19:00）：10元/3公里；</view>
+      <view>晚上（19:00-23:00）：15元/3公里；</view>
+      <view>每超过3公里，需加收5元，不足3公里按3公里计算。</view>
+    </view>
+    <!-- 提交按钮 -->
+    <view class="fixed-bottom">
+      <button class="my-btn">提交</button>
+    </view>
+  </van-tab>
+  <!-- 任务进度 -->
+  <van-tab title="任务进度">
+    <view class="task bg-fff">
+      <block wx:for="{{2}}">
+        <view class="task-item border-bottom">
+          <view class="task-line">
+            货物名称：
+            <text>两小盒草莓共200g</text>
+          </view>
+          <view class="task-line">
+            取货地址：
+            <text>花园路国基路</text>
+          </view>
+          <view class="task-line">
+            送达地址：
+            <text>华山路岗坡路花园小区</text>
+          </view>
+          <van-button size="small" custom-class="task-btn">已接单</van-button>
+        </view>
+      </block>
+    </view>
+  </van-tab>
+</van-tabs>

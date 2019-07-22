@@ -1,0 +1,12 @@
+.line {
+    height: 1rpx;
+}
+
+.card {
+    background: #fff!important;
+    margin-bottom: 20rpx!important;
+}
+
+.btn {
+    margin-left: 36rpx;
+}

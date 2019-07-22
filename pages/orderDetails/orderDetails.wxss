@@ -17,6 +17,7 @@
 
 .line-text {
     padding-left: 10rpx;
+    color: #8c8c8c;
 }
 
 .tit,

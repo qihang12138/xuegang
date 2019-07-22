@@ -1,0 +1,19 @@
+.msg {
+    padding: 0 30rpx;
+    border-top: 1rpx solid #f5f5f5;
+    font-size: 13px;
+}
+
+.msg-header {
+    padding: 12rpx 0;
+}
+
+.msg-item {
+    padding: 32rpx 0;
+}
+
+.msg-img {
+    border-radius: 50%;
+    height: 95rpx;
+    width: 95rpx;
+}
