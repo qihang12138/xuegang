@@ -1,0 +1,65 @@
+/* 公用 */
+
+.public {
+    color: #333;
+    background: #fff;
+}
+
+.line {
+    font-size: 14px;
+}
+
+.line-right {
+    flex: 1;
+    text-align: right;
+    color: #8c8c8c;
+}
+
+.line-text {
+    padding-left: 10rpx;
+    color: #8c8c8c;
+}
+
+.tit,
+.line {
+    padding: 20rpx 30rpx;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.tit {
+    font-weight: 500rpx;
+}
+
+.msg {
+    padding: 25rpx 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.line,
+.pick {
+    display: flex;
+    align-items: center;
+}
+
+.pick {
+    padding: 8rpx 30rpx 0;
+}
+
+
+/* 实付款 */
+
+.payment {
+    display: flex;
+    padding: 35rpx 30rpx;
+    margin-bottom: 100rpx;
+    font-size: 15px;
+    color: #333;
+    background: #fff;
+}
+
+.payment-text {
+    flex: 1;
+    text-align: right;
+    color: #FF3824;
+}

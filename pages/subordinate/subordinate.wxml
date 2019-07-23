@@ -1,0 +1,16 @@
+<block wx:for="{{3}}" wx:key="index">
+  <view class="flex-box subordinate bg-fff flex-align">
+    <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="subordinate-img"></image>
+    <view class="flex-item">
+      <view>昵称昵称昵称</view>
+      <view class="font-12">
+        ID:
+        <text>123456789</text>
+      </view>
+    </view>
+    <view class="font-12">
+      佣金
+      <text class="subordinate-text">30</text>
+    </view>
+  </view>
+</block>

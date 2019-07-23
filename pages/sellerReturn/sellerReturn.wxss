@@ -1,0 +1,9 @@
+.card {
+    margin-bottom: 10rpx!important;
+    border-top: 1rpx solid #f5f5f5!important;
+    background: #fff!important;
+}
+
+.reject {
+    margin-left: 50rpx;
+}

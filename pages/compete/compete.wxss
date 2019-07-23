@@ -1,0 +1,53 @@
+.compete-header {
+    margin-bottom: 5rpx;
+    padding: 30rpx 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.header-img {
+    margin-bottom: 40rpx;
+    border-radius: 50%;
+    border: 4rpx solid #e5e5e5;
+    height: 130rpx;
+    width: 130rpx;
+}
+
+.vertical {
+    margin: 0 72rpx;
+    width: 2rpx;
+    height: 50rpx;
+    background: #E6E6E6;
+}
+
+
+/* 排行榜 */
+
+.rank {
+    padding: 20rpx 30rpx;
+}
+
+.rank-num {
+    text-align: center;
+    line-height: 52rpx;
+    height: 52rpx;
+    width: 52rpx
+}
+
+.num-img {
+    height: 52rpx;
+    width: 52rpx;
+}
+
+.rank-img {
+    margin: 0 25rpx;
+    border-radius: 50%;
+    border: 2rpx solid #e5e5e5;
+    height: 65rpx;
+    width: 65rpx;
+}
+
+.rank-sales {
+    font-size: 14px;
+    color: #FD1200;
+}

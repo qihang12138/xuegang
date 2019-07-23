@@ -1,0 +1,19 @@
+<view class="seller-header flex-box flex-align bg-fff">
+  <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="header-img"></image>
+  <view>
+    <view>用户名用户名</view>
+    <view class="header-id">
+      ID:
+      <text>0123456789</text>
+    </view>
+  </view>
+</view>
+<!-- 我的资金 -->
+<view class="capital">
+  <view class="capital-cont">
+    <view class="color-8c">当前累计收益 (元)</view>
+    <view class="money border-bottom">0.00</view>
+  </view>
+  <van-cell is-link title="我的资金" value="立即提现" link-type="navigateTo" url="/pages/index/index" />
+  <van-cell is-link title="我的下级" link-type="navigateTo" url="/pages/index/index" border="{{false}}" />
+</view>

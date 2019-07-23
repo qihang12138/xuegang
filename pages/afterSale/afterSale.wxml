@@ -1,0 +1,38 @@
+<!-- 取货信息 -->
+<view class="public">
+  <view class="tit">退货/售后信息</view>
+  <view class="msg">
+    
+    <view class="pick">
+      订单号:
+      <text class="line-text">123456</text>
+    </view>
+    <view class="pick">
+      付款时间:
+      <text class="line-text">2019-07-19 12:00</text>
+    </view>
+    <view class="pick">
+      申请时间:
+      <text class="line-text">2019-07-19 12:00</text>
+    </view>
+    <view class="pick">
+      退款原因:
+      <text class="line-text">不想要买,不合适</text>
+    </view>
+  </view>
+</view>
+
+<!-- 商品信息 -->
+<view class="public m10">
+  <view class="tit">商品信息</view>
+  <view class="line">
+    山东新鲜水果
+    <view class="line-right">¥1.68/份×1</view>
+  </view>
+</view>
+
+<!-- 实付款 -->
+<view class="payment">
+  实付款
+  <view class="payment-text">¥1.00</view>
+</view>

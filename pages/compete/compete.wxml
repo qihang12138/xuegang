@@ -1,0 +1,20 @@
+<view class="compete-header bg-fff">
+  <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="header-img"></image>
+  <view class="flex-box flex-center">
+    <view>第二名</view>
+    <view class="vertical"></view>
+    <view>1000.00</view>
+  </view>
+</view>
+<!-- 排行榜 -->
+<block wx:for="{{5}}" wx:key="index">
+  <view class="flex-box flex-align rank bg-fff border-bottom">
+    <view class="rank-num">
+      {{index>2?index+1:''}}
+      <image src="{{arr[index]}}" class="num-img" wx:if="{{index<3}}"></image>
+    </view>
+    <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="rank-img"></image>
+    <view class="rank-name flex-item">小包子</view>
+    <view class="rank-sales">1024</view>
+  </view>
+</block>

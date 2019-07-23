@@ -1,0 +1,68 @@
+.bg-fff {
+    padding-top: 25rpx;
+}
+
+.balance {
+    margin: 0 auto;
+    padding-top: 55rpx;
+    height: 209rpx;
+    width: 714rpx;
+    color: #fff;
+    background: url('https://s2.ax1x.com/2019/07/22/ePHxwq.png') no-repeat 0/714rpx 204rpx;
+}
+
+.balance-text {
+    padding-left: 120rpx;
+}
+
+.balance-money {
+    padding-left: 100rpx;
+    font-size: 20px;
+}
+
+
+/* 充值 */
+
+.pay-options {
+    flex-wrap: wrap;
+    padding: 0 50rpx
+}
+
+.pay-option {
+    margin-bottom: 40rpx;
+    text-align: center;
+    line-height: 130rpx;
+    border: 2rpx solid #3C93FF;
+    border-radius: 10rpx;
+    width: 280rpx;
+    height: 130rpx;
+    font-weight: 500;
+}
+
+.pay-on {
+    background: #3C93FF;
+    color: #fff;
+}
+
+
+/* 支付 */
+
+.payment {
+    margin: 10rpx 0 50rpx;
+    padding: 40rpx 30rpx;
+    font-weight: bold;
+}
+
+.payment-money {
+    color: #3C93FF;
+}
+
+
+/* 规则 */
+
+.rule {
+    padding: 0 87rpx 75rpx;
+    text-align: center;
+    font-size: 12px;
+    color: #8c8c8c;
+}
