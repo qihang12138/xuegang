@@ -1,17 +1,12 @@
 // pages/commodityDetails/commodityDetails.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        imgUrls: [
-            'https://s2.ax1x.com/2019/07/15/ZoFuee.png',
-            'https://s2.ax1x.com/2019/07/15/ZoFuee.png',
-            'https://s2.ax1x.com/2019/07/15/ZoFuee.png',
-            'https://s2.ax1x.com/2019/07/15/ZoFuee.png',
-            'https://s2.ax1x.com/2019/07/15/ZoFuee.png'
-        ],
+        pageData:{},
         indicatorDots: false,
         autoplay: false,
         interval: 5000,
@@ -28,6 +23,20 @@ Page({
             }]
         }]
     },
+    postData() {
+        app.http({
+          url: app.api.ApiGoodsDetail,
+          data: {
+            gid:'18'
+          }
+        }).then(res => {
+          if (res.error_code === 0) {
+            this.setData({
+              pageData: res.data
+            })
+          }
+        })
+      },
     tap() {
         console.log('tap')
     },
@@ -37,6 +46,7 @@ Page({
      */
     onLoad: function(options) {
 
+        this.postData();
     },
 
     /**

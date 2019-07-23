@@ -6,23 +6,23 @@ Component({
     properties: {
         src: {
             type: String,
-            value: "https://s2.ax1x.com/2019/07/17/ZL0gpT.png"
+            value: ""
         },
         name: {
             type: String,
-            value: "四川新鲜的橙子"
+            value: ""
         },
         weight: {
             type: String,
-            value: "123g"
+            value: ""
         },
         priceNew: {
             type: String,
-            value: "¥29.8"
+            value: ""
         },
         priceOld: {
             type: String,
-            value: "¥29.9"
+            value: ""
         },
     },
 

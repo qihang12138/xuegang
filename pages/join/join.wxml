@@ -1,26 +1,55 @@
 <!-- 选项卡 -->
-<option one="申请团长" two="申请零售通" three="申请供应商" option-pad="option-pad" option-wp="option-wp"></option>
+<van-tabs bind:change="change">
+  <van-tab title="申请团长">
+    <view class="msg">
+      <view class="msg-item">
+        <view class="msg-key">姓名</view>
+        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name"/>
+      </view>
+      <view class="msg-item">
+        <view class="msg-key">社区名字</view>
+        <input type="text" value="{{community}}" placeholder="请输入社区名" bindinput="community"/>
+      </view>
+      <view class="msg-item">
+        <view class="msg-key">社区地址</view>
+        <input type="text" value="{{addr}}" placeholder="请输入社区地址" bindinput="addr"/>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="申请零售通">
+    <view class="msg">
+      <view class="msg-item">
+        <view class="msg-key">姓名</view>
+        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name"/>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="申请供应商">
+    <view class="msg">
+      <view class="msg-item">
+        <view class="msg-key">姓名</view>
+        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name"/>
+      </view>
+      <view class="msg-item">
+        <view class="msg-key">产品名称</view>
+        <input type="text" value="{{community}}" placeholder="请输入产品名称" bindinput="community"/>
+      </view>
+      <view class="msg-item">
+        <view class="msg-key">详细地址</view>
+        <input type="text" value="{{addr}}" placeholder="请输入详细地址" bindinput="addr"/>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
 <!-- 提交信息 -->
-<view class="msg">
-  <view class="msg-item">
-    <view class="msg-key">姓名</view>
-    <input type="text" value="" placeholder="请输入姓名" />
-  </view>
-  <view class="msg-item">
-    <view class="msg-key">社区名字</view>
-    <input type="text" value="" placeholder="请输入社区名" />
-  </view>
-  <view class="msg-item">
-    <view class="msg-key">社区地址</view>
-    <input type="text" value="" placeholder="请输入社区地址" />
-  </view>
+<view class="bg-fff">
   <view class="msg-item">
     <view class="msg-key">联系方式</view>
-    <input type="text" value="" placeholder="请输入联系方式" />
+    <input type="text" value="{{phone}}" placeholder="请输入联系方式" bindinput="phone"/>
   </view>
-  <navigator url="">
+  <navigator url="/pages/autonym/autonym">
     <view class="msg-item msg-autonym">
-        <view class="msg-key">实名认证</view>
+      <view class="msg-key">实名认证</view>
     </view>
   </navigator>
 </view>
@@ -28,4 +57,6 @@
 <view class="hint">申请成功后，我们将以最快的速度给您回应；想要查看进
 度可以拨打电话0371-123456789</view>
 <!-- 提交按钮 -->
-<my-btn></my-btn>
+<view class="fixed-bottom">
+  <button class="my-btn" bindtap="submit">提交</button>
+</view>

@@ -1,0 +1,13 @@
+<view class="list">
+  <input type="text" placeholder="请输入手机号" class="list-input color-8c border-bottom" />
+  <input type="text" placeholder="输入密码" class="list-input color-8c border-bottom" />
+</view>
+<view class="flex-box p30">
+    <navigator url="" class="signin option">立即注册</navigator>
+    <view class="flex-item"></view>
+    <navigator url="" class="find option">找回密码</navigator>
+</view>
+<!-- 按钮 -->
+<view class="fixed-bottom">
+  <button class="my-btn">确定</button>
+</view>

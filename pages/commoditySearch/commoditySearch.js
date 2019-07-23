@@ -1,18 +1,41 @@
 // pages/commoditySearch/commoditySearch.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    on:0,
+    pageData:{}
   },
-
+  changeOn(event){
+    var id = event.currentTarget.dataset.id
+    this.setData({
+      on:id
+    });
+  },
+  postData() {
+    app.http({
+      url: app.api.ApiGetBrandGoods,
+      data: {
+        tid:1
+      },
+      method: 'POST'
+    }).then(res => {
+      if (res.error_code === 0) {
+        this.setData({
+          pageData: res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.postData();
   },
 
   /**

@@ -26,14 +26,8 @@
 
 /* 商品列表 */
 
-.commodity {
-    display: flex;
-    position: fixed;
-    height: 100%;
-}
-
 .commodity-list {
-    width: 186rpx；
+    width: 750rpx;
 }
 
 .commodity-breviary {
@@ -69,6 +63,9 @@
     line-height: 30rpx;
     font-size: 14px;
     color: #333;
+}
+.commodity-text{
+    max-width: 320rpx;
 }
 
 .commodity-price {

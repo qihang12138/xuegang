@@ -1,53 +1,13 @@
-// pages/join/join.js
-const app = getApp()
+// pages/phoneLogin/phoneLogin.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag: 1,
-    name: '',
-    phone: '',
-    community: '',
-    addr: ''
-  },
-  name(event) {
-    this.setData({ name: event.detail.value });
-  },
-  phone(event) {
-    this.setData({ phone: event.detail.value });
-  },
-  community(event) {
-    this.setData({ community: event.detail.value });
-  },
-  addr(event) {
-    this.setData({ addr: event.detail.value });
-  },
-  change(event) {
-    this.setData({
-      flag: event.detail.index + 1,
-      name: '',
-      phone: '',
-      community: '',
-      addr: ''
-    })
 
   },
-  submit() {
-    var _this = this;
-    app.http({
-      url: app.api.ApiApply,
-      data: {
-        type: _this.data.flag,
-        name: '起航',
 
-      },
-      method: 'POST'
-    }).then(res => {
-
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */

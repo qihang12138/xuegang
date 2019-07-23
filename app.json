@@ -1,7 +1,15 @@
 {
     "pages": [
-        "pages/sellerReturn/sellerReturn",
+        "pages/logIn/logIn",
+        "pages/signIn/signIn",
+        "pages/newPassword/newPassword",
+        "pages/forgetPassword/forgetPassword",
+        "pages/phoneLogin/phoneLogin",
         "pages/commodityDetails/commodityDetails",
+        "pages/join/join",
+        "pages/index/index",
+        "pages/commoditySearch/commoditySearch",
+        "pages/sellerReturn/sellerReturn",
         "pages/password/password",
         "pages/afterSale/afterSale",
         "pages/pay/pay",
@@ -39,13 +47,10 @@
         "pages/rule/rule",
         "pages/integral/integral",
         "pages/cart/cart",
-        "pages/join/join",
         "pages/autonym/autonym",
         "pages/orderResult/orderResult",
         "pages/distributionSites/distributionSites",
-        "pages/commoditySearch/commoditySearch",
         "pages/searchResult/searchResult",
-        "pages/index/index",
         "pages/blank/blank",
         "pages/submitOrder/submitOrder"
     ],
@@ -55,8 +60,39 @@
         "navigationBarTitleText": "首页",
         "navigationBarTextStyle": "black"
     },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#3C93FF",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/images/index.png",
+                "selectedIconPath": "/images/index-on.png"
+            },
+            {
+                "pagePath": "pages/join/join",
+                "text": "加盟",
+                "iconPath": "/images/join.png",
+                "selectedIconPath": "/images/join-on.png"
+            },
+            {
+                "pagePath": "pages/cart/cart",
+                "text": "购物车",
+                "iconPath": "/images/cart.png",
+                "selectedIconPath": "/images/cart-on.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "/images/my.png",
+                "selectedIconPath": "/images/my-on.png"
+            }
+        ]
+    },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
+        "van-notice-bar": "/vant/notice-bar/index",
         "van-goods-action": "/vant/goods-action/index",
         "van-goods-action-icon": "/vant/goods-action-icon/index",
         "van-goods-action-button": "/vant/goods-action-button/index",

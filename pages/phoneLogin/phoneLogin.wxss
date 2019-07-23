@@ -1,0 +1,20 @@
+page {
+    font-size: 12px;
+}
+
+.list {
+    margin-top: 60rpx;
+    background: #fff;
+}
+
+.list-input {
+    padding: 20rpx 30rpx;
+}
+
+.list-item {
+    padding: 12rpx 30rpx;
+}
+.option{
+    font-size: 15px;
+    color: #3C93FF;
+}

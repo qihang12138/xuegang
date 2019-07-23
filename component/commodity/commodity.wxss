@@ -17,7 +17,12 @@
     height: 300rpx;
     margin-bottom: 20rpx;
 }
-
+.commodity-name{
+    width: 330rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
 .commodity-weight {
     margin: 10rpx 0;
     font-size: 12px;

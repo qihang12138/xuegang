@@ -16,7 +16,11 @@ page {
 .m10 {
     margin: 10rpx 0;
 }
-
+.text-hide{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
 .fixed-bottom {
     position: fixed;
     left: 0;

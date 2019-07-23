@@ -1,7 +1,6 @@
-{
-  "backgroundTextStyle": "light",
+{"backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
-  "navigationBarTitleText": "加盟",
+  "navigationBarTitleText": "注册",
   "navigationBarTextStyle": "black",
   "usingComponents": {}
 }

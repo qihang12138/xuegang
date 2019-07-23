@@ -1,19 +1,19 @@
 <!-- 轮播图 -->
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{pageData.goods_img}}" wx:key="index">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+      <image src="{{item.image}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
 
 <!-- 商品简介 -->
 <view class="brief">
-  <view class="brief-name">新鲜的福建书峰琵琶</view>
+  <view class="brief-name">{{pageData.goods.g_name}}</view>
   <view class="brief-price">
-    <view class="brief-price-new">¥36.00</view>
-    <view class="brief-price-old">¥29.9</view>
+    <view class="brief-price-new">{{pageData.goods.g_xprice}}</view>
+    <view class="brief-price-old">{{pageData.goods.g_yprice}}</view>
   </view>
   <view class="brief-info">
     <view class="brief-info-express">快递:<text>免运费</text></view>
@@ -28,7 +28,7 @@
   <view class="discounts-box">
     <view class="discounts-tit">优惠</view>
     <view class="discounts-tickets">店铺优惠券</view>
-    <block wx:for="{{2}}">
+    <block wx:for="{{2}}" wx:key="index">
       <view class="discounts-ticket">满99减5</view>
     </block>
   </view>

@@ -10,10 +10,10 @@
 </view>
 <!-- 轮播图 -->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" class="swiper">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{pageData.lot_banner}}" wx:key="index">
     <swiper-item>
       <navigator url="">
-        <image src="{{item}}" class="slide-image"/>
+        <image src="{{item.image}}" class="slide-image"/>
       </navigator>
     </swiper-item>
   </block>
@@ -22,22 +22,21 @@
 <input type="text" placeholder="搜索商品" class="search" />
 <!-- 分类栏 -->
 <view class="sort">
-  <view class="sort-son" wx:for="{{4}}">
+  <view class="sort-son" wx:for="{{pageData.lot_type}}" wx:key="index">
     <navigator url="">
-      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="sort-img" />
-      <view>冰淇淋</view>
+      <image src="{{item.type_image}}" class="sort-img" />
+      <view>{{item.type_name}}</view>
     </navigator>
   </view>
 </view>
 <!-- 公告栏 -->
-<view class="notice">
-  <view class="notice-cont">
-    次日下午可以到团长处领取商品，每日下单时间：0:00-ajhdlkjasjhdklajskldjaskldjklashdjkhasiujdhjioqawjdikojlhnasjkdhjkaskjldj
-  </view>
-</view>
+<van-notice-bar
+  left-icon="volume"
+  text="{{pageData.announcement[0].desc}}"
+/>
 <!-- 广告图 -->
 <navigator url="">
-  <image class="banner" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" />
+  <image class="banner" src="{{pageData.alone_brand.img}}" />
 </navigator>
 <!-- 店铺推荐 -->
 <view class="shop">
@@ -48,7 +47,7 @@
   </view>
   <view class="shop-hint">今日店铺首推爆款 赶紧抢购吧</view>
   <navigator url="">
-    <image class="shop-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" />
+    <image class="shop-img" src="{{pageData.alone_brand.img}}" />
   </navigator>
 </view>
 <!-- 爆款团购 -->
@@ -60,8 +59,8 @@
   </view>
   <view class="shop-hint">各种品类商品 优美价廉 赶紧抢购吧</view>
   <view class="commoditys">
-    <block wx:for="{{4}}">
-      <commodity></commodity>
+    <block wx:for="{{pageData.group_pay_goods}}" wx:key="index">
+      <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}"></commodity>
     </block>
   </view>
   

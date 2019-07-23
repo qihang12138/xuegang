@@ -4,26 +4,27 @@
   <button class="search-btn"></button>
 </view>
 <!-- 商品列表 -->
-<view class="commodity">
-  <view class="commodity-list">
-    <view class="commodity-brand on">伊利</view>
-    <view class="commodity-brand" wx:for="{{6}}">蒙牛</view>
-  </view>
-  <!-- 商品内容 -->
-  <view class="commodity-kind">
-    <block wx:for="{{5}}">
-      <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
-        <view class="commodity-cont">
-          <image class="commodity-img" src="https://s2.ax1x.com/2019/07/15/ZoFuee.png"></image>
-          <view class="commodity-msg">
-            <view class="commodity-name">
-              <view>伊利纯牛奶无菌砖早餐谷粒多红黑</view>
-              <view>250ml*16盒</view>
+<view>
+  <view class="commodity-list flex-box">
+    <block wx:for="{{pageData.lot_brand}}" wx:key="index">
+      <view class="commodity-brand {{index===on?'on':''}}" bindtap="changeOn" data-id='{{index}}'>{{item.bname}}</view>
+      <!-- 商品内容 -->
+      <view class="commodity-kind">
+        <block wx:for="{{pageData.lot_brand[index].goods}}" wx:key="index">
+          <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+            <view class="commodity-cont">
+              <image class="commodity-img" src="{{item.g_image}}"></image>
+              <view class="commodity-msg">
+                <view class="commodity-name">
+                  <view class="text-hide commodity-text">{{item.g_name}}</view>
+                  <view>250ml*16盒</view>
+                </view>
+                <view class="commodity-price">¥48.80</view>
+              </view>
             </view>
-            <view class="commodity-price">¥48.80</view>
-          </view>
-        </view>
-      </navigator>
+          </navigator>
+        </block>
+      </view>
     </block>
   </view>
 </view>
