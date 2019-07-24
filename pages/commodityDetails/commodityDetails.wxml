@@ -1,63 +1,133 @@
 <!-- 轮播图 -->
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
-  <block wx:for="{{pageData.goods_img}}" wx:key="index">
+<swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" class="swiper">
+  <block wx:for="{{ pageData.goods_img }}" wx:key="index">
     <swiper-item>
-      <image src="{{item.image}}" class="slide-image"/>
+      <image src="{{ item.image }}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
-
 <!-- 商品简介 -->
 <view class="brief">
-  <view class="brief-name">{{pageData.goods.g_name}}</view>
+  <view class="brief-name">{{ pageData.goods.g_name }}</view>
   <view class="brief-price">
-    <view class="brief-price-new">{{pageData.goods.g_xprice}}</view>
-    <view class="brief-price-old">{{pageData.goods.g_yprice}}</view>
+    <view class="brief-price-new">¥{{ pageData.goods.g_xprice || 0.00 }}</view>
+    <view class="brief-price-old">¥{{ pageData.goods.g_yprice || 0.00 }}</view>
   </view>
   <view class="brief-info">
-    <view class="brief-info-express">快递:<text>免运费</text></view>
-    <view class="brief-info-surplus">剩余<text>123</text>份</view>
-    <view class="brief-info-sold">已售<text>456</text>份</view>
-  </view>
-  <view class="brief-collect">收藏宝贝</view>
-</view>
-
-<!-- 优惠 -->
-<view class="discounts">
-  <view class="discounts-box">
-    <view class="discounts-tit">优惠</view>
-    <view class="discounts-tickets">店铺优惠券</view>
-    <block wx:for="{{2}}" wx:key="index">
-      <view class="discounts-ticket">满99减5</view>
-    </block>
-  </view>
-  <view class="discounts-get">领券</view>
-</view>
-
-<!-- 选项卡 -->
-<option one="商品详情" two="用户评价" three="购买记录" option-pad="option-pad"></option>
-
-<!-- 商品详情/富文本 -->
-<rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
-
-<!-- 底部 -->
-<view class="footer">
-  <view class="footer-service">
-    <navigator url="" class="footer-nav">
-     客服
-    </navigator>
+    <view class="brief-info-express">
+      快递:
+      <text>{{ pageData.goods.g_freight===0?'免运费':'¥'+pageData.goods.g_freight }}</text>
     </view>
-  <view class="footer-cart">
-    <navigator url="" class="footer-nav">
-      购物车
-    </navigator>
+    <view class="brief-info-surplus">
+      剩余
+      <text>{{ pageData.goods.g_kc }}</text>
+      份
+    </view>
+    <view class="brief-info-sold">
+      已售
+      <text>{{ pageData.goods.g_sales }}</text>
+      份
+    </view>
   </view>
-  <view class="footer-add">加入购物车</view>
-  <view class="footer-buy">
-    <navigator url="">
-      购买
-    </navigator>
+  <view class="brief-collect">
+    <image class="brief-collect-img" src="{{ collect===0?'/images/collect.png':'/images/collect-on.png' }}"></image>
+    <view>收藏宝贝</view>
   </view>
-    
 </view>
+<van-cell is-link custom-class="discounts" bind:click="ticketShow">
+  <view slot="title" class="flex-box">
+    <view class="van-cell-text">优惠</view>
+    <view class="discounts-tickets">店铺优惠券</view>
+    <block wx:for="{{ pageData.coupon }}" wx:key="index" wx:if="{{ index<2 }}">
+      <view class="discounts-ticket flex-item">满{{ item.target }}减{{ item.money }}</view>
+    </block>
+    <view class="discounts-get">领券</view>
+  </view>
+</van-cell>
+<!-- 选项卡 -->
+<van-tabs animated custom-class="tabs">
+  <van-tab title="商品详情">
+    <!-- 商品详情/富文本 -->
+    <rich-text nodes="{{ pageData.goods.g_content }}"></rich-text>
+  </van-tab>
+  <van-tab title="用户评价">
+    <view class="evaluate">
+      <van-cell is-link title="商品评价({{ pageData.comment.length }})" value="查看全部" link-type="navigateTo" url="/pages/index/index" custom-class="evaluate-tit" />
+      <block wx:for="{{ pageData.comment }}" wx:key="index">
+        <view class="flex-box flex-align bg-fff p30">
+          <image class="evaluate-img" src="{{ item.u_image }}"></image>
+          <view class="flex-item">{{ item.u_name }}</view>
+          <van-rate value="{{ item.number }}" size="{{ 15 }}" color="#f44" void-color="#eee" void-icon="star" readonly />
+        </view>
+        <view class="evaluate-cont bg-fff text-hide-2">{{ item.content }}</view>
+        <view class="evaluate-time bg-fff border-bottom">{{ item.create }}</view>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="购买记录">
+    <block wx:for="{{ pageData.buy_record }}" wx:key="index">
+      <view class="flex-box flex-align bg-fff p30">
+        <image class="evaluate-img" src="{{ item.u_image }}"></image>
+        <view class="flex-item font-12">{{ item.u_name }}</view>
+        <view class="flex-item font-12">{{ item.number }}份</view>
+        <view class="evaluate-time bg-fff">{{ item.create }}</view>
+      </view>
+    </block>
+  </van-tab>
+</van-tabs>
+<!-- 底部 -->
+<van-goods-action custom-class="footer">
+  <van-goods-action-icon icon="chat-o" text="客服" bind:click="" />
+  <van-goods-action-icon icon="cart-o" text="购物车" bind:click="" />
+  <van-goods-action-button text="加入购物车" type="warning" bind:click="addCart" />
+  <van-goods-action-button text="立即购买" url="/pages/orderDone/orderDone" />
+</van-goods-action>
+<!-- 优惠券 -->
+<van-popup show="{{ ticketShow }}" position="bottom" overlay="{{ true }}" bind:close="onClose" custom-class="ticket-box">
+  <view class="ticket-tit">优惠</view>
+  <block wx:for="{{2}}">
+    <view class="ticket">
+      <view class="ticket-left">
+        <view>
+          <text class="ticket-money">¥3</text>
+          店铺优惠券
+        </view>
+        <view>
+          订单金额满
+          <text>60</text>
+          元可使用
+        </view>
+        <view>有效期2019.01.20-2019.05.31</view>
+      </view>
+      <view class="ticket-right">立即领取</view>
+    </view>
+  </block>
+</van-popup>
+<!-- 购物车 -->
+<van-popup show="{{ cartShow }}" position="bottom" overlay="{{ true }}" bind:close="onClose" custom-class="p30 cart">
+  <view class="cart-cont">
+    <view class="flex-box">
+      <image class="cart-img" src="{{ pageData.spec[sidIndex].s_image }}"></image>
+      <view class="flex-item">
+        <view class="cart-name">{{ pageData.goods.g_name }}</view>
+        <view class="brief-price">
+          <view class="brief-price-new">¥{{ pageData.spec[sidIndex].s_xprice || 0.00 }}</view>
+          <view class="brief-price-old">¥{{ pageData.spec[sidIndex].y_xprice || 0.00 }}</view>
+        </view>
+      </view>
+    </view>
+    <view>规格</view>
+    <block wx:for="{{pageData.spec}}" wx:key="index">
+      <scroll-view class="cart-specs" scroll-y="{{true}}" scroll-with-animation="{{true}}">
+        <view class="cart-spec {{index===sidIndex?'spec-on':''}}" data-sid="{{item.sid}}" bindtap="changeSpec">{{item.s_name}}</view>
+      </scroll-view>
+    </block>
+    <view class="flex-box cart-num flex-align">
+      <view class="flex-item">数量</view>
+      <van-stepper value="{{ stepper }}" bind:change="stepper" />
+    </view>
+  </view>
+  <view class="fixed-bottom">
+    <button class="my-btn" bindtap="submit">确定</button>
+  </view>
+</van-popup>

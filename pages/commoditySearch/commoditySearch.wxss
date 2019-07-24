@@ -1,37 +1,33 @@
-.search {
-    display: flex;
-    padding: 0 30rpx;
-    margin: 15rpx 0 20rpx;
-    font-size: 15px;
+page {
+    height: 100%;
 }
 
-.search-input {
-    padding: 16rpx 50rpx;
-    width: 490rpx;
-    height: 28rpx;
-    border-radius: 10rpx 0 0 10rpx;
-    background: #fff;
+/* 搜索 */
+.search-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
-
-.search-btn {
-    width: 100rpx;
-    border-radius: 0 10rpx 10rpx 0;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAJaUlEQVRYR81ZD0yU5xl/3++7f8ifUUHQTVdtg8BxQFBamLFR2tVtZGmbsq1bo1ObTtN0GdVpZtdVseu0Jus2Sxq2Lm1n26WUJctqdFlNN1bGrNaVetwdB4ENnE4mK8q/O4777nvf/Z7j7nrIccdZIL7Jl9zd977P83uf/89znCWx7HZ7qqqqWaqUy3UpK7nkeYzzIpAwMSYlwxd89uNzB2PKZanIs5qmdSmK8r/S0lJPEqxm3EoMEq7u7m6z7vWuDHC1mnNZDVx5TLI0HDQDZwq+f0JHYjHmw08AzsZwiS788kfJ5Z8yMzP7VqxYMZ6QYZwNcQE3NTWppatXLw0oxq8yzrZBcgWglYFHSYKpwN4RyeRFzpRjAP67oqKi/+BCehI0IltnBNzc3GzIzcrdKJnYDbAVOHELnuj9XnwfxTMBCUaYczILzlLwWzpApUSfwW/DCufnseOwJTX1vVWrVvmSBR0T8OnTp1My0zKrJBeHoHIbMKhEGEh0weQgDvVB762Q83sA0S2EiDCGvQITt3IpN2D/WpgHaSUbjyEEjiTeBWovqEb1twUFBXTpWa9pgHt7ey1er3eb1MVeMF4Zpf6r+HxO4ezXBt18dlgbHl27du0o9hCAKQuXUHp6etI8Hk+6STHdIbm+lXHlLlw+K7QR92CXIOnnNF0/loxDTgFMjNwO95cF0+sB5LYwcVDvYoLVG2Xg7cvXrl2pqqoKzFYkoKm63e4cprMHBBPfA8P8iJlwfoEzuR83brTZbOSkCVcEMAhz1/nzpVw1vAwTKAsRDUCt7VD/jwYGB5oBNGmbCyOAT1hysnKqINVn4YAlIRMhSbthZk8A8LsQEn2PuyKAHQ5HLsAdhe19LWSzAqfPgHgtiH10o14dzZ2k7XQ6y4J8GKsMmZuAc7wT0PUdMI1LswIcNAWn+35EhAYcyMVDsbQLanyiqLTo1GxunohR+H1Qk3bXJqayX0SZB/yDP2W6eOHVvOrqiXi0ghLu6ur6nOb310Mh9wWly/nHkMKBlNSUV24k9CQCT4497hl/BNo7CNFkBx1XyjOa0DdDyr1xAdNhz4hns6KwQ5DqEhzUJefHFVV53Gq19idifqPvOzo6lgldvAgTnBQSY0NQ6zM+v+9X5eXlFONjLt5jt+dMqOrPkWq/jh1GPP3w3McLbba3Y4WsGwV4/blJM3TCDPmLeLeMzBC2/BeuKFviCYq7XK4iJmQTDhRCunAAjrzPdsDR/jtX4GaiAwdcCjN8CXypPlGh4YtGzmrybbZzM0rY1e7aiWjyYzIHGPQwQsMzI2MjDevWrftURcpsLksZNSMt4zEko/3g/xmcuQZB/9Bksbyal5cX0/m4q91ZP1nYoPri7ALT9YeKSks/CKpo/hcihv1OpqpvgdutYOeH0BpHvZ7dFRUVg7HYc6fD+XtsqsZLE1TzN9Vk/Bby++X5xzrJobOz87O6P9AIYd2Fr4gW7ERA6t9BtBiICbjD4fw7YmAFQgylmZO60B+dafN8XKKtrW2J2WhqgLAeCNbVkp0SXG4rLi6+EhMwTOIMbncHXgYAuNETRx3zARgSTtc1bR9CWi3wLgLgbr+ufamsrKwvNmCH632Y6514OY7N9aPescOVlZUj8wEuFk1EijR0A7sAeC/epwNDnyoNdxeUFsRMINzlcJ7FxvKwhFWDuruwsDCmwc/HJTpbW9MDGZkoZdku0E+FWXRI33i1rbz837El7HS2IA6vC/VlJwMLbMPt7e23oBY4DP4UqYyQ8Duw4e0z27DD1YB8sYXsB9Gixaf5H16zZs2CRQk0uEs038QrcPyvwPFRGvNGxaDsmknLvMPh2IucuA+3W4znAhMLGocZytrb0VMdh2St4E9d9k8Rr55HpsXn6YsA34t8/DKku2KhMx01utnZ2TUwiXrKtKgvBpjCH0VXfXKmOoajfVkpAjpUwjYGawmFn8ThnQtRS8AcMrSJiYNSyJ2wYQv4uwJS3BevxOQUB0UgUIuw8gOApuHIglRrpGyENCsq4SbkASvAov3iDSbv2MG8OGEV5ajkqE2t0RUbqrXjfk377nw6X2crEkZmYA9sd3dIUJeY4FutJdbmeB1OsOOg4I2yfQ8mCt8PHg52HBIdR+q8dBwkpE6XaxOc/Zf4TEWPhrrgTdVs3JOfn/9xvHgfaUJJPZByI25nCx3oRCVSi3j4Lr7PaeWGyFCI7HaUc+UeAg/6vfCdh1G4f5Cof4wApjY8Nzt3OxrROhDIwUMx8c9cBPYVlpTY56hr5h1tbbdLk/lpMH4IPMzQJsYV8q9IFjsgnH8myqZTBindbQjihokDCOCPgBDNxTRswFyCPz0HcwnDsuxsq86UQ0jDJFlLCBzNO4fR9L6BsvJIolZ/2qjK8Q8EcjM7CuluCqbKSXMg86jHbPgPyEADyUobbdhioYmNaGwfA7kNoEdztuEQYOo0CMcoItVrutSfiwc61jCQY3BdZODqAZChwn5REDTnVxFSWnQmX7cIy7ngbO3EiVFeVxdrtsb7P/ww5arFkgHp3aYyZTMs9X44Vi7V3aDrRhh7CZpTIe1a0P98GDTeHeM+3yFreXnMjn2mcSt3f+S+Var6HhD4BkRM00faSzO1QYDvQ4veyplokYoybXqJAeZqRJ0SaOIe3LUQZ+g8mQBNKu2A/OzIyEjLYiEMIjPz20LIA9i7hCSOC16DpF9Aej5aUlKCHm/qijvQDnYDZvODTJfbg8Gd6tVPVrz5MIEjzVAiovGrDyPZPkjzrYAQbwJIT9isgjxMpv3Q4dYo+v241E+GhoZeW79+/ZRxbFzAhI2iR1ZW1kro7pu4+YPgvhQSpym8+frbX/edut5R7B1BTD/FFOU3kJ4rVlGDFL18wjfxJMBsCYGOjGOvDg29Hg06IeAwCEoucLps3a9XKiq7G/n/C5BSKiiTY9JDi6KKBmAeGP37GHg34y8aOxTfH0u90ReE3yxXFfVJCGQzzpNAaF2kGXI06FkDDhOnCgsST1/EeZpXSiPslf5VogEi0zm/AtUP4p2Gd2PFg4OjPIlZMoE2KIanAGornJPC6jTQSQOOZQahbEVNy6fOiOhAClRF+RnM716AC//NEJS00Wx+Y04AJ7DlpF7X1dUpNTU1NkXyI3C8L0ZAY1oPx3z+pgNMtyONwWeKp4Fm7F83JeBo0Pi39QiizAYUSnSRmxdwGLTrvKucG2Qtoo4K8I3/B8vxcWUE3RTWAAAAAElFTkSuQmCC') no-repeat center/44rpx 44rpx #fff;
-}
-
-.search-btn::after {
-    border: none;
-}
-
 
 /* 商品列表 */
+.commodity {
+    position: fixed;
+    top: 120rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
 .commodity-list {
     width: 750rpx;
+    height: 100%;
+    align-items: stretch;
 }
 
 .commodity-breviary {
     flex: 1;
+    align-items: stretch;
 }
 
 .commodity-kind {
@@ -64,7 +60,8 @@
     font-size: 14px;
     color: #333;
 }
-.commodity-text{
+
+.commodity-text {
     max-width: 320rpx;
 }
 

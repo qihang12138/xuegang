@@ -1,0 +1,13 @@
+<view class="evaluate">
+    <van-cell title="商品评价({{pageData.lot.length}})" custom-class="evaluate-tit" />
+    <block wx:for="{{pageData.lot}}" wx:key="index">
+        <view class="flex-box flex-align bg-fff p30">
+            <image class="evaluate-img" src="{{item.u_image}}"></image>
+            <view class="flex-item">{{item.u_name}}</view>
+            <van-rate value="{{item.number}}" size="{{ 15 }}" color="#f44" void-color="#eee" void-icon="star" readonly />
+        </view>
+        <view class="evaluate-cont bg-fff text-hide-2">{{item.content}}</view>
+        <view class="evaluate-time bg-fff border-bottom">{{item.create}}</view>
+    </block>
+    
+</view>

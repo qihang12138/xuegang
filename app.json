@@ -1,17 +1,20 @@
 {
     "pages": [
+        "pages/commodityDetails/commodityDetails",
+        "pages/submitOrder/submitOrder",
+        "pages/distributionSites/distributionSites",
+        "pages/commoditySearch/commoditySearch",
+        "pages/sellerReturn/sellerReturn",
+        "pages/afterSale/afterSale",
+        "pages/evaluateAll/evaluateAll",
         "pages/logIn/logIn",
         "pages/signIn/signIn",
         "pages/newPassword/newPassword",
         "pages/forgetPassword/forgetPassword",
         "pages/phoneLogin/phoneLogin",
-        "pages/commodityDetails/commodityDetails",
         "pages/join/join",
         "pages/index/index",
-        "pages/commoditySearch/commoditySearch",
-        "pages/sellerReturn/sellerReturn",
         "pages/password/password",
-        "pages/afterSale/afterSale",
         "pages/pay/pay",
         "pages/compete/compete",
         "pages/subordinate/subordinate",
@@ -49,10 +52,8 @@
         "pages/cart/cart",
         "pages/autonym/autonym",
         "pages/orderResult/orderResult",
-        "pages/distributionSites/distributionSites",
         "pages/searchResult/searchResult",
-        "pages/blank/blank",
-        "pages/submitOrder/submitOrder"
+        "pages/blank/blank"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -92,6 +93,7 @@
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
+        "van-search": "/vant/search/index",
         "van-notice-bar": "/vant/notice-bar/index",
         "van-goods-action": "/vant/goods-action/index",
         "van-goods-action-icon": "/vant/goods-action-icon/index",

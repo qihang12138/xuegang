@@ -20,16 +20,29 @@ Page({
     }
     wx.login({
       success(res) {
-        let { errMsg, code } = res;
+        let { errMsg, code } = res,
+        formData = {
+          code,
+          nickname: userInfo.nickName,
+          image: userInfo.avatarUrl,
+          fid:0
+        }, isOK = true;
+
+        // for(let k in formData) {
+        //   if(formData[k] === "") isOK = false
+          
+        //   break
+        // }
+
+        // if (!isOK) {
+          
+        //   return 
+        // }
+
         app.http({
           url: app.api.ApiWechat,
           method: 'POST',
-          data: {
-            code,
-            nickname: userInfo.nickName,
-            image: userInfo.avatarUrl,
-            fid:0
-          }
+          data: formData
         }).then(res => {
           let { error_code, msg, data: { uid } } = res
           if (error_code === 0) {
@@ -37,9 +50,10 @@ Page({
             app.util.toast({
               title: msg
             }).then(() => {
-              wx.reLaunch({
-                url: '/pages/index/index'
-              })
+              // wx.reLaunch({
+              //   url: '/pages/index/index'
+              // })
+              wx.navigateTo({});
             })
           }
         })

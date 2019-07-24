@@ -1,4 +1,5 @@
-// pages/ticket/ticket.js
+// pages/evaluateAll/evaluateAll.js
+const app = getApp()
 Page({
 
   /**
@@ -7,12 +8,26 @@ Page({
   data: {
 
   },
-
+  getData() {
+    app.http({
+      url: app.api.ApiGetMoreComment,
+      data: { gid: '18' }
+    }).then(res => {
+      if (res.error_code === 0) {
+        res.data.lot.forEach(item => {
+          item.create = app.util.formatTime(new Date(item.create * 1000))
+        })
+        this.setData({
+          pageData: res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   /**
