@@ -1,7 +1,8 @@
-<van-cell is-link icon="location-o" label="{{site.place}}{{site.home}}" link-type="navigateTo" url="/pages/receivingList/receivingList?select=1" custom-class="flex-align site">
+<van-cell is-link title="添加收货地址" link-type="navigateTo" url="/pages/receiving/receiving?flag=1" icon="add-o" custom-class="site" wx:if="{{siteBol}}" />
+<van-cell is-link icon="location-o" label="{{site.place}}{{site.home}}" link-type="navigateTo" url="/pages/receivingList/receivingList?select=1" custom-class="flex-align site" wx:else>
     <view slot="title" class="flex-box">
-        <view class="van-cell-text flex-item">收货人: {{site.name}}</view>
-        <view class="van-cell-text">{{site.phone}}</view> 
+        <view class="van-cell-text">收货人: {{site.name}}</view>
+        <view class="van-cell-text title-phone">{{site.phone}}</view>
     </view>
 </van-cell>
 <!-- 商品信息 -->

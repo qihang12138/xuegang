@@ -18,7 +18,8 @@ Page({
         show: false,
         confirm: false,
         operate: false,
-        id: 0
+        id: 0,
+        flag: 0
     },
     onChange({ detail }) {
         // 需要手动对 checked 状态进行更新
@@ -73,9 +74,21 @@ Page({
             method: 'POST'
         }).then(res => {
             if (res.error_code === 0) {
-                wx.navigateBack({
-                    delta: 1
-                })
+                if (this.data.flag) {
+                    wx.navigateBack({
+                        delta: 1
+                    })
+                } else {
+                    // let pages = getCurrentPages();//获取当前页面js里面的pages里的所有信息。
+                    // let prevPage = pages[pages.length - 2];//prevPage 是获取上一个页面的js里面的pages的所有信息。
+                    // prevPage.setData({
+                    //     siteId: e.currentTarget.dataset.id
+                    // })
+                    wx.redirectTo({
+                        url: '/pages/receivingList/receivingList?select=1'
+                    })
+                }
+
             }
         })
     },
@@ -102,7 +115,8 @@ Page({
         if (options.id) {
             this.setData({
                 operate: true,
-                id: options.id
+                id: options.id,
+                flag: options.flag
             });
             this.getData();
         }

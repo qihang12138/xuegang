@@ -5,7 +5,7 @@
       <text class="list-phone">{{item.phone}}</text>
     </view>
     <view class="list-site">{{item.place}}{{item.home}}</view>
-    <navigator class="list-edit" url="/pages/receiving/receiving?id={{item.id}}">编辑</navigator>
+    <view class="list-edit" data-id="{{item.id}}" catchtap='editSite'>编辑</view>
   </view>
 </block>
 <!-- 按钮 -->

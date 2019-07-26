@@ -12,10 +12,14 @@ Page({
     commodity: '',
     site: '',
     siteId: 0,
+    siteBol: true,
     ticket: [],
     remark: ''
+
   },
   getSite() {
+    console.log('显示');
+    
     var siteId = this.data.siteId
     if (siteId !== 0) {
       // 获取地址
@@ -23,12 +27,21 @@ Page({
         url: app.api.ApiAddrLister
       }).then(res => {
         if (res.error_code === 0) {
-          res.data.list.forEach(item => {
-            if (item.id === siteId) {
-              this.setData({ site: item })
-              return;
-            }
-          });
+          if (res.data.list.length === 0) {
+            console.log('无');
+            this.setData({ siteBol: true })
+          } else {
+            res.data.list.forEach(item => {
+              console.log('有');
+              if (item.id === siteId) {
+                this.setData({
+                  site: item,
+                  siteBol: false
+                })
+              }
+            });
+          }
+
         }
       })
     }
@@ -48,15 +61,20 @@ Page({
       url: app.api.ApiAddrLister
     }).then(res => {
       if (res.error_code === 0) {
-        res.data.list.forEach(item => {
-          if (item.default === 1) {
-            this.setData({
-              site: item,
-              siteId: item.id
-            })
-            return;
-          }
-        });
+        if (res.data.list.length === 0) {
+          this.setData({ siteBol: true })
+        } else {
+          res.data.list.forEach(item => {
+            if (item.default === 1) {
+              this.setData({
+                site: item,
+                siteId: item.id,
+                siteBol: false
+              })
+            }
+          });
+        }
+
       }
     })
   },
@@ -110,7 +128,6 @@ Page({
    */
   onShow: function () {
     this.getSite();
-
   },
 
   /**

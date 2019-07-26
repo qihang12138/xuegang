@@ -1,4 +1,6 @@
 // pages/orderWait/orderWait.js
+import Dialog from '../../vant/dialog/dialog'
+
 const app = getApp()
 Page({
   data: {
@@ -9,10 +11,16 @@ Page({
    * 页面的初始数据
    */
   getData() {
+    var type = this.data.type;
+    if (type === 1) {
+   
+    }
     app.http({
-      url: app.api.ApiGetUserOrder
+      url: app.api.ApiGetUserOrder,
+      data: { type: type }
     }).then(res => {
       if (res.error_code === 0) {
+        // console.log(this.data.type,res.data);
         var never = [],
           type = this.data.type;
         res.data.never.forEach(item => {
@@ -20,19 +28,37 @@ Page({
             never.push(item)
           }
         });
-        console.log(never);
         this.setData({
           never: never
         })
       }
     })
   },
+  cancel(e) {
+    Dialog.confirm({
+      message: '确定要取消该订单吗?'
+    }).then(() => {
+      var oid = e.currentTarget.dataset.oid;
+      app.http({
+        url: app.api.ApiCancelOrder,
+        data: { oid: oid }
+      }).then(res => {
+        if (res.error_code === 0) {
+          this.getData()
+        }
+      })
+    }).catch(() => {
+      // on cancel
+    });
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var type = options.type - 0;
+    this.setData({ type: type })
     this.getData();
-    this.setData({ type: options.type })
   },
 
   /**

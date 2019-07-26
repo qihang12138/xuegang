@@ -19,12 +19,17 @@ Page({
       }
     })
   },
+  editSite(e) {
+    wx.navigateTo({
+      url:'/pages/receiving/receiving?id='+e.currentTarget.dataset.id
+    })
+  },
   select(e) {
     if (this.data.select) {
       let pages = getCurrentPages();//获取当前页面js里面的pages里的所有信息。
       let prevPage = pages[pages.length - 2];//prevPage 是获取上一个页面的js里面的pages的所有信息。
       prevPage.setData({
-        siteId:e.currentTarget.dataset.id
+        siteId: e.currentTarget.dataset.id
       })
       wx.navigateBack({
         delta: 1
