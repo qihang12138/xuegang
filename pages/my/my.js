@@ -1,19 +1,36 @@
 // pages/my/my.js
+const app = getApp()
 Page({
-
+  data:{
+    pageData:'',
+    urls:[
+      '/pages/retail/retail',
+      '/pages/collect/collect',
+      '/pages/ticketList/ticketList',
+      '/pages/integral/integral',
+      '/pages/receivingList/receivingList'
+    ]
+  },
   /**
    * 页面的初始数据
    */
-  data: {
-
+  getData() {
+    app.http({
+      url: app.api.ApiGetUserView
+    }).then(res => {
+      if (res.error_code === 0) {
+        this.setData({
+          pageData: res.data
+        })
+      }
+    })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getData();
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

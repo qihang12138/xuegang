@@ -1,0 +1,80 @@
+/* 公用 */
+
+.public {
+    color: #333;
+    background: #fff;
+}
+
+.line {
+    font-size: 14px;
+}
+
+.line-right {
+    flex: 1;
+    text-align: right;
+    color: #8c8c8c;
+}
+
+.line-text {
+    padding-left: 10rpx;
+    color: #8c8c8c;
+}
+
+.tit,
+.line {
+    padding: 20rpx 30rpx;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.tit {
+    font-weight: 600
+}
+
+.msg {
+    padding: 25rpx 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.line,
+.pick {
+    display: flex;
+    align-items: center;
+}
+
+/* 收货地址 */
+.site{
+    margin: 2rpx 0 10rpx;
+}
+/* 商品信息 */
+
+.pick {
+    padding: 8rpx 30rpx 0;
+}
+
+
+
+
+/* 费用详情 */
+
+.cost {
+    padding-bottom: 35rpx;
+}
+
+
+/* 备注 */
+
+.remark {
+    margin: 20rpx 0;
+}
+
+.remark-text {
+    padding: 20rpx 30rpx;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+/* 地址 */
+.flex-box{
+    width: 500rpx;
+}

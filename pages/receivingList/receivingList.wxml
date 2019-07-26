@@ -1,5 +1,5 @@
 <block wx:for="{{pageData}}" wx:key="index">
-  <view class="list">
+  <view class="list" bindtap="select" data-id="{{item.id}}">
     <view class="{{item.default?'list-on':''}}">
       {{item.name}}
       <text class="list-phone">{{item.phone}}</text>

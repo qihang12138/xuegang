@@ -10,6 +10,7 @@ const api = {
     ApiApply: ApiUrl + 'user/apply',
     ApiGetApply: ApiUrl + 'user/get_apply',
     ApiGetUserData: ApiUrl + 'user/get_user_data',
+    ApiGetUserView: ApiUrl + 'common/get_user_view',
     ApiUsercollect: ApiUrl + 'user/collect',
     ApiCouponList: ApiUrl + 'index/coupon_list',
     ApiGetSiteRecord: ApiUrl + 'user/get_site_record',
@@ -26,7 +27,9 @@ const api = {
     ApiCollect: ApiUrl + 'goods/collect',
     ApiSubmitOrder: ApiUrl + 'goods/submit_order',
     ApiRetail: ApiUrl + 'goods/retail',
-    ApiUploadFile: ApiUrl + 'index/upload_file'
+    ApiUploadFile: ApiUrl + 'index/upload_file',
+    ApiSubmitOrderToo: ApiUrl + 'goods/submit_order_too',
+    ApiQuerenToo: ApiUrl + 'goods/queren_too',
 
 
 }

@@ -28,17 +28,6 @@ Page({
           fid:0
         }, isOK = true;
 
-        // for(let k in formData) {
-        //   if(formData[k] === "") isOK = false
-          
-        //   break
-        // }
-
-        // if (!isOK) {
-          
-        //   return 
-        // }
-
         app.http({
           url: app.api.ApiWechat,
           method: 'POST',
@@ -50,10 +39,9 @@ Page({
             app.util.toast({
               title: msg
             }).then(() => {
-              // wx.reLaunch({
-              //   url: '/pages/index/index'
-              // })
-              wx.navigateTo({});
+              wx.navigateBack({
+                delta: 1
+              })
             })
           }
         })

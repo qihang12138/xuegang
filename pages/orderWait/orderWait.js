@@ -1,27 +1,39 @@
 // pages/orderWait/orderWait.js
 const app = getApp()
 Page({
-
+  data: {
+    type: 0,
+    never: []
+  },
   /**
    * 页面的初始数据
    */
   getData() {
     app.http({
-        url:app.api.ApiGetUserOrder
+      url: app.api.ApiGetUserOrder
     }).then(res => {
-        if(res.error_code === 0) {
-            this.setData({
-                pageData: res.data
-            })
-        }
+      if (res.error_code === 0) {
+        var never = [],
+          type = this.data.type;
+        res.data.never.forEach(item => {
+          if (item.type === type) {
+            never.push(item)
+          }
+        });
+        console.log(never);
+        this.setData({
+          never: never
+        })
+      }
     })
-},
-/**
- * 生命周期函数--监听页面加载
- */
-onLoad: function (options) {
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
     this.getData();
-},
+    this.setData({ type: options.type })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

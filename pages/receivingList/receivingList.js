@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    select: 0,
   },
   getData() {
     app.http({
@@ -19,10 +19,25 @@ Page({
       }
     })
   },
+  select(e) {
+    if (this.data.select) {
+      let pages = getCurrentPages();//获取当前页面js里面的pages里的所有信息。
+      let prevPage = pages[pages.length - 2];//prevPage 是获取上一个页面的js里面的pages的所有信息。
+      prevPage.setData({
+        siteId:e.currentTarget.dataset.id
+      })
+      wx.navigateBack({
+        delta: 1
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.select) {
+      this.setData({ select: 1 })
+    }
     this.getData();
   },
   /**

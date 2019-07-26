@@ -80,24 +80,25 @@
   <van-goods-action-icon icon="chat-o" text="客服" bind:click="" />
   <van-goods-action-icon icon="cart-o" text="购物车" bind:click="" />
   <van-goods-action-button text="加入购物车" type="warning" bind:click="addCart" />
-  <van-goods-action-button text="立即购买" url="/pages/orderDone/orderDone" />
+  <van-goods-action-button text="立即购买" bind:click="addCart" />
 </van-goods-action>
 <!-- 优惠券 -->
 <van-popup show="{{ ticketShow }}" position="bottom" overlay="{{ true }}" bind:close="onClose" custom-class="ticket-box">
   <view class="ticket-tit">优惠</view>
-  <block wx:for="{{2}}">
+  <block wx:for="{{ pageData.coupon }}" wx:key="index" wx:if="{{ index<2 }}">
     <view class="ticket">
       <view class="ticket-left">
         <view>
-          <text class="ticket-money">¥3</text>
-          店铺优惠券
+          ¥
+          <text class="ticket-money">{{item.money}}</text>
+          {{item.name}}
         </view>
         <view>
           订单金额满
-          <text>60</text>
+          <text>{{item.target}}</text>
           元可使用
         </view>
-        <view>有效期2019.01.20-2019.05.31</view>
+        <view>有效期{{item.start}} - {{item.end}}</view>
       </view>
       <view class="ticket-right">立即领取</view>
     </view>
@@ -119,7 +120,9 @@
     <view>规格</view>
     <block wx:for="{{pageData.spec}}" wx:key="index">
       <scroll-view class="cart-specs" scroll-y="{{true}}" scroll-with-animation="{{true}}">
-        <view class="cart-spec {{index===sidIndex?'spec-on':''}}" data-sid="{{item.sid}}" bindtap="changeSpec">{{item.s_name}}</view>
+        <view class="cart-spec {{index===sidIndex?'spec-on':''}}" data-sid="{{item.sid}}" bindtap="changeSpec">
+          {{item.s_name}}
+        </view>
       </scroll-view>
     </block>
     <view class="flex-box cart-num flex-align">
@@ -128,6 +131,9 @@
     </view>
   </view>
   <view class="fixed-bottom">
-    <button class="my-btn" bindtap="submit">确定</button>
+    <button class="my-btn" bindtap="submit" wx:if="{{false}}">确定</button>
   </view>
+  <navigator class="fixed-bottom" url="/pages/deliveryOrder/deliveryOrder?gid={{gid}}&sid={{sid}}&stepper={{stepper}}">
+    <button class="my-btn">确定</button>
+  </navigator>
 </van-popup>

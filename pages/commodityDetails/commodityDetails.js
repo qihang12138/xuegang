@@ -8,7 +8,6 @@ Page({
   data: {
     value: 5,
     pageData: {},
-    // discounts: false,
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
@@ -19,11 +18,13 @@ Page({
     stepper: 1,
     sid: 0,
     sidIndex: 0,
+    gid: 18,
+    siteId: 0
   },
   getData() {
     app.http({
       url: app.api.ApiGoodsDetail,
-      data: { gid: '18' }
+      data: { gid: this.data.gid }
     }).then(res => {
       let { error_code, data } = res;
       if (error_code === 0) {
@@ -31,13 +32,32 @@ Page({
         data.comment.forEach(item => {
           item.create = app.util.formatTime(new Date(item.create * 1000))
         })
+        data.coupon.forEach(item => {
+          item.start = app.util.YMD(new Date(item.start * 1000));
+          item.end = app.util.YMD(new Date(item.end * 1000));
+        })
         data.buy_record.forEach(item => {
           item.create = app.util.formatTime(new Date(item.create * 1000))
         })
         this.setData({
           pageData: data,
-          collect: data.goods.collect
+          collect: data.goods.collect,
+          sid: data.spec[0].sid
         })
+      }
+    })
+
+    // 获取地址
+    app.http({
+      url: app.api.ApiAddrLister
+    }).then(res => {
+      if (res.error_code === 0) {
+        res.data.list.forEach(item => {
+          if (item.default === 1) {
+            this.setData({ siteId: item.id })
+            return;
+          }
+        });
       }
     })
   },
@@ -73,7 +93,6 @@ Page({
   addCart() {
     this.setData({ cartShow: true });
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

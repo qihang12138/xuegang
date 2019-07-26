@@ -1,0 +1,45 @@
+<van-cell is-link icon="location-o" label="{{site.place}}{{site.home}}" link-type="navigateTo" url="/pages/receivingList/receivingList?select=1" custom-class="flex-align site">
+    <view slot="title" class="flex-box">
+        <view class="van-cell-text flex-item">收货人: {{site.name}}</view>
+        <view class="van-cell-text">{{site.phone}}</view> 
+    </view>
+</van-cell>
+<!-- 商品信息 -->
+<view class="public ">
+    <view class="tit">商品信息</view>
+    <view class="line">
+        {{ commodity.g_name }}
+        <view class="line-right">¥{{ commodity.g_xprice }}/份×{{ stepper }}</view>
+    </view>
+</view>
+<!-- 费用详情 -->
+<view class="public cost">
+    <view class="tit">费用详情</view>
+    <view class="pick">
+        商品金额
+        <view class="line-right">¥{{ commodity.g_yprice }}</view>
+    </view>
+    <view class="pick">
+        优惠
+        <view class="line-right">-¥{{ commodity.g_yprice - commodity.g_xprice }}</view>
+    </view>
+    <view class="pick">
+        运费
+        <view class="line-right">¥{{ commodity.g_freight }}</view>
+    </view>
+    <view class="pick">
+        积分
+        <view class="line-right">-¥0.00</view>
+    </view>
+    <view class="pick">
+        应付
+        <view class="line-right">¥{{ commodity.g_xprice * stepper }}</view>
+    </view>
+</view>
+<!-- 备注 -->
+<view class="public remark">
+    <view class="tit">备注</view>
+    <textarea class="remark-text" placeholder="请留下你的备注信息~~~" bindinput="changeRemark"></textarea>
+</view>
+<!-- 实付款 -->
+<van-submit-bar price="{{ commodity.g_xprice * stepper * 100 }}" button-text="提交订单" bind:submit="submit" />

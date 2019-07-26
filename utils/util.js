@@ -8,6 +8,13 @@ const formatTime = date => {
 
   return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+const YMD = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return [year, month, day].map(formatNumber).join('.')
+}
 
 const formatNumber = n => {
   n = n.toString()
@@ -28,5 +35,6 @@ const toast = ({ title = '提示文字', icon = 'success', duration = 1500 } = o
 
 module.exports = {
   formatTime: formatTime,
-  toast:toast
+  toast:toast,
+  YMD:YMD
 }
