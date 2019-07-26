@@ -1,92 +1,79 @@
 // pages/rule/rule.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        nodes: [{
-            name: 'div',
-            attrs: {
-                class: 'rule-cont',
-                style: 'margin-bottom: 100px;'
-            },
-            children: [{
-                type: 'text',
-                text: `
-                积分是对会员在路之遥电子网（www.lzyec.com）参与下单、线上活动、互动交流等行为给予的奖励。
-                1. 怎样获取积分？
-                （1）注册普通会员积1000分原始积分；
-                （2）发话题贴积10分，设成优秀原创话题可另获20分的积分；
-                （3）会员单笔消费所得积分 = 消费金额* 1
-                2. 积分使用公式
-                会员单笔消费积分抵用 = 积分*0.2%（使用额度需不高于单笔订单总额的10%）
-                3. 积分兑换礼品
-                会员账户内的积分可用于兑换相应礼品，进入【积分商城】即可直接兑换。
-                4. 积分使用规则
-                （1）积分使用过程中不找零、不兑现、不开发票，不可转移至其他账户。
-                （2）使用积分进行兑换，兑换申请一经提交, 一律不能取消(除礼品缺货等特殊情况)。
-                （3）如因路之遥电子网缺货等原因导致的退货退款，则抵扣的积分将返还到会员账户，如因会员个人原因导致的退货退款，则不返还抵扣积分。
-                （4）兑换礼品涉及运费由用户自行承担。
-                （5）路之遥电子网保留最终解释权。  
-              `
-            }]
-        }]
+        nodes:''
     },
-
+    getData() {
+        app.http({
+            url: app.api.ApiGuiZe
+        }).then(res => {
+            if (res.error_code === 0) {
+                var desc = "nodes[0].childre[0].text";
+                this.setData({
+                    nodes : res.data.find.desc
+                })
+                
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
-
+    onLoad: function (options) {
+        this.getData();
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function() {
+    onReady: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
+    onShow: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function() {
+    onHide: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function() {
+    onUnload: function () {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function() {
+    onPullDownRefresh: function () {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function() {
+    onReachBottom: function () {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
+    onShareAppMessage: function () {
 
     }
 })

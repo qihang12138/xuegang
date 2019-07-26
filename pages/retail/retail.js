@@ -1,4 +1,5 @@
 // pages/retail/retail.js
+const app = getApp()
 Page({
 
   /**
@@ -7,12 +8,25 @@ Page({
   data: {
 
   },
-
+  getData() {
+    app.http({
+      url: app.api.ApiRetail
+    }).then(res => {
+      if (res.error_code === 0) {
+        this.setData({
+          pageData: res.data
+        })
+      }
+    })
+  },
+  retail(e){
+    var gid = e.currentTarget.dataset.gid;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   /**

@@ -33,11 +33,7 @@
 
 .photos-front {
     padding-right: 42rpx;
-    background: url('https://s2.ax1x.com/2019/07/15/ZoFuee.png') no-repeat 0 0/324rpx 280rpx;
-}
-
-.photos-contrary {
-    background: url('https://s2.ax1x.com/2019/07/15/ZoFuee.png') no-repeat 0 0/324rpx 280rpx;
+    
 }
 
 

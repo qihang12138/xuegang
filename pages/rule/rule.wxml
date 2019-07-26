@@ -1,2 +1,4 @@
 <view class="rule">积分规则</view>
-<rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+<view class="p30 font-14">
+    <rich-text nodes="{{nodes}}"></rich-text>
+</view>

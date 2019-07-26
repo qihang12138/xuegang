@@ -1,12 +1,28 @@
 <view class="header">
   <text>自提点</text>
-  <text class="header-text">汉飞城市公园第二期 提货点</text>
+  <text class="header-text"></text>
 </view>
-
 <!-- 收货信息 -->
-<view class="msg">
-
+<view class="flex-box p30 bg-fff font-14 ">
+  <view class=" msg">收货信息</view>
+  <input type="text" class="flex-item" placeholder="姓名"/>
+  <input type="text" class="flex-item" placeholder="手机号"/>
 </view>
-
 <!-- 配送时间 -->
-<view class="time"></view>
+<view class="flex-box flex-align p30 bg-fff">
+  <view class="flex-item font-14">配送时间</view>
+  <view class="time">次日送达</view>
+</view>
+<!-- 提示 -->
+<view class="hint">
+  <view class="">温馨提示</view>
+  <view class="">下单成功后,请于次日下午到</view>
+  <view class="">
+    <text class="hint-site">【汉飞城市公园第二期】</text>
+    取货
+  </view>
+</view>
+<!-- 下一步按钮 -->
+<view class="fixed-bottom">
+    <button class="my-btn" bindtap="next">下一步</button>
+  </view>

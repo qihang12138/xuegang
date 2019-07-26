@@ -33,5 +33,6 @@ App({
     },
     http: require('./config/http'),
     api: require('./config/api'),
-    util:require('./utils/util')
+    util: require('./utils/util'),
+    upload: require('./config/upload.js')
 })

@@ -56,3 +56,11 @@
     font-weight: 500;
     color: #FD1200;
 }
+
+/* 无记录提示 */
+
+.hint{
+    padding-top: 30rpx;
+    text-align: center;
+    color: #8c8c8c;
+}

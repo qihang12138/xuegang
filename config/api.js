@@ -8,9 +8,26 @@ const api = {
     ApiGetSerchData: ApiUrl + 'index/get_serch_data',
     ApiGetNearSite: ApiUrl + 'index/get_near_site',
     ApiApply: ApiUrl + 'user/apply',
+    ApiGetApply: ApiUrl + 'user/get_apply',
+    ApiGetUserData: ApiUrl + 'user/get_user_data',
+    ApiUsercollect: ApiUrl + 'user/collect',
+    ApiCouponList: ApiUrl + 'index/coupon_list',
+    ApiGetSiteRecord: ApiUrl + 'user/get_site_record',
+    ApiGuiZe: ApiUrl + 'user/ji_fen_gui_ze',
+    ApiAddrLister: ApiUrl + 'user/addr_lister',
+    ApiSaveAddr: ApiUrl + 'user/save_addr',
+    ApiUpdateAddr: ApiUrl + 'user/update_addr',
+    ApiDeleteAddr: ApiUrl + 'user/delete_addr',
+    ApiGetUserOrder: ApiUrl + 'order/get_user_order',
     // 商品
     ApiGetBrandGoods: ApiUrl + 'goods/get_brand_goods',
     ApiGoodsDetail: ApiUrl + 'goods/goods_detail',
-    ApiGetMoreComment: ApiUrl + 'goods/get_more_comment'
+    ApiGetMoreComment: ApiUrl + 'goods/get_more_comment',
+    ApiCollect: ApiUrl + 'goods/collect',
+    ApiSubmitOrder: ApiUrl + 'goods/submit_order',
+    ApiRetail: ApiUrl + 'goods/retail',
+    ApiUploadFile: ApiUrl + 'index/upload_file'
+
+
 }
 module.exports = api;

@@ -41,6 +41,18 @@ Page({
       }
     })
   },
+  chengeCollect(e) {
+    var gid = e.currentTarget.dataset.gid;
+    var collect = this.data.collect;
+    app.http({
+      url: app.api.ApiCollect,
+      data: { gid: gid }
+    }).then(res => {
+      this.setData({
+        collect: !collect
+      })
+    })
+  },
   changeSpec(e) {
     var sid = e.currentTarget.dataset.sid;
     this.setData({ sid: sid });
@@ -50,10 +62,10 @@ Page({
     this.setData({ ticketShow: true });
   },
   onClose() {
-    this.setData({ 
+    this.setData({
       ticketShow: false,
-      cartShow:false
-     });
+      cartShow: false
+    });
   },
   stepper(event) {
     this.setData({ stepper: event.detail });

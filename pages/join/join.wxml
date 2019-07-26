@@ -1,51 +1,81 @@
 <!-- 选项卡 -->
 <van-tabs bind:change="change">
   <van-tab title="申请团长">
-    <view class="msg">
+    <view class="msg" wx:if="{{schedule}}">
       <view class="msg-item">
         <view class="msg-key">姓名</view>
-        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name"/>
+        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name" />
       </view>
       <view class="msg-item">
         <view class="msg-key">社区名字</view>
-        <input type="text" value="{{community}}" placeholder="请输入社区名" bindinput="community"/>
+        <input type="text" value="{{community}}" placeholder="请输入社区名" bindinput="community" />
       </view>
       <view class="msg-item">
         <view class="msg-key">社区地址</view>
-        <input type="text" value="{{addr}}" placeholder="请输入社区地址" bindinput="addr"/>
+        <input type="text" value="{{addr}}" placeholder="请输入社区地址" bindinput="addr" />
       </view>
+    </view>
+    <!-- 进度 -->
+    <view class="bg-fff p30" wx:if="{{!schedule}}">
+      <view>
+        <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF" />
+      </view>
+      <view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
+      <van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
+        失败的原因失败的原因失败的原因
+      </van-popup>
     </view>
   </van-tab>
   <van-tab title="申请零售通">
-    <view class="msg">
+    <view class="msg" wx:if="{{schedule}}">
       <view class="msg-item">
         <view class="msg-key">姓名</view>
-        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name"/>
+        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name" />
       </view>
+    </view>
+    <!-- 进度 -->
+    <view class="bg-fff p30" wx:if="{{!schedule}}">
+      <view>
+        <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF" />
+      </view>
+      <view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
+      <van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
+        失败的原因失败的原因失败的原因失败的原因失败的原因失败的
+      </van-popup>
     </view>
   </van-tab>
   <van-tab title="申请供应商">
-    <view class="msg">
+    <view class="msg" wx:if="{{schedule}}">
       <view class="msg-item">
         <view class="msg-key">姓名</view>
-        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name"/>
+        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name" />
       </view>
       <view class="msg-item">
         <view class="msg-key">产品名称</view>
-        <input type="text" value="{{community}}" placeholder="请输入产品名称" bindinput="community"/>
+        <input type="text" value="{{community}}" placeholder="请输入产品名称" bindinput="community" />
       </view>
       <view class="msg-item">
         <view class="msg-key">详细地址</view>
-        <input type="text" value="{{addr}}" placeholder="请输入详细地址" bindinput="addr"/>
+        <input type="text" value="{{addr}}" placeholder="请输入详细地址" bindinput="addr" />
       </view>
+    </view>
+    <!-- 进度 -->
+    <view class="bg-fff p30" wx:if="{{!schedule}}">
+      <view>
+        <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF" />
+      </view>
+      <view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
+      <van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
+        失败的原因失败的原因失败的原因
+      </van-popup>
     </view>
   </van-tab>
 </van-tabs>
 <!-- 提交信息 -->
-<view class="bg-fff">
+<view class="bg-fff" wx:if="{{schedule}}">
   <view class="msg-item">
     <view class="msg-key">联系方式</view>
-    <input type="text" value="{{phone}}" placeholder="请输入联系方式" bindinput="phone"/>
+    <input type="text" value="{{phone}}" placeholder="请输入联系方式" bindinput="phone" />
   </view>
   <navigator url="/pages/autonym/autonym">
     <view class="msg-item msg-autonym">
@@ -53,10 +83,7 @@
     </view>
   </navigator>
 </view>
-<!-- 提示 -->
-<view class="hint">申请成功后，我们将以最快的速度给您回应；想要查看进
-度可以拨打电话0371-123456789</view>
 <!-- 提交按钮 -->
-<view class="fixed-bottom">
+<view class="fixed-bottom" wx:if="{{schedule}}">
   <button class="my-btn" bindtap="submit">提交</button>
 </view>

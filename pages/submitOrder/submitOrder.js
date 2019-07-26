@@ -1,4 +1,5 @@
 // pages/submitOrder/submitOrder.js
+const app = getApp()
 Page({
 
   /**
@@ -7,12 +8,24 @@ Page({
   data: {
 
   },
-
+  postData() {
+    app.http({
+      url: app.api.ApiSubmitOrder,
+      data:{},
+      method: 'POST'
+    }).then(res => {
+      if (res.error_code === 0) {
+        this.setData({
+          pageData: res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**

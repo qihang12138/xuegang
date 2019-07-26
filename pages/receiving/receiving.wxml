@@ -1,31 +1,32 @@
 <view class="item">
   <view class="item-name">联系人</view>
-  <input type="text" placeholder="收货人姓名" class="item-input"/>
+  <input type="text" placeholder="收货人姓名" class="item-input" value="{{msgObj.name}}" bindinput="changeMsgObj" data-kind="name" />
 </view>
 <view class="item">
   <view class="item-name">联系方式</view>
-  <input type="text" placeholder="收货人手机号" class="item-input"/>
+  <input type="text" placeholder="收货人手机号" class="item-input" value="{{msgObj.phone}}" bindinput="changeMsgObj" data-kind="phone" />
 </view>
 <view class="item">
   <view class="item-name">地区</view>
-  <view class="item-input" bindtap="site">选择省/市/区</view>
+  <view class="item-input" bindtap="site" wx:if="{{!confirm}}">选择省/市/区</view>
+  <view class="item-input" bindtap="site" wx:if="{{confirm}}">
+    {{msgObj.place}}
+  </view>
 </view>
 <view class="item">
   <view class="item-name">收货地址</view>
-  <input type="text" placeholder="详细楼号/门牌号/楼层" class="item-input"/>
+  <input type="text" placeholder="详细楼号/门牌号/楼层" class="item-input" value="{{msgObj.home}}" bindinput="changeMsgObj" data-kind="home" />
 </view>
-
-
 <!-- 设置默认地址 -->
-<view class="item item-default" wx:if="{{bol}}">
+<view class="item item-default">
   <view class="item-site">设置为默认地址</view>
-  <van-switch checked="{{ checked }}" bind:change="onChange" custom-class="item-btn"/>
+  <van-switch checked="{{ msgObj.default }}" bind:change="onChange" custom-class="item-btn" />
 </view>
 <!-- 删除 -->
-<view class="item-del">删除</view>
-
-<navigator class="btn" url="../receivingList/receivingList" wx:if="{{bol}}">保存地址</navigator>
-<navigator class="btn" url="../receivingList/receivingList" wx:else>保存地址</navigator>
-<van-popup show="{{ show }}" position="bottom" custom-class="site">
-  <van-area area-list="{{ areaList }}" bind:cancel="onClose"/>
+<view class="item-del" wx:if="{{operate}}" bindtap="delete">删除</view>
+<view class="fixed-bottom" bindtap="save">
+  <button class="my-btn" bindtap="submit">保存地址</button>
+</view>
+<van-popup show="{{ show }}" position="bottom" custom-class="site"  bind:close="onClose">
+  <van-area area-list="{{ areaList }}" bind:cancel="onClose" bind:confirm="confirm" />
 </van-popup>

@@ -10,7 +10,9 @@
 .list-site {
     padding-top: 10rpx;
 }
-
+.list-phone{
+    padding-left: 20rpx;
+}
 .list-edit {
     position: absolute;
     right: 30rpx;

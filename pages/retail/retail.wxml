@@ -1,6 +1,6 @@
 <view class="commoditys">
-  <block wx:for="{{8}}" wx:key="index">
-    <commodity></commodity>
+  <block wx:for="{{pageData.goods}}" wx:key="index">
+    <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}" bindtap="retail" data-gid="{{item.gid}}"></commodity>
   </block>
 </view>
   

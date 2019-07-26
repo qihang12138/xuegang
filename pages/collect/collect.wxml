@@ -1,6 +1,6 @@
-<block wx:for="{{2}}">
-  <navigator class="line">
-    <order></order>
+<block wx:for="{{pageData}}" wx:key="index">
+  <navigator class="line border-bottom">
+    <order src="{{item.g_image}}" name="{{item.g_name}}" price="{{item.g_xprice}}" unit="{{item.g_company}}"></order>
   </navigator>
 </block>
   

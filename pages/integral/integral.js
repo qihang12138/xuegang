@@ -1,18 +1,35 @@
 // pages/integral/integral.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    integral: 0
   },
-
+  getData() {
+    app.http({
+      url: app.api.ApiGetSiteRecord
+    }).then(res => {
+      if (res.error_code === 0) {
+        res.data.sign.forEach(item => {
+          item.create = app.util.formatTime(new Date(item.create * 1000));
+        })
+        res.data.conversion.forEach(item => {
+          item.create = app.util.formatTime(new Date(item.create * 1000));
+        })
+        this.setData({
+          pageData: res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   /**

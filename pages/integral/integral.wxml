@@ -1,27 +1,28 @@
 <view class="header">
-  <navigator  class="header-rule">规则</navigator>
+  <navigator class="header-rule" url="/pages/rule/rule">规则</navigator>
   <view class="">可用积分</view>
-  <view class="header-num">6005</view>
+  <view class="header-num">{{ integral }}</view>
   <navigator class="header-sign" url="">去签到</navigator>
 </view>
-
 <!-- 标签页 -->
 <van-tabs animated swipeable color="#3C93FF" tab-active-class="tab-active">
   <van-tab title="积分明细">
-    <block wx:for="{{5}}">
+    <view class="hint" wx:if="{{!pageData.conversion.length}}">暂无记录!</view>
+    <block wx:for="{{pageData.sign}}" wx:key="index">
       <view class="tab-detail">
-        <view>签到</view>
-        <view class="tab-time">2018-11-07   18:00</view>
-        <view class="tab-num">+100</view>
+        <view>{{item.describe}}</view>
+        <view class="tab-time">{{item.create}}</view>
+        <view class="tab-num">+{{item.price}}</view>
       </view>
     </block>
   </van-tab>
   <van-tab title="兑换记录">
-    <block wx:for="{{5}}">
+    <view class="hint" wx:if="{{!pageData.conversion.length}}">暂无记录!</view>
+    <block wx:for="{{pageData.conversion}}">
       <view class="tab-detail">
-        <view>商品抵押</view>
-        <view class="tab-time">2018-11-07   18:00</view>
-        <view class="tab-num">-10</view>
+        <view>{{item.describe}}</view>
+        <view class="tab-time">{{item.create}}</view>
+        <view class="tab-num">-{{item.price}}</view>
       </view>
     </block>
   </van-tab>

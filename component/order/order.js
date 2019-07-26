@@ -6,11 +6,11 @@ Component({
     properties: {
         src: {
             type: String,
-            value: "https://s2.ax1x.com/2019/07/17/ZL0gpT.png"
+            value: ""
         },
         name: {
             type: String,
-            value: "四川新鲜的橙子"
+            value: ""
         },
         state: {
             type: String,
@@ -18,7 +18,7 @@ Component({
         },
         price: {
             type: String,
-            value: "29.90"
+            value: "0.00"
         },
         unit: {
             type: String,

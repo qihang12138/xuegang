@@ -35,7 +35,7 @@ page {
 .item-del {
     position: absolute;
     right: 30rpx;
-    top: 450rpx;
+    top: 550rpx;
     padding: 1rpx 0 1rpx 40rpx;
     font-size: 13px;
     color: #3C93FF;

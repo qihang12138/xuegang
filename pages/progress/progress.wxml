@@ -1,5 +1,0 @@
-<view class="progress">
-  <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF"/>
-</view>
-<view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
-<van-popup show="{{ show }}" bind:close="onClose" custom-class="hint">失败的原因失败的原因失败的原因</van-popup>

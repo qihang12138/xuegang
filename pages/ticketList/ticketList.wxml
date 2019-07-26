@@ -25,16 +25,17 @@
   </van-tab>
   <van-tab title="线上优惠券" tab-class="on">
     <view class="p30">
-      <block wx:for="{{2}}">
+      <block wx:for="{{pageData}}" wx:key="index">
         <view class="ticket">
           <view class="ticket-left">
             <view>
-              <text class="ticket-money">¥3</text>
+              ¥
+              <text class="ticket-money">{{item.money}}</text>
               店铺优惠券
             </view>
             <view>
               订单金额满
-              <text>60</text>
+              <text>{{item.target}}</text>
               元可使用
             </view>
             <view>有效期2019.01.20-2019.05.31</view>
