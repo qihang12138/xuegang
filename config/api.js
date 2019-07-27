@@ -35,7 +35,13 @@ const api = {
     ApiGetUserOrder: ApiUrl + 'order/get_user_order',
     ApiCancelOrder: ApiUrl + 'order/cancel_order',
     //购物车
-
+    ApiSaveCar: ApiUrl + 'car/save_car',
+    ApiCarLister: ApiUrl + 'car/car_lister',
+    ApiIncreaseReduce: ApiUrl + 'car/increase_reduce',
+    ApiCancel: ApiUrl + 'car/cancel',
+    ApiDeleteCar: ApiUrl + 'car/delete_car',
+    ApiCarQuerenToo: ApiUrl + 'car/queren_too',
+    ApiSubmitCarToo: ApiUrl + 'car/submit_car_too',
 
 }
 module.exports = api;

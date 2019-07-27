@@ -7,20 +7,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    on:0,
-    pageData:{}
+    on: 0,
+    tid:0,
+    pageData: {}
   },
-  changeOn(event){
+  changeOn(event) {
     var id = event.currentTarget.dataset.id
     this.setData({
-      on:id
+      on: id
     });
   },
   postData() {
     app.http({
       url: app.api.ApiGetBrandGoods,
       data: {
-        tid:1
+        tid: this.data.tid
       },
       method: 'POST'
     }).then(res => {
@@ -35,6 +36,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({ tid: options.tid });
     this.postData();
   },
 

@@ -11,18 +11,14 @@ Page({
    * 页面的初始数据
    */
   getData() {
-    var type = this.data.type;
-    if (type === 1) {
-   
-    }
+    var never = [],
+    type = this.data.type;
+    if (type > 1) { type++ }
     app.http({
       url: app.api.ApiGetUserOrder,
       data: { type: type }
     }).then(res => {
       if (res.error_code === 0) {
-        // console.log(this.data.type,res.data);
-        var never = [],
-          type = this.data.type;
         res.data.never.forEach(item => {
           if (item.type === type) {
             never.push(item)

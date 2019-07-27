@@ -19,7 +19,8 @@ Page({
     sid: 0,
     sidIndex: 0,
     gid: 18,
-    siteId: 0
+    siteId: 0,
+    btnShow: true
   },
   getData() {
     app.http({
@@ -76,7 +77,6 @@ Page({
   changeSpec(e) {
     var sid = e.currentTarget.dataset.sid;
     this.setData({ sid: sid });
-    console.log(this.data.sid)
   },
   ticketShow() {
     this.setData({ ticketShow: true });
@@ -91,12 +91,49 @@ Page({
     this.setData({ stepper: event.detail });
   },
   addCart() {
-    this.setData({ cartShow: true });
+    this.setData({
+      cartShow: true,
+      btnShow: true
+    })
+  },
+  buy() {
+    this.setData({
+      cartShow: true,
+      btnShow: false
+    })
+  },
+  submit() {
+    var data = this.data;
+    app.http({
+      url: app.api.ApiSaveCar,
+      data: {
+        gid: data.gid,
+        sid: data.sid,
+        num: data.stepper
+      },
+      method: 'POST'
+    }).then(res => {
+      if (res.error_code === 0) {
+        this.setData({
+          cartShow: false,
+        })
+        app.util.toast({
+          title: '添加成功'
+        })
+      }
+    })
+  },
+  toCart(){
+    wx.switchTab({
+      url: '../cart/cart'
+    })
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({ gid: options.gid })
     this.getData();
   },
 

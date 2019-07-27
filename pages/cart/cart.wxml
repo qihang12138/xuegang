@@ -1,24 +1,21 @@
-<view class="commodity">
-  <van-checkbox value="{{ checked }}" bind:change="checked" class="commodity-checkbox"></van-checkbox>
-  <image class="commodity-img" src="https://s2.ax1x.com/2019/07/17/ZL0gpT.png"/>
-  <view>
-    <view class="commodity-name">新鲜的福建书峰琵琶</view>
+<block wx:for="{{pageData}}" wx:key="index">
+  <view class="commodity">
+    <van-checkbox value="{{ item.status }}" bind:change="checked" data-id="{{item.id}}"></van-checkbox>
+    <image class="commodity-img" src="{{item.g_image}}" />
+    <view>
+      <view class="commodity-name">{{item.g_name}}</view>
       <view>
-        <text class="commodity-price">¥16.00</text>
-        元/包
+        <text class="commodity-price">{{item.g_xprice}}</text>
+        元/{{item.g_company}}
       </view>
+    </view>
+    <van-stepper value="{{item.num}}" class="commodity-stepper" bind:change="changeNum" data-id="{{item.id}}" />
   </view>
-  <van-stepper value="{{stepper}}" class="commodity-stepper"/>
-</view>
-
+</block>
 <!-- 底部 -->
-<view class="footer">
-  <van-checkbox value="{{ checked }}" bind:change="checked" class="commodity-checkbox"></van-checkbox>
-  <text class="footer-all">全选</text>
-  <text>删除</text>
-  <view class="footer-total">
-    合计:
-    <text class="footer-price">¥0</text>
-  </view>
-  <view class="footer-balance">去结算</view>
-</view>  
+<van-submit-bar price="{{ price }}" button-text="去结算" bind:submit="buy">
+  <van-checkbox value="{{ type===1?false:true }}" bind:change="status" class="flex-box footer">
+    全选
+    <text class="del" catchtap='del' wx:if="{{ del }}">删除</text>
+  </van-checkbox>
+</van-submit-bar>

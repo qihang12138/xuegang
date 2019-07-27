@@ -6,12 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    gid:0
   },
   getData() {
     app.http({
       url: app.api.ApiGetMoreComment,
-      data: { gid: '18' }
+      data: { gid: this.data.gid }
     }).then(res => {
       if (res.error_code === 0) {
         res.data.lot.forEach(item => {
@@ -27,6 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({ gid: options.gid })
     this.getData();
   },
 

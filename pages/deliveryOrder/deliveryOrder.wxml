@@ -8,33 +8,41 @@
 <!-- 商品信息 -->
 <view class="public ">
     <view class="tit">商品信息</view>
-    <view class="line">
+    <view class="line" wx:if="{{!cart}}">
         {{ commodity.g_name }}
-        <view class="line-right">¥{{ commodity.g_xprice }}/份×{{ stepper }}</view>
+        <view class="line-right">
+            ¥{{ commodity.g_xprice }}/{{ commodity.g_company }}×{{ commodity.num }}
+        </view>
     </view>
+    <block wx:for="{{pageData.order_data.goods}}" wx:key="index" wx:if="{{cart}}">
+        <view class="line">
+            {{ item.g_name }}
+            <view class="line-right">¥{{ item.g_xprice }}/{{item.g_company}}×{{ item.num }}</view>
+        </view>
+    </block>
 </view>
 <!-- 费用详情 -->
 <view class="public cost">
     <view class="tit">费用详情</view>
     <view class="pick">
         商品金额
-        <view class="line-right">¥{{ commodity.g_yprice }}</view>
+        <view class="line-right">¥{{ price.goods_price }}</view>
     </view>
     <view class="pick">
         优惠
-        <view class="line-right">-¥{{ commodity.g_yprice - commodity.g_xprice }}</view>
+        <view class="line-right">-¥{{ price.coupon_price }}</view>
     </view>
     <view class="pick">
         运费
-        <view class="line-right">¥{{ commodity.g_freight }}</view>
+        <view class="line-right">¥{{ price.freight || price.goods_freight }}</view>
     </view>
     <view class="pick">
         积分
-        <view class="line-right">-¥0.00</view>
+        <view class="line-right">-¥{{price.integral_price}}</view>
     </view>
     <view class="pick">
         应付
-        <view class="line-right">¥{{ commodity.g_xprice * stepper }}</view>
+        <view class="line-right">¥{{ price.all_price || price.now_price }}</view>
     </view>
 </view>
 <!-- 备注 -->
@@ -43,4 +51,4 @@
     <textarea class="remark-text" placeholder="请留下你的备注信息~~~" bindinput="changeRemark"></textarea>
 </view>
 <!-- 实付款 -->
-<van-submit-bar price="{{ commodity.g_xprice * stepper * 100 }}" button-text="提交订单" bind:submit="submit" />
+<van-submit-bar price="{{ price.all_price }}" button-text="提交订单" bind:submit="submit" />

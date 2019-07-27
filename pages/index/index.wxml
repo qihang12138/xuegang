@@ -1,9 +1,9 @@
 <!-- 地址 -->
 <view class="location">
-  <navigator url="">
+  <navigator>
     <view class="location-site">郑州</view>
   </navigator>
-  <navigator class="delivery" url="">
+  <navigator class="delivery">
     <text>还未选择配送地点</text>
     <text>[切换]</text>
   </navigator>
@@ -12,8 +12,8 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" class="swiper">
   <block wx:for="{{pageData.lot_banner}}" wx:key="index">
     <swiper-item>
-      <navigator url="">
-        <image src="{{item.image}}" class="slide-image"/>
+      <navigator>
+        <image src="{{item.image}}" class="slide-image" />
       </navigator>
     </swiper-item>
   </block>
@@ -23,19 +23,16 @@
 <!-- 分类栏 -->
 <view class="sort">
   <view class="sort-son" wx:for="{{pageData.lot_type}}" wx:key="index">
-    <navigator url="">
+    <navigator url="/pages/commoditySearch/commoditySearch?tid={{item.type_id}}">
       <image src="{{item.type_image}}" class="sort-img" />
       <view>{{item.type_name}}</view>
     </navigator>
   </view>
 </view>
 <!-- 公告栏 -->
-<van-notice-bar
-  left-icon="volume"
-  text="{{pageData.announcement[0].desc}}"
-/>
+<van-notice-bar left-icon="volume" text="{{pageData.announcement[0].desc}}" />
 <!-- 广告图 -->
-<navigator url="">
+<navigator>
   <image class="banner" src="{{pageData.alone_brand.img}}" />
 </navigator>
 <!-- 店铺推荐 -->
@@ -46,7 +43,7 @@
     <view class="line"></view>
   </view>
   <view class="shop-hint">今日店铺首推爆款 赶紧抢购吧</view>
-  <navigator url="">
+  <navigator>
     <image class="shop-img" src="{{pageData.alone_brand.img}}" />
   </navigator>
 </view>
@@ -60,9 +57,9 @@
   <view class="shop-hint">各种品类商品 优美价廉 赶紧抢购吧</view>
   <view class="commoditys">
     <block wx:for="{{pageData.group_pay_goods}}" wx:key="index">
-      <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}"></commodity>
+      <navigator url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}">
+        <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}"></commodity>
+      </navigator>
     </block>
   </view>
-  
-    
 </view>

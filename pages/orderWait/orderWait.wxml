@@ -11,9 +11,9 @@
       <van-button type="danger" size="mini" bind:click="pay">付款</van-button>
     </view>
     <!-- 待取货 -->
-    <view class="btns" wx:elif="{{ type===1 || type===2}}">
-      <van-button type="default" custom-class="btn" size="mini">退款</van-button>
-      <view class="code">取货二维码</view>
+    <view class="pick-btns" wx:elif="{{ type===1 || type===2}}">
+      <van-button type="default" custom-class="pick-btn" size="mini">退款</van-button>
+      <view class="pick-code">取货二维码</view>
     </view>
     <!-- 待评价3 -->
     <view class="btns" wx:elif="{{ type===3 }}">
