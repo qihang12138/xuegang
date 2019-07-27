@@ -1,4 +1,4 @@
-<view class="seller-header flex-box flex-align bg-fff">
+<!-- <view class="seller-header flex-box flex-align bg-fff">
   <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="header-img"></image>
   <view>
     <view>用户名用户名</view>
@@ -7,6 +7,12 @@
       <text>0123456789</text>
     </view>
   </view>
+</view> -->
+<view class="head-panel">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="head-name"></open-data>
 </view>
 <!-- 我的资金 -->
 <view class="capital">
@@ -20,60 +26,20 @@
 <view class="order">
   <view class="order-tit border-bottom">订单管理</view>
   <view class="flex-box order-classify">
-    <view class="flex-item">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="order-img"></image>
-      <view>今日订单</view>
-    </view>
-    <view class="flex-item">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="order-img"></image>
-      <view>本月订单</view>
-    </view>
-    <view class="flex-item">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="order-img"></image>
-      <view>待提货订单</view>
-    </view>
-    <view class="flex-item">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="order-img"></image>
-      <view>提醒取货</view>
-    </view>
+    <block wx:for="{{pageData.order}}">
+      <view class="flex-item">
+        <image src="{{item.icon}}" class="order-img"></image>
+        <view>{{item.name}}</view>
+      </view>
+    </block>
   </view>
 </view>
 <!-- 选项 -->
 <view class="options flex-box">
+  <block wx:for="{{pageData.serve}}">
     <navigator class="option box-sizing border-bottom border-right">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>商品分享</view>
+      <image src="{{item.icon}}" class="option-img"></image>
+      <view>{{item.name}}</view>
     </navigator>
-    <navigator class="option box-sizing border-bottom border-right">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>扫一扫</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>退货/售后</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom border-right">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>跑腿充值</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom border-right">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>发布任务</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>快捷报单</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom border-right">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>查看会员</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom border-right">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>销量比拼</view>
-    </navigator>
-    <navigator class="option box-sizing border-bottom">
-      <image src="https://s2.ax1x.com/2019/07/22/ePGlM6.png" class="option-img"></image>
-      <view>查看密码</view>
-    </navigator>
+  </block>
 </view>

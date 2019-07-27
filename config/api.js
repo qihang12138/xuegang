@@ -34,6 +34,8 @@ const api = {
     // 订单
     ApiGetUserOrder: ApiUrl + 'order/get_user_order',
     ApiCancelOrder: ApiUrl + 'order/cancel_order',
+    //支付
+    ApiPay: ApiUrl + 'pay/pay',
     //购物车
     ApiSaveCar: ApiUrl + 'car/save_car',
     ApiCarLister: ApiUrl + 'car/car_lister',
@@ -42,6 +44,9 @@ const api = {
     ApiDeleteCar: ApiUrl + 'car/delete_car',
     ApiCarQuerenToo: ApiUrl + 'car/queren_too',
     ApiSubmitCarToo: ApiUrl + 'car/submit_car_too',
+    // 团长
+    ApiSiteIndex: ApiUrl + 'site/site_index',
+    ApiCompete: ApiUrl + 'site/compete',
 
 }
 module.exports = api;

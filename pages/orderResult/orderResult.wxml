@@ -1,11 +1,10 @@
 <!-- 大图 -->
 <view class="icon">
-  <image src="https://s2.ax1x.com/2019/07/17/ZLnayF.png" class="icon-img" wx:if="{{bol}}"></image>
+  <image src="https://s2.ax1x.com/2019/07/17/ZLnayF.png" class="icon-img" wx:if="{{bol==1}}"></image>
   <image src="https://s2.ax1x.com/2019/07/17/ZLQuhn.png" class="icon-img" wx:else></image>
 </view>
-
 <!-- 结果 -->
-<view class="result" wx:if="{{bol}}">
+<view class="result" wx:if="{{bol==1}}">
   <view>下单成功</view>
   <view>
     成功支付
@@ -17,6 +16,6 @@
   <view class="result-cause">余额不足</view>
 </view>
 <!-- 按钮 -->
-<button class="btn-true btn" wx:if="{{bol}}">查看订单</button>
+<button class="btn-true btn" wx:if="{{bol==1}}">查看订单</button>
 <button class="btn-false btn" wx:else>继续支付</button>
 <button class="btn">返回首页</button>

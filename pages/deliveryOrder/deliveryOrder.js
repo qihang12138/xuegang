@@ -92,13 +92,32 @@ Page({
       method: 'POST'
     }).then(res => {
       if (res.error_code === 0) {
-        app.util.toast({
-          title: '下单成功'
-        }).then(() => {
-          wx.navigateBack({
-            delta: 2
+        app.http({
+          url: app.api.ApiPay,
+          data: {
+            oid: res.data.oid
+          }
+        }).then(data => {
+          wx.requestPayment({
+            timeStamp: data.timeStamp,
+            nonceStr: data.nonceStr,
+            package: data.package,
+            signType: 'MD5',
+            paySign: data.paySign,
+            success(res) { 
+              wx.reLaunch({
+                url: '../orderResult/orderResult?bol=1'
+              })
+             },
+            fail(res) { 
+              wx.reLaunch({
+                url: '../orderResult/orderResult?bol=0'
+              })
+             }
           })
+
         })
+
       }
     })
   },
