@@ -1,29 +1,18 @@
-// pages/compete/compete.js
-const app = getApp()
+// pages/errandPay/errandPay.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        pageData: ''
+        currentValue: 30
     },
-    getData() {
-        app.http({
-            url: app.api.ApiCompete
-        }).then(res => {
-            if (res.error_code === 0) {
-                this.setData({
-                    pageData: res.data
-                })
-            }
-        })
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
+
     },
 
     /**

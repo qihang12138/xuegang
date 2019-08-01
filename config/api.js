@@ -47,6 +47,9 @@ const api = {
     // 团长
     ApiSiteIndex: ApiUrl + 'site/site_index',
     ApiCompete: ApiUrl + 'site/compete',
+    ApiGetChildUser: ApiUrl + 'site/get_child_user',
+    ApiGetUserOrder: ApiUrl + 'site/get_user_order',
+    ApiPublish: ApiUrl + 'site/publish',
 
 }
 module.exports = api;

@@ -1,0 +1,7 @@
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item title="如何成为二级会员呢？" name="1">提供多样店铺模板，快速搭建网上商城</van-collapse-item>
+    <van-collapse-item title="为什么开通会员了看不见会员价格？" name="2">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</van-collapse-item>
+    <van-collapse-item title="会什么开通会员会支付失败？" name="3">线上拓客，随时预约，贴心顺手的开单收银</van-collapse-item>
+    <van-collapse-item title="为什么已经是会员了，有的活动不优惠呢？" name="4">线上拓客，随时预约，贴心顺手的开单收银</van-collapse-item>
+    <van-collapse-item title="怎么有的商品不优惠呢？" name="5">线上拓客，随时预约，贴心顺手的开单收银</van-collapse-item>
+</van-collapse>

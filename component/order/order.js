@@ -16,6 +16,10 @@ Component({
             type: String,
             value: ''
         },
+        time: {
+            type: String,
+            value: ''
+        },
         price: {
             type: String,
             value: "0.00"

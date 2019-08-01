@@ -4,6 +4,7 @@
     <view class="order-msg">
       <view class="order-name">{{name}}</view>
       <view class="order-state">{{state}}</view>
+      <view class="order-state order-time">{{time}}</view>
     </view>
     <view class="order-msg">
       <view class="order-size">

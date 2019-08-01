@@ -1,4 +1,5 @@
 // pages/sellerOrder/sellerOrder.js
+const app = getApp()
 Page({
 
     /**
@@ -8,14 +9,29 @@ Page({
         tag: '交易成功',
         leftBtn: '收货完成',
         centerBtn: '取货完成',
-        rightBtn: '取货完成'
+        rightBtn: '取货完成',
+        type: 0
+
     },
 
+    getData() {
+        app.http({
+            url: app.api.ApiGetUserOrder,
+            data: { type: this.data.type }
+        }).then(res => {
+            if (res.error_code === 0) {
+                this.setData({
+                    pageData: res.data.lot
+                })
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.setData({ type: options.type })
+        this.getData();
     },
 
     /**

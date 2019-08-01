@@ -3,16 +3,6 @@
     font-size: 15px;
 }
 
-.task-text {
-    padding-right: 40rpx;
-    min-width: 120rpx;
-    text-align: center;
-}
-
-.flex-item {
-    font-size: 13px;
-}
-
 
 /* 规则 */
 

@@ -1,34 +1,17 @@
 <van-tabs animated>
   <van-tab title="发布任务">
     <view class="task bg-fff">
-      <view class="flex-box p30 border-bottom">
-        <view class="task-text">货物名称</view>
-        <input class="flex-item" placeholder="请输入名称" />
-      </view>
-      <view class="flex-box p30 border-bottom">
-        <view class="task-text">取货地址</view>
-        <input class="flex-item" placeholder="请输入取货地址" />
-      </view>
-      <view class="flex-box p30 border-bottom">
-        <view class="task-text">送达地址</view>
-        <input class="flex-item" placeholder="请输入送达地址" />
-      </view>
-      <view class="flex-box p30 border-bottom">
-        <view class="task-text">联系方式</view>
-        <input class="flex-item" placeholder="请输入联系方式" />
-      </view>
-      <view class="flex-box p30 border-bottom">
-        <view class="task-text">送达时间</view>
-        <input class="flex-item" placeholder="请输入送达时间" />
-      </view>
-      <view class="flex-box p30 border-bottom">
-        <view class="task-text">金额</view>
-        <input class="flex-item" placeholder="请输入金额" />
-      </view>
-      <view class="flex-box p30">
-        <view class="task-text">备注</view>
-        <input class="flex-item" placeholder="请输入备注" />
-      </view>
+      <van-cell-group>
+        <van-field label="货物名称" placeholder="请输入货物名称" clearable bind:input="changeMsg" data-id="g_name" />
+        <van-field label="配送类型" placeholder="请输入货物名称" clearable  disabled icon="arrow"/>
+        <van-field label="取货手机号" placeholder="请输入取货手机号" clearable data-id="gain_phone" />
+        <van-field label="送达手机号" placeholder="请输入送达手机号" clearable data-id="phone" />
+        <van-field label="取货地址" placeholder="请输入取货地址" clearable data-id="obtain" />
+        <van-field label="送达地址" placeholder="请输入送达地址" clearable data-id="end" />
+        <van-field label="佣金" placeholder="请输入任务佣金" clearable data-id="profit" />
+        <van-field label="任务期限" placeholder="请输入任务期限" clearable data-id="time" />
+        <van-field label="任务备注" placeholder="请输入任务备注" clearable data-id="content" />
+      </van-cell-group>
     </view>
     <!-- 规则 -->
     <view class="color-8c rule">
@@ -38,7 +21,7 @@
     </view>
     <!-- 提交按钮 -->
     <view class="fixed-bottom">
-      <button class="my-btn">提交</button>
+      <button class="my-btn" bindtap="submit">提交</button>
     </view>
   </van-tab>
   <!-- 任务进度 -->

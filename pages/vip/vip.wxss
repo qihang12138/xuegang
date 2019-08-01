@@ -1,0 +1,107 @@
+page {
+    padding-bottom: 100rpx;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    height: 370rpx;
+    background: url('https://s2.ax1x.com/2019/07/31/etOFaT.png') no-repeat 0 0/750rpx 370rpx;
+}
+
+.header-btn {
+    display: inline-block;
+    margin-top: 230rpx;
+    padding: 10rpx 80rpx;
+    border-radius: 32rpx;
+    font-size: 20px;
+    color: #333;
+    background: #C6AB78;
+}
+
+
+/* 会员分类 */
+
+.vip-type-box {
+    overflow: hidden;
+}
+
+.vip-type {
+    padding: 0 15rpx;
+}
+
+.vip-type-item {
+    margin: 0 15rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    width: 174rpx;
+    height: 196rpx;
+    border: 2rpx solid #e6e6e6;
+}
+
+.vip-type-name {
+    padding-top: 30rpx;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.vip-type-money,
+.vip-type-rmb {
+    font-size: 14px;
+    color: #FF6950;
+}
+
+.vip-type-money {
+    padding: 10rpx 0;
+    font-size: 20px;
+}
+
+.vip-type-on {
+    border: 1rpx solid #DD5F49;
+    background: #FFF7F0;
+}
+
+.vip-type-btn {
+    margin: 60rpx 30rpx 35rpx;
+    padding: 15rpx 0;
+    border-radius: 30rpx;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background: #E3B45A;
+}
+
+
+/* 会员特权 */
+
+.privilege {
+    margin: 20rpx 0;
+}
+
+.privilege-img {
+    height: 105rpx;
+    width: 105rpx;
+}
+
+.privilege-box {
+    justify-content: space-around;
+}
+
+.privilege-text {
+    padding: 20rpx 0 40rpx;
+}
+
+.privilege-item {
+    text-align: center;
+}
+
+.privilege-btn {
+    padding: 20rpx 0;
+    text-align: center;
+    border-top: 1rpx solid #f5f5f5;
+}
+
+.btn-left {
+    border-left: 1rpx solid #f5f5f5;
+}

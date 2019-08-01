@@ -6,11 +6,12 @@
 }
 
 .header-img {
-    margin-bottom: 40rpx;
+    margin: 0 auto 40rpx;
     border-radius: 50%;
-    border: 4rpx solid #e5e5e5;
+    overflow: hidden;
     height: 130rpx;
     width: 130rpx;
+    border: 4rpx solid #e5e5e5;
 }
 
 .vertical {
@@ -18,6 +19,14 @@
     width: 2rpx;
     height: 50rpx;
     background: #E6E6E6;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left
 }
 
 
@@ -47,7 +56,15 @@
     width: 65rpx;
 }
 
+.rank-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
 .rank-sales {
+    padding-left: 100rpx;
     font-size: 14px;
     color: #FD1200;
 }

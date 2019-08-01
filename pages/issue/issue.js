@@ -1,29 +1,22 @@
-// pages/compete/compete.js
-const app = getApp()
+// pages/issue/issue.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        pageData: ''
+        activeName: ''
     },
-    getData() {
-        app.http({
-            url: app.api.ApiCompete
-        }).then(res => {
-            if (res.error_code === 0) {
-                this.setData({
-                    pageData: res.data
-                })
-            }
-        })
+    onChange(event) {
+        this.setData({
+            activeNames: event.detail
+        });
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
+
     },
 
     /**

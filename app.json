@@ -1,7 +1,16 @@
 {
     "pages": [
-        "pages/join/join",
+        "pages/task/task",
+        "pages/sellerOrder/sellerOrder",
+        "pages/subordinate/subordinate",
         "pages/compete/compete",
+        "pages/record/record",
+        "pages/errandPay/errandPay",
+        "pages/agreement/agreement",
+        "pages/vipRules/vipRules",
+        "pages/vip/vip",
+        "pages/issue/issue",
+        "pages/join/join",
         "pages/seller/seller",
         "pages/index/index",
         "pages/commodityDetails/commodityDetails",
@@ -26,14 +35,11 @@
         "pages/phoneLogin/phoneLogin",
         "pages/password/password",
         "pages/pay/pay",
-        "pages/subordinate/subordinate",
         "pages/member/member",
         "pages/withdrawRecord/withdrawRecord",
         "pages/withdrawCentre/withdrawCentre",
         "pages/withdraw/withdraw",
-        "pages/task/task",
         "pages/sellerOrderDetails/sellerOrderDetails",
-        "pages/sellerOrder/sellerOrder",
         "pages/commodityImg/commodityImg",
         "pages/refund/refund",
         "pages/ticketList/ticketList",
@@ -62,8 +68,7 @@
     "tabBar": {
         "color": "#999999",
         "selectedColor": "#3C93FF",
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/index/index",
                 "text": "首页",
                 "iconPath": "/images/index.png",
@@ -91,6 +96,10 @@
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
+        "van-field": "/vant/field/index",
+        "van-slider": "/vant/slider/index",
+        "van-collapse": "/vant/collapse/index",
+        "van-collapse-item": "/vant/collapse-item/index",
         "van-dialog": "/vant/dialog/index",
         "van-submit-bar": "/vant/submit-bar/index",
         "van-search": "/vant/search/index",
