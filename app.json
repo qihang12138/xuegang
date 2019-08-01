@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/join/join",
         "pages/compete/compete",
         "pages/seller/seller",
         "pages/index/index",
@@ -13,7 +14,6 @@
         "pages/deliveryOrder/deliveryOrder",
         "pages/integral/integral",
         "pages/collect/collect",
-        "pages/join/join",
         "pages/sellerReturn/sellerReturn",
         "pages/submitOrder/submitOrder",
         "pages/distributionSites/distributionSites",
