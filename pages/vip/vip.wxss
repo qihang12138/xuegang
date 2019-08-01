@@ -32,15 +32,16 @@ page {
 
 .vip-type-item {
     margin: 0 15rpx;
+    padding: 0 10rpx;
     border-radius: 10rpx;
     text-align: center;
-    width: 174rpx;
+    width: 154rpx;
     height: 196rpx;
     border: 2rpx solid #e6e6e6;
 }
 
 .vip-type-name {
-    padding-top: 30rpx;
+    padding-top: 20rpx;
     font-size: 14px;
     font-weight: 500;
     color: #333;
@@ -53,7 +54,7 @@ page {
 }
 
 .vip-type-money {
-    padding: 10rpx 0;
+    padding-top: 5rpx;
     font-size: 20px;
 }
 
@@ -70,6 +71,13 @@ page {
     font-size: 14px;
     color: #fff;
     background: #E3B45A;
+}
+
+.vip-type-cont {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 

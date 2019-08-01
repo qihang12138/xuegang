@@ -8,8 +8,8 @@
 <view class="order">
   <view class="order-tit">我的订单</view>
   <view class="order-options">
-    <block wx:for="{{pageData.order}}" wx:key="index">
-      <navigator class="order-option" url="/pages/orderWait/orderWait?type={{index}}">
+    <block wx:for="{{pageData.order}}" wx:key="{{index}}">
+      <navigator class="order-option" url="/pages/orderWait/orderWait?type={{index}}" hover-class="none">
         <image class="order-img" src="{{item.icon}}"></image>
         <view>{{item.name}}</view>
       </navigator>

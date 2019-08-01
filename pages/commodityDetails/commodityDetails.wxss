@@ -77,6 +77,7 @@
 
 
 /* 优惠 */
+
 .discounts {
     margin: 20rpx 0;
     background: #fff !important;
@@ -117,13 +118,15 @@
 }
 
 
-
 /* 标签 */
+
 .tabs {
     margin-bottom: 200rpx;
 }
 
+
 /* 评价 */
+
 .evaluate-tit {
     margin-top: 20rpx;
 }
@@ -147,12 +150,20 @@
     color: #8c8c8c;
 }
 
+
 /* 底部 */
+
 .footer {
     z-index: 10;
 }
 
+
 /* 优惠券 */
+
+.coupons {
+    height: 500rpx;
+}
+
 .ticket-box {
     padding-bottom: 100rpx;
 }
@@ -193,7 +204,9 @@
     font-size: 14px;
 }
 
+
 /* 购物车 */
+
 .cart {
     padding-bottom: 150rpx;
 }
@@ -213,7 +226,6 @@
 
 .cart-specs {
     height: 200rpx;
-
 }
 
 .cart-spec {
@@ -225,7 +237,8 @@
     min-width: 135rpx;
     background: #f5f5f5;
 }
-.spec-on{
+
+.spec-on {
     border-color: #FF3824;
     color: #FF3824;
     background: #fff;

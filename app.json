@@ -1,5 +1,8 @@
 {
     "pages": [
+        "pages/vip/vip",
+        "pages/my/my",
+        "pages/orderWait/orderWait",
         "pages/task/task",
         "pages/sellerOrder/sellerOrder",
         "pages/subordinate/subordinate",
@@ -8,7 +11,6 @@
         "pages/errandPay/errandPay",
         "pages/agreement/agreement",
         "pages/vipRules/vipRules",
-        "pages/vip/vip",
         "pages/issue/issue",
         "pages/join/join",
         "pages/seller/seller",
@@ -17,7 +19,6 @@
         "pages/personalDetails/personalDetails",
         "pages/logIn/logIn",
         "pages/retail/retail",
-        "pages/my/my",
         "pages/orderComment/orderComment",
         "pages/orderEvaluate/orderEvaluate",
         "pages/deliveryOrder/deliveryOrder",
@@ -46,7 +47,7 @@
         "pages/orderDetails/orderDetails",
         "pages/orderRebate/orderRebate",
         "pages/orderPick/orderPick",
-        "pages/orderWait/orderWait",
+        
         "pages/orderRefund/orderRefund",
         "pages/orderDone/orderDone",
         "pages/receiving/receiving",

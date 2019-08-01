@@ -1,16 +1,16 @@
-<van-tabs animated>
+<van-tabs animated bind:change="task">
   <van-tab title="发布任务">
     <view class="task bg-fff">
       <van-cell-group>
         <van-field label="货物名称" placeholder="请输入货物名称" clearable bind:input="changeMsg" data-id="g_name" />
-        <van-field label="配送类型" placeholder="请输入货物名称" clearable  disabled icon="arrow"/>
-        <van-field label="取货手机号" placeholder="请输入取货手机号" clearable data-id="gain_phone" />
-        <van-field label="送达手机号" placeholder="请输入送达手机号" clearable data-id="phone" />
-        <van-field label="取货地址" placeholder="请输入取货地址" clearable data-id="obtain" />
-        <van-field label="送达地址" placeholder="请输入送达地址" clearable data-id="end" />
-        <van-field label="佣金" placeholder="请输入任务佣金" clearable data-id="profit" />
-        <van-field label="任务期限" placeholder="请输入任务期限" clearable data-id="time" />
-        <van-field label="任务备注" placeholder="请输入任务备注" clearable data-id="content" />
+        <van-field label="配送类型" value="{{type}}" placeholder="请选择配送类型" clearable disabled icon="arrow" bindtap="changeShow" />
+        <van-field label="取货手机号" placeholder="请输入取货手机号" clearable bind:input="changeMsg" data-id="gain_phone" />
+        <van-field label="送达手机号" placeholder="请输入送达手机号" clearable bind:input="changeMsg" data-id="phone" />
+        <van-field label="取货地址" placeholder="请输入取货地址" clearable bind:input="changeMsg" data-id="obtain" />
+        <van-field label="送达地址" placeholder="请输入送达地址" clearable bind:input="changeMsg" data-id="end" />
+        <van-field label="佣金" placeholder="请输入任务佣金" clearable bind:input="changeMsg" data-id="profit" />
+        <van-field label="任务期限" placeholder="请输入任务期限" clearable bind:input="changeMsg" data-id="time" />
+        <van-field label="任务备注" placeholder="请输入任务备注" clearable bind:input="changeMsg" data-id="content" />
       </van-cell-group>
     </view>
     <!-- 规则 -->
@@ -27,23 +27,24 @@
   <!-- 任务进度 -->
   <van-tab title="任务进度">
     <view class="task bg-fff">
-      <block wx:for="{{2}}">
+      <block wx:for="{{task}}" wx:key="{{index}}">
         <view class="task-item border-bottom">
           <view class="task-line">
             货物名称：
-            <text>两小盒草莓共200g</text>
+            <text>{{ item.g_name }}</text>
           </view>
           <view class="task-line">
             取货地址：
-            <text>花园路国基路</text>
+            <text>{{ item.obtain }}</text>
           </view>
           <view class="task-line">
             送达地址：
-            <text>华山路岗坡路花园小区</text>
+            <text>{{ item.end }}</text>
           </view>
-          <van-button size="small" custom-class="task-btn">已接单</van-button>
+          <van-button size="small" custom-class="task-btn">{{ status }}</van-button>
         </view>
       </block>
     </view>
   </van-tab>
 </van-tabs>
+<van-action-sheet show="{{ show }}" actions="{{ types }}" bind:close="changeShow" bind:select="changeType" />

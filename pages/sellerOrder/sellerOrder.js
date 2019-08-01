@@ -11,12 +11,11 @@ Page({
         centerBtn: '取货完成',
         rightBtn: '取货完成',
         type: 0
-
     },
 
     getData() {
         app.http({
-            url: app.api.ApiGetUserOrder,
+            url: app.api.ApiSiteGetUserOrder,
             data: { type: this.data.type }
         }).then(res => {
             if (res.error_code === 0) {
@@ -30,7 +29,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.setData({ type: options.type })
+        var type = options.type,
+            titles = ['今日订单', '本月订单', '待提货订单'],
+            title = titles[type]
+        this.setData({ type: type });
+        wx.setNavigationBarTitle({
+            title: title
+        })
         this.getData();
     },
 

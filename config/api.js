@@ -31,9 +31,13 @@ const api = {
     ApiRetail: ApiUrl + 'goods/retail',
     ApiSubmitOrderToo: ApiUrl + 'goods/submit_order_too',
     ApiQuerenToo: ApiUrl + 'goods/queren_too',
+    ApiGetCoupon: ApiUrl + 'goods/get_coupon',
     // 订单
     ApiGetUserOrder: ApiUrl + 'order/get_user_order',
     ApiCancelOrder: ApiUrl + 'order/cancel_order',
+    ApiTuiView: ApiUrl + 'order/tui_view',
+    ApiOrderDetail: ApiUrl + 'order/order_detail',
+    ApiSaveComment: ApiUrl + 'order/save_comment',
     //支付
     ApiPay: ApiUrl + 'pay/pay',
     //购物车
@@ -48,8 +52,13 @@ const api = {
     ApiSiteIndex: ApiUrl + 'site/site_index',
     ApiCompete: ApiUrl + 'site/compete',
     ApiGetChildUser: ApiUrl + 'site/get_child_user',
-    ApiGetUserOrder: ApiUrl + 'site/get_user_order',
+    ApiSiteGetUserOrder: ApiUrl + 'site/get_user_order',
     ApiPublish: ApiUrl + 'site/publish',
+    ApiTask: ApiUrl + 'site/task',
+    ApiDiscountsList: ApiUrl + 'site/discounts_list',
+    // vip
+    ApiVip: ApiUrl + 'user/vip',
+
 
 }
 module.exports = api;

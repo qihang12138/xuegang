@@ -1,6 +1,6 @@
 <block wx:for="{{ never }}" wx:key="index">
   <view class="order">
-    <navigator url="">
+    <navigator url="/pages/orderDetails/orderDetails?oid={{item.oid}}">
       <order state="等待买家付款" src="{{ item.child[0].g_image }}" name="{{ item.child[0].g_name }}" price="{{ item.child[0].g_price }}" unit="{{ item.child[0].g_company }}" num="{{ item.child[0].o_num }}"></order>
     </navigator>
     <!-- 待付款 -->
@@ -18,12 +18,13 @@
     <!-- 待评价3 -->
     <view class="btns" wx:elif="{{ type===3 }}">
       <van-button type="default" custom-class="btn" size="mini">查看订单</van-button>
-      <van-button type="danger" size="mini">评价</van-button>
+      <van-button type="danger" size="mini" bindtap="evaluate" data-oid="{{item.oid}}">评价</van-button>
     </view>
     <!-- 已完成4 -->
     <!-- 退货5 -->
   </view>
 </block>
+<view class="footer">没有更多了~</view>
 <van-dialog id="van-dialog" />
 <!--  -->
 <!-- <block wx:for="{{3}}" wx:key="index">

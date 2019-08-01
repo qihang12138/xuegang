@@ -85,24 +85,26 @@
 <!-- 优惠券 -->
 <van-popup show="{{ ticketShow }}" position="bottom" overlay="{{ true }}" bind:close="onClose" custom-class="ticket-box">
   <view class="ticket-tit">优惠</view>
-  <block wx:for="{{ pageData.coupon }}" wx:key="index" wx:if="{{ index<2 }}">
-    <view class="ticket">
-      <view class="ticket-left">
-        <view>
-          ¥
-          <text class="ticket-money">{{item.money}}</text>
-          {{item.name}}
+  <scroll-view class="coupons" scroll-y="{{true}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{ pageData.coupon }}" wx:key="index">
+      <view class="ticket">
+        <view class="ticket-left">
+          <view>
+            ¥
+            <text class="ticket-money">{{item.money}}</text>
+            {{item.name}}
+          </view>
+          <view>
+            订单金额满
+            <text>{{item.target}}</text>
+            元可使用
+          </view>
+          <view>有效期{{item.start}} - {{item.end}}</view>
         </view>
-        <view>
-          订单金额满
-          <text>{{item.target}}</text>
-          元可使用
-        </view>
-        <view>有效期{{item.start}} - {{item.end}}</view>
+        <view class="ticket-right" bindtap="getCoupon" data-cid="{{item.id}}">立即领取</view>
       </view>
-      <view class="ticket-right">立即领取</view>
-    </view>
-  </block>
+    </block>
+  </scroll-view>
 </van-popup>
 <!-- 购物车 -->
 <van-popup show="{{ cartShow }}" position="bottom" overlay="{{ true }}" bind:close="onClose" custom-class="p30 cart">

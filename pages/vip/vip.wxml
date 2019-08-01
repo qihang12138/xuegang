@@ -5,14 +5,14 @@
 <view class="bg-fff vip-type-box">
     <view class="p30">会员分类</view>
     <view class="vip-type flex-box">
-        <block wx:for="{{3}}" wx:key="{{index}}">
-            <view class="vip-type-item vip-type-on">
-                <view class="vip-type-name">一级会员</view>
+        <block wx:for="{{vip.vip_lot}}" wx:key="{{index}}">
+            <view class="vip-type-item">
+                <view class="vip-type-name">{{item.name}}</view>
                 <view class="vip-type-money">
                     <text class="vip-type-rmb">¥</text>
-                    100
+                    {{item.price}}
                 </view>
-                <view class="vip-type-cont font-12 color-8c">充100送20享受9.5折优惠</view>
+                <view class="vip-type-cont font-12 color-8c">充{{item.price}}送{{item.complimentary}}享受{{item.discount}}折优惠</view>
             </view>
         </block>
     </view>
@@ -22,10 +22,10 @@
 <view class="privilege bg-fff">
     <view class="p30">会员特权</view>
     <view class="flex-box privilege-box">
-        <block wx:for="{{4}}" wx:key="{{index}}">
+        <block wx:for="{{vip.privilege}}" wx:key="{{index}}">
             <view class="privilege-item">
-                <image class="privilege-img" src="https://s2.ax1x.com/2019/07/31/etWHb9.png" />
-                <view class="privilege-text">尊贵标识</view>
+                <image class="privilege-img" src="{{item.image}}" />
+                <view class="privilege-text">{{item.name}}</view>
             </view>
         </block>
     </view>
@@ -34,5 +34,6 @@
         <navigator url="" class="flex-item privilege-btn btn-left">会员规则</navigator>
     </view>
 </view>
+
 <!-- 常见问题 -->
 <van-cell is-link title="常见问题" link-type="navigateTo" url="/pages/index/index" />

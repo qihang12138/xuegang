@@ -9,50 +9,47 @@
     <view class="pick">
       <view>
         取货人:
-        <text class="line-text">张三</text>
+        <text class="line-text">{{order.a_name}}</text>
       </view>
       <view class="line-right">
         电话:
-        <text class="line-text">12345678945</text>
+        <text class="line-text">{{order.a_phone}}</text>
       </view>
     </view>
     <view class="pick">
       订单号:
-      <text class="line-text">123456</text>
+      <text class="line-text">{{order.o_code}}</text>
     </view>
     <view class="pick">
       订单时间:
-      <text class="line-text">2019-07-19 12:00</text>
+      <text class="line-text">{{order.create}}</text>
     </view>
   </view>
 </view>
-
 <!-- 自提站点 -->
 <view class="public site">
   <view class="tit">自提站点</view>
   <view class="line">
     自提地址
-    <view class="line-right">金水区 汉飞城市二期</view>
+    <view class="line-right">{{order.site}}{{order.addr}}</view>
   </view>
   <view class="line">
     联系人
-    <view class="line-right">张三</view>
+    <view class="line-right">{{order.a_name}}</view>
   </view>
   <view class="line">
     电话
-    <view class="line-right tel">12345678945</view>
+    <view class="line-right tel">{{order.a_phone}}</view>
   </view>
 </view>
-
 <!-- 商品信息 -->
 <view class="public">
   <view class="tit">商品信息</view>
   <view class="line">
-    山东新鲜水果
-    <view class="line-right">¥1.68/份×1</view>
+    {{goods.g_name}}
+    <view class="line-right">¥{{goods.g_price}}/{{goods.company}}×{{goods.o_num}}</view>
   </view>
 </view>
-
 <!-- 费用详情 -->
 <view class="public cost">
   <view class="tit">费用详情</view>
@@ -77,15 +74,13 @@
     <view class="line-right">¥1.00</view>
   </view>
 </view>
-
 <!-- 备注 -->
 <view class="public remark">
   <view class="tit">备注</view>
-  <view class="remark-text">无备注</view>
+  <view class="remark-text">{{order.content}}</view>
 </view>
-
 <!-- 实付款 -->
 <view class="payment">
   实付款
-  <view class="payment-text">¥1.00</view>
+  <view class="payment-text">¥{{order.money}}</view>
 </view>
