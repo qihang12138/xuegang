@@ -1,19 +1,20 @@
 <!-- 选项卡 -->
-<van-tabs bind:change="change">
+<van-tabs bind:change="change" animated>
   <van-tab title="申请团长">
     <view class="msg" wx:if="{{schedule}}">
-      <view class="msg-item">
-        <view class="msg-key">姓名</view>
-        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name" />
-      </view>
-      <view class="msg-item">
-        <view class="msg-key">社区名字</view>
-        <input type="text" value="{{community}}" placeholder="请输入社区名" bindinput="community" />
-      </view>
-      <view class="msg-item">
-        <view class="msg-key">社区地址</view>
-        <input type="text" value="{{addr}}" placeholder="请输入社区地址" bindinput="addr" />
-      </view>
+      <van-cell-group>
+        <van-field label="姓名" placeholder="请输入姓名" bind:input="onInput" data-id="name" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="社区名字" placeholder="请输入社区名字" bind:input="onInput" data-id="community" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="社区地址" placeholder="请输入社区地址" bind:input="onInput" data-id="addr" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="联系方式" placeholder="请输入联系方式" bind:input="onInput" data-id="phone" />
+      </van-cell-group>
+      <van-cell is-link title="实名认证" link-type="navigateTo" url="/pages/autonym/autonym" />
     </view>
     <!-- 进度 -->
     <view class="bg-fff p30" wx:if="{{!schedule}}">
@@ -21,17 +22,22 @@
         <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF" />
       </view>
       <view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
-      <van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
-        失败的原因失败的原因失败的原因
-      </van-popup>
     </view>
   </van-tab>
   <van-tab title="申请零售通">
     <view class="msg" wx:if="{{schedule}}">
-      <view class="msg-item">
-        <view class="msg-key">姓名</view>
-        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name" />
-      </view>
+      <van-cell-group>
+        <van-field label="姓名" placeholder="请输入姓名" bind:input="onInput" data-id="name" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="详细地址" placeholder="请输入详细地址" bind:input="onInput" data-id="name" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="联系方式" placeholder="请输入联系方式" bind:input="onInput" data-id="phone" />
+      </van-cell-group>
+      <van-cell is-link title="实名认证" link-type="navigateTo" url="/pages/autonym/autonym" />
+      <van-cell title="上传营业执照" border="{{false}}" />
+      <image class="thumb" src="{{logoThumb || '/images/add.png'}}" bindtap="singleUpload" mode="aspectFill"></image>
     </view>
     <!-- 进度 -->
     <view class="bg-fff p30" wx:if="{{!schedule}}">
@@ -39,25 +45,23 @@
         <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF" />
       </view>
       <view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
-      <van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
-        失败的原因失败的原因失败的原因失败的原因失败的原因失败的
-      </van-popup>
     </view>
   </van-tab>
   <van-tab title="申请供应商">
     <view class="msg" wx:if="{{schedule}}">
-      <view class="msg-item">
-        <view class="msg-key">姓名</view>
-        <input type="text" value="{{name}}" placeholder="请输入姓名" bindinput="name" />
-      </view>
-      <view class="msg-item">
-        <view class="msg-key">产品名称</view>
-        <input type="text" value="{{community}}" placeholder="请输入产品名称" bindinput="community" />
-      </view>
-      <view class="msg-item">
-        <view class="msg-key">详细地址</view>
-        <input type="text" value="{{addr}}" placeholder="请输入详细地址" bindinput="addr" />
-      </view>
+      <van-cell-group>
+        <van-field label="姓名" placeholder="请输入姓名" bind:input="onInput" data-id="name" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="产品名称" placeholder="请输入产品名称" bind:input="onInput" data-id="name" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="详细地址" placeholder="请输入详细地址" bind:input="onInput" data-id="name" />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field label="联系方式" placeholder="请输入联系方式" bind:input="onInput" data-id="phone" />
+      </van-cell-group>
+      <van-cell is-link title="实名认证" link-type="navigateTo" url="/pages/autonym/autonym" />
     </view>
     <!-- 进度 -->
     <view class="bg-fff p30" wx:if="{{!schedule}}">
@@ -65,24 +69,13 @@
         <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#3C93FF" />
       </view>
       <view class="progress-text">接收后，我们将会以最快的速度进行审核，成功/失败后我们将打电话联系您</view>
-      <van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
-        失败的原因失败的原因失败的原因
-      </van-popup>
     </view>
   </van-tab>
 </van-tabs>
-<!-- 提交信息 -->
-<view class="bg-fff" wx:if="{{schedule}}">
-  <view class="msg-item">
-    <view class="msg-key">联系方式</view>
-    <input type="text" value="{{phone}}" placeholder="请输入联系方式" bindinput="phone" />
-  </view>
-  <navigator url="/pages/autonym/autonym">
-    <view class="msg-item msg-autonym">
-      <view class="msg-key">实名认证</view>
-    </view>
-  </navigator>
-</view>
+<!-- 失败原因 -->
+<van-popup show="{{ hintShow }}" overlay="{{false}}" bind:close="changeHint" custom-class="hint">
+  {{cause}}
+</van-popup>
 <!-- 提交按钮 -->
 <view class="fixed-bottom" wx:if="{{schedule}}">
   <button class="my-btn" bindtap="submit">提交</button>

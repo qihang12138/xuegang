@@ -1,7 +1,7 @@
+const http = require('./http')
 let ApiUrl = 'http://xuegang.dd371.com/api/';
 // let ApiUrl = 'http://192.168.101.205/api/';
 const api = {
-    // 用户登录
     ApiWechat: ApiUrl + 'login/wechat',
     ApiIndex: ApiUrl + 'index/index',
     ApiSearchGoods: ApiUrl + 'index/search_goods',
@@ -58,6 +58,13 @@ const api = {
     ApiDiscountsList: ApiUrl + 'site/discounts_list',
     // vip
     ApiVip: ApiUrl + 'user/vip',
+    ApiVipTest: params => http({ url: ApiUrl + 'user/vip', data: params }),
+    ApiProblem: params => http({ url: ApiUrl + 'user/problem', data: params }),
+    ApiWallet: params => http({ url: ApiUrl + 'user/wallet', data: params }),
+    ApiAddVipOrder: params => http({ url: ApiUrl + 'user/add_vip_order', data: params }),
+    ApiPriceRecord: params => http({ url: ApiUrl + 'user/price_record', data: params })
+
+
 
 
 }

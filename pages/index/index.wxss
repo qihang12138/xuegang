@@ -36,13 +36,25 @@ page {
 /* 搜索商品 */
 
 .search {
-    margin: 14rpx auto;
-    padding: 18rpx 0 18rpx 60rpx;
-    width: 630rpx;
-    height: 24rpx;
-    font-size: 13px;
-    border-radius: 15rpx;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABwklEQVRIS72V31GDQBDGczDwrBUEKzBWIOkgqcDwAsmTdqAdJG+Z5IVYgViBWAGmAkgHvsJMgt9mFgad44hIZIbhz+7d77u93T3RU1zL5dLSdb1fuOz3+91sNktUY37ahMx5vV5P8jy/h20gsX/g38LzvOdTQN8ApFjTtBeemCYITNMMHcf59H3/IssyG/9GuO+EEKFhGGOyqUAlgCeP4LzD4InruqRUesHXhpAAxhgChipICVitVscJMcBuUkV+vKIEYiKIGdaJOQIw+QMe88PhcPWbTeSVvAHiALKRQQoAZUaIjZucsnFVHyREgIToY+yNFACHARwiqB9CfdgCQBnnI7SXstCKYplQIE3ZJmCTQIH4P2GSx7YA3sO8LgLnX0HTEk8IkXoPeIl/zSILIZa1ld7/1AGvgio5byr9ImRcyTG+t1BvKyuZjNyLCBJzZdb2It43aooWamAznU6dRkAFQk3smgbiGWDwK9lIcZqmt3gdUTPE853suOcqiOo8oPooD5uKwi0Ai6L38Nnh10GU1UthozBUJk9kzVAFadUeZPGug3QGIKgM0imgCsH7GOkbdA5gyADndULt+yyA6h59AUjBOCiLWcd6AAAAAElFTkSuQmCC') no-repeat 25rpx center/23rpx 23rpx #fff;
+    padding: 14rpx 30rpx;
+}
+
+.van-cell {
+    padding: 10rpx 20rpx!important;
+    border-radius: 10rpx;
+}
+
+
+/* 会员 */
+
+.vip {
+    padding: 20rpx 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.vip-img {
+    width: 690rpx;
+    height: 138rpx;
 }
 
 
@@ -65,6 +77,7 @@ page {
     height: 82rpx;
     border-radius: 50%;
 }
+
 
 /* 广告图 */
 

@@ -17,11 +17,14 @@
 <view class="grade bg-fff">
     <view class="grade-tit p30">会员等级</view>
     <view class="msg">
+        <view class="level">一级会员</view>
         <view class="msg-header flex-box">
-            <image src="https://s2.ax1x.com/2019/07/31/eN9lPP.png" class="msg-img" />
+           <view class="avatar">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
             <view class="msg-cont">
-                <view class="msg-name">
-                    美丽的七七
+                <view>
+                    <open-data type="userNickName" class="msg-name"></open-data>
                     <text class="msg-grade">lv1</text>
                 </view>
                 <view class="msg-time">2019-06-30充值</view>
@@ -40,7 +43,7 @@
 </view>
 <!-- 充值 -->
 <van-cell-group>
-    <van-field value="{{ value }}" label="充值金额" placeholder="请输入想要充值的金额" border="{{ false }}" bind:change="onChange" />
+    <van-field label="充值金额" placeholder="请输入想要充值的金额" bind:input="onInput" type="number" />
 </van-cell-group>
 <!-- 提示 -->
 <view class="hint">充值规则如下：充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则</view>

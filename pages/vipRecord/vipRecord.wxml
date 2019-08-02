@@ -1,0 +1,30 @@
+<van-tabs animated>
+    <van-tab title="消费记录">
+        <view class="m20">
+            <view wx:if="{{record.come.length === 0}}" class="hint">暂时没有消费记录</view>
+            <block wx:for="{{record.come}}" wx:key="{{index}}">
+                <view class="record">
+                    <view class="font-14 flex-item">
+                        {{item.descr}}
+                        <view class="font-12 color-8c">2019-08-02 18:00</view>
+                    </view>
+                    <view class="money">-{{item.money}}</view>
+                </view>
+            </block>
+        </view>
+    </van-tab>
+    <van-tab title="充值记录">
+        <view class="m20">
+             <view wx:if="{{record.enter.length === 0}}" class="hint">暂时没有充值记录</view>
+            <block wx:for="{{record.enter}}" wx:key="{{index}}">
+                <view class="record">
+                    <view class="font-14 flex-item">
+                        {{item.sescr}}
+                        <view class="font-12 color-8c">2019-08-02 18:00</view>
+                    </view>
+                    <view class="money">+{{item.money}}</view>
+                </view>
+            </block>
+        </view>
+    </van-tab>
+</van-tabs>

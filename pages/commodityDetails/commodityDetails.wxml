@@ -65,14 +65,16 @@
     </view>
   </van-tab>
   <van-tab title="购买记录">
-    <block wx:for="{{ pageData.buy_record }}" wx:key="index">
-      <view class="flex-box flex-align bg-fff p30">
-        <image class="evaluate-img" src="{{ item.u_image }}"></image>
-        <view class="flex-item font-12">{{ item.u_name }}</view>
-        <view class="flex-item font-12">{{ item.number }}份</view>
-        <view class="evaluate-time bg-fff">{{ item.create }}</view>
-      </view>
-    </block>
+    <view class="m20">
+      <block wx:for="{{ pageData.buy_record }}" wx:key="index">
+        <view class="flex-box flex-align bg-fff p30">
+          <image class="evaluate-img" src="{{ item.u_image }}"></image>
+          <view class="flex-item font-12">{{ item.u_name }}</view>
+          <view class="flex-item font-12">{{ item.number }}份</view>
+          <view class="evaluate-time bg-fff">{{ item.create }}</view>
+        </view>
+      </block>
+    </view>
   </van-tab>
 </van-tabs>
 <!-- 底部 -->

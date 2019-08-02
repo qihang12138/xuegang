@@ -19,11 +19,21 @@
   </block>
 </swiper>
 <!-- 搜索商品 -->
-<input type="text" placeholder="搜索商品" class="search" />
+<view class="search">
+  <van-cell-group custom-class="search">
+    <van-field placeholder="搜索商品" left-icon="search" border="{{ false }}" bind:confirm="search"/>
+  </van-cell-group>
+</view>
+<!-- 会员 -->
+<view class="vip bg-fff">
+  <navigator url="/pages/vip/vip" hover-class="none">
+    <image src="https://s2.ax1x.com/2019/08/02/edWEHe.png" class="vip-img" />
+  </navigator>
+</view>
 <!-- 分类栏 -->
 <view class="sort">
   <view class="sort-son" wx:for="{{pageData.lot_type}}" wx:key="index">
-    <navigator url="/pages/commoditySearch/commoditySearch?tid={{item.type_id}}">
+    <navigator url="/pages/commoditySearch/commoditySearch?tid={{item.type_id}}" hover-class="none">
       <image src="{{item.type_image}}" class="sort-img" />
       <view>{{item.type_name}}</view>
     </navigator>
@@ -32,8 +42,8 @@
 <!-- 公告栏 -->
 <van-notice-bar left-icon="volume" text="{{pageData.announcement[0].desc}}" />
 <!-- 广告图 -->
-<navigator>
-  <image class="banner" src="{{pageData.alone_brand.img}}" />
+<navigator hover-class="none">
+  <image class="banner" src="{{pageData.task_home_img.image}}" />
 </navigator>
 <!-- 店铺推荐 -->
 <view class="shop">
@@ -43,7 +53,7 @@
     <view class="line"></view>
   </view>
   <view class="shop-hint">今日店铺首推爆款 赶紧抢购吧</view>
-  <navigator>
+  <navigator hover-class="none">
     <image class="shop-img" src="{{pageData.alone_brand.img}}" />
   </navigator>
 </view>
@@ -57,7 +67,7 @@
   <view class="shop-hint">各种品类商品 优美价廉 赶紧抢购吧</view>
   <view class="commoditys">
     <block wx:for="{{pageData.group_pay_goods}}" wx:key="index">
-      <navigator url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}">
+      <navigator url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}" hover-class="none">
         <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}"></commodity>
       </navigator>
     </block>

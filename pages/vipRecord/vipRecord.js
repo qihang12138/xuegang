@@ -1,22 +1,34 @@
-// pages/issue/issue.js
+// pages/vipRecord/vipRecord.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        activeName: ''
+        record: ''
     },
-    onChange(event) {
-        this.setData({
-            activeNames: event.detail
-        });
+    getData() {
+        app.api.ApiPriceRecord().then(res => {
+            if (res.error_code === 0) {
+                var { enter, come } = res.data;
+                enter.forEach(item => {
+                    item.create = item.create.formatTime(new Date(item.create * 1000))
+                });
+                come.forEach(item => {
+                    item.create = item.create.formatTime(new Date(item.create * 1000))
+                });
+                this.setData({
+                    record: res.data
+                })
+            }
+        })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.getData()
     },
 
     /**

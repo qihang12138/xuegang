@@ -6,7 +6,7 @@ page {
     position: relative;
     text-align: center;
     height: 370rpx;
-    background: url('https://s2.ax1x.com/2019/07/31/etOFaT.png') no-repeat 0 0/750rpx 370rpx;
+    /* background: url('https://s2.ax1x.com/2019/07/31/etOFaT.png') no-repeat 0 0/750rpx 370rpx; */
 }
 
 .header-btn {
@@ -59,7 +59,7 @@ page {
 }
 
 .vip-type-on {
-    border: 1rpx solid #DD5F49;
+    border: 2rpx solid #DD5F49;
     background: #FFF7F0;
 }
 
@@ -78,6 +78,82 @@ page {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+}
+
+
+/* 会员等级 */
+
+.grade {
+    padding: 80rpx 0 10rpx;
+    background: url('https://s2.ax1x.com/2019/08/02/edc9L4.png') no-repeat 0 0/750rpx 370rpx;
+}
+
+.grade-tit {
+    font-weight: bold;
+}
+
+.avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.msg {
+    padding: 40rpx 30rpx;
+    margin: 0 30rpx;
+    border-radius: 10rpx;
+    color: #fff;
+    background: url('https://s2.ax1x.com/2019/07/31/etXSYD.png')no-repeat 0/690rpx 350rpx;
+}
+
+.msg-img {
+    border-radius: 50%;
+    height: 80rpx;
+    width: 80rpx;
+}
+
+.msg-time,
+.msg-grade {
+    font-size: 12px;
+}
+
+.msg-grade {
+    display: inline-block;
+    padding: 0 9rpx;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+    background: #FCC543;
+}
+
+.custom-box {
+    padding: 70rpx 0 0 30rpx;
+}
+
+.custom {
+    opacity: 1!important;
+    width: 300rpx;
+}
+
+.custom-button {
+    padding: 0 8rpx;
+    border-radius: 15rpx;
+    font-size: 18rpx;
+    color: #876226;
+    background: #fff;
+}
+
+.custom-text {
+    margin-top: -5rpx;
+    padding-left: 15rpx;
+    font-size: 18rpx;
+}
+
+.custom-num {
+    padding-top: 70rpx;
+    font-size: 14px;
+    color: #876226;
 }
 
 

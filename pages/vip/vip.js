@@ -6,25 +6,41 @@ Page({
      * 页面的初始数据
      */
     data: {
-        vip: ''
+        vip: '',
+        typeOn: 0,
+        vid: '',
+        currentValue: 30
     },
+    typeOn(e) {
+        var on = e.currentTarget.dataset.on,
+            id = e.currentTarget.dataset.id
+        this.setData({ typeOn: on, vid: id });
 
+    },
     getData() {
-        app.http({
-            url: app.api.ApiVip
-        }).then(res => {
-            if (res.error_code === 0) {
-                this.setData({
-                    vip: res.data
-                })
-            }
-        })
+        app.api.ApiVipTest().then(res => {
+                if (res.error_code === 0) {
+                    this.setData({
+                        vip: res.data
+                    })
+                }
+            })
+            // app.http({
+            //     url: app.api.ApiVip
+            // }).then(res => {
+            //     if (res.error_code === 0) {
+            //         this.setData({
+            //             vip: res.data
+            //         })
+            //     }
+            // })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
         this.getData();
+
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

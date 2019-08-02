@@ -2,6 +2,7 @@
     padding: 20rpx;
     border-radius: 10rpx;
     height: 180rpx;
+    font-size: 14px;
     color: #fff;
     background: url('https://s2.ax1x.com/2019/07/31/etXSYD.png') no-repeat 0/690rpx 180rpx;
 }
@@ -32,24 +33,38 @@
     font-weight: bold;
 }
 
+.avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
 .msg {
-    padding: 40rpx 30rpx;
+    position: relative;
+    padding: 35rpx 30rpx;
     margin: 0 30rpx;
     border-radius: 10rpx;
     color: #fff;
-    background: url('https://s2.ax1x.com/2019/07/31/etXSYD.png')no-repeat 0/690rpx 350rpx;
+    background: url('https://s2.ax1x.com/2019/07/31/etXSYD.png')no-repeat 0 0/690rpx 350rpx;
+}
+
+.level {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5rpx 10rpx;
+    border-radius: 0px 10rpx 0px 10rpx;
+    font-size: 20rpx;
+    background: linear-gradient(-83deg, rgba(243, 221, 181, 1) 0%, rgba(248, 233, 211, 1) 100%);
+    color: #876226;
 }
 
 .msg-img {
-    padding-right: 15rpx;
     border-radius: 50%;
     height: 80rpx;
     width: 80rpx;
-}
-
-.msg-name {
-    font-size: 14px;
-    padding-bottom: 8rpx;
 }
 
 .msg-time,

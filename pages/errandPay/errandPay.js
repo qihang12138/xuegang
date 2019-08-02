@@ -5,9 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-        currentValue: 30
+        currentValue: 30,
+        money: ''
     },
-
+    onInput(e) {
+        var money = e.detail;
+        this.setData({ money: money })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

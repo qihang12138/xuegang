@@ -1,22 +1,50 @@
-<view class="header">
+<view class="header" style="background: url('{{vip.top_img.image}}') no-repeat 0 0/750rpx 370rpx" wx:if="{{false}}">
     <view class="header-btn">¥100元立即开通</view>
 </view>
 <!-- 会员分类 -->
-<view class="bg-fff vip-type-box">
+<view class="bg-fff vip-type-box" wx:if="{{false}}">
     <view class="p30">会员分类</view>
     <view class="vip-type flex-box">
         <block wx:for="{{vip.vip_lot}}" wx:key="{{index}}">
-            <view class="vip-type-item">
+            <view class="vip-type-item {{index==typeOn?'vip-type-on':''}}" bindtap="typeOn" data-on="{{index}}" data-id="{{item.id}}">
                 <view class="vip-type-name">{{item.name}}</view>
                 <view class="vip-type-money">
                     <text class="vip-type-rmb">¥</text>
                     {{item.price}}
                 </view>
-                <view class="vip-type-cont font-12 color-8c">充{{item.price}}送{{item.complimentary}}享受{{item.discount}}折优惠</view>
+                <view class="vip-type-cont font-12 color-8c">
+                    充{{item.price}}送{{item.complimentary}}享受{{item.discount}}折优惠
+                </view>
             </view>
         </block>
     </view>
     <view class="vip-type-btn">立即开通</view>
+</view>
+<!-- 会员等级 -->
+<view class="grade">
+    <view class="msg">
+        <view class="msg-header flex-box">
+            <view class="avatar">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="msg-cont">
+                <view>
+                    <open-data type="userNickName" class="msg-name"></open-data>
+                    <text class="msg-grade">lv1</text>
+                </view>
+                <view class="msg-time">2019-06-30充值</view>
+            </view>
+        </view>
+        <view class="flex-box flex-align custom-box">
+            <text class="custom-button">V1</text>
+            <van-slider value="{{ currentValue }}" disabled use-button-slot custom-class="custom" active-color="#fff" inactive-color="#B9975E">
+                <view class="custom-button" slot="button">{{ currentValue }}</view>
+            </van-slider>
+            <text class="custom-button">V2</text>
+            <text class="custom-text">成长值 30/500</text>
+        </view>
+        <view class="custom-num">NO.000140120101</view>
+    </view>
 </view>
 <!-- 会员特权 -->
 <view class="privilege bg-fff">
@@ -30,10 +58,13 @@
         </block>
     </view>
     <view class="flex-box">
-        <navigator url="" class="flex-item privilege-btn ">会员服务协议</navigator>
-        <navigator url="" class="flex-item privilege-btn btn-left">会员规则</navigator>
+        <navigator url="/pages/vipRules/vipRules?id=deal" class="flex-item privilege-btn ">
+            会员服务协议
+        </navigator>
+        <navigator url="/pages/vipRules/vipRules?id=rule" class="flex-item privilege-btn btn-left">
+            会员规则
+        </navigator>
     </view>
 </view>
-
 <!-- 常见问题 -->
-<van-cell is-link title="常见问题" link-type="navigateTo" url="/pages/index/index" />
+<van-cell is-link title="常见问题" link-type="navigateTo" url="/pages/vipRules/vipRules?id=problem" />

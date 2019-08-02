@@ -1,0 +1,14 @@
+page {
+    background: #fff;
+}
+
+.tit {
+    font-weight: 600;
+}
+
+.cont {
+    padding: 30rpx 0;
+    font-size: 14px;
+    color: #8c8c8c;
+    white-space: pre-line
+}

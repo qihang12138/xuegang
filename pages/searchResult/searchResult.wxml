@@ -1,5 +1,12 @@
+<!-- 搜索商品 -->
+<view class="search-box">
+  <van-search placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+</view>
+
 <view class="commoditys">
-    <block wx:for="{{8}}">
-      <commodity></commodity>
-    </block>
-  </view>
+  <block wx:for="{{2}}">
+    <commodity></commodity>
+  </block>
+</view>
