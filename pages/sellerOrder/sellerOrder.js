@@ -30,7 +30,7 @@ Page({
      */
     onLoad: function(options) {
         var type = options.type,
-            titles = ['今日订单', '本月订单', '待提货订单'],
+            titles = ['今日订单', '本月订单', '待提货订单', '快捷报单'],
             title = titles[type]
         this.setData({ type: type });
         wx.setNavigationBarTitle({

@@ -1,6 +1,6 @@
-<block wx:for="{{3}}" wx:key="index">
+<block wx:for="{{lot}}" wx:key="{{index}}">
   <view>
-    <van-card num="2" tag="标签" price="10.00" title="商品标题" thumb="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" thumb-link="/pages/index/index" custom-class="card">
+    <van-card num="2" price="{{item.child.price}}" title="{{item.child.g_name}}" thumb="{{item.child.g_image}}" thumb-link="/pages/index/index" custom-class="card">
       <view slot="desc">
         <view class="color-8c">
           退款原因:

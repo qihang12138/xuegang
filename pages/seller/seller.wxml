@@ -1,13 +1,4 @@
-<!-- <view class="seller-header flex-box flex-align bg-fff">
-  <image src="https://s2.ax1x.com/2019/07/19/ZjbfmD.png" class="header-img"></image>
-  <view>
-    <view>用户名用户名</view>
-    <view class="header-id">
-      ID:
-      <text>0123456789</text>
-    </view>
-  </view>
-</view> -->
+
 <view class="head-panel">
   <view class="avatar">
     <open-data type="userAvatarUrl"></open-data>
@@ -37,7 +28,7 @@
 <!-- 选项 -->
 <view class="options flex-box">
   <block wx:for="{{pageData.serve}}">
-    <navigator class="option box-sizing border-bottom border-right">
+    <navigator class="option box-sizing border-bottom border-right" hover-class="none">
       <image src="{{item.icon}}" class="option-img"></image>
       <view>{{item.name}}</view>
     </navigator>

@@ -1,30 +1,29 @@
 <view class="bg-fff">
   <view class="balance box-sizing">
-    <view class="balance-text">余额</view>
-    <view class="balance-money">12.00</view>
+    <view class="balance-box">
+      <view class="balance-text">余额</view>
+      <view class="balance-money">{{pay.user.price}}</view>
+    </view>
   </view>
 </view>
-
 <!-- 充值 -->
 <view class="money p30 bg-fff">充值金额</view>
 <view class="flex-box pay-options bg-fff">
-  <view class="pay-option pay-on">充1000</view>
-  <view class="flex-item"></view>
-  <view class="pay-option">充500</view>
-  <view class="pay-option">充300</view>
-  <view class="flex-item"></view>
-  <view class="pay-option">充100</view>
+  <block wx:for="{{pay.lot}}" wx:key="{{index}}">
+    <view class="pay-option {{index==payOn?'pay-on':''}}" bindtap="payOn" data-id="{{index}}">
+      充{{item.name}}元
+    </view>
+  </block>
 </view>
-
 <!-- 支付 -->
-<view class="payment">
-  支付金额
-  <text class="payment-money">1000元</text>
+<view class="payment bg-fff">
+  支付金额:
+  <text class="payment-money">{{pay.lot[payOn].name}}元</text>
 </view>
-
 <!-- 规则 -->
-<view class="rule">充值规则如下：充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则</view>
-
+<view class="rule">
+  <rich-text nodes="{{ pay.rule.desc }}"></rich-text>
+</view>
 <!-- 按钮 -->
 <view class="fixed-bottom">
   <button class="my-btn">去支付</button>

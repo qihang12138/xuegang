@@ -1,4 +1,5 @@
 // pages/sellerReturn/sellerReturn.js
+const app = getApp()
 Page({
 
     /**
@@ -6,22 +7,18 @@ Page({
      */
     data: {
         show: false,
-        actions: [{
-                name: '已经发货无法取消'
-            },
-            {
-                name: '该物品不能退货'
-            },
-            {
-                name: '格子口不合适'
-            },
-            {
-                name: '运费不合适'
-            },
-            {
-                name: '重新下单'
-            },
-        ]
+        lot: [],
+        actions: []
+    },
+    getData() {
+        app.api.ApiReject().then(res => {
+            if (res.error_code === 0) {
+                this.setData({
+                    lot: res.data.lot,
+                    actions: res.data.cause,
+                })
+            }
+        })
     },
     cause() {
         this.setData({ show: true });
@@ -39,7 +36,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.getData();
     },
 
     /**

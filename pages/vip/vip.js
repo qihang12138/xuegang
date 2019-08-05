@@ -9,7 +9,8 @@ Page({
         vip: '',
         typeOn: 0,
         vid: '',
-        currentValue: 30
+        currentValue: 30,
+        level: true
     },
     typeOn(e) {
         var on = e.currentTarget.dataset.on,
@@ -19,21 +20,29 @@ Page({
     },
     getData() {
         app.api.ApiVipTest().then(res => {
-                if (res.error_code === 0) {
-                    this.setData({
-                        vip: res.data
-                    })
+            if (res.error_code === 0) {
+                var level = res.data.user_alone.level;
+                if (level !== 0) {
+                    this.setData({ level: false })
+                } else {
+                    this.setData({ level: true })
                 }
-            })
-            // app.http({
-            //     url: app.api.ApiVip
-            // }).then(res => {
-            //     if (res.error_code === 0) {
-            //         this.setData({
-            //             vip: res.data
-            //         })
-            //     }
-            // })
+                this.setData({
+                    vip: res.data
+                })
+            }
+        })
+
+
+        // app.http({
+        //     url: app.api.ApiVip
+        // }).then(res => {
+        //     if (res.error_code === 0) {
+        //         this.setData({
+        //             vip: res.data
+        //         })
+        //     }
+        // })
     },
     /**
      * 生命周期函数--监听页面加载

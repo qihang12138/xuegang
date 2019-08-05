@@ -1,8 +1,8 @@
-<view class="header" style="background: url('{{vip.top_img.image}}') no-repeat 0 0/750rpx 370rpx" wx:if="{{false}}">
+<view class="header" style="background: url('{{vip.top_img.image}}') no-repeat 0 0/750rpx 370rpx" wx:if="{{level}}">
     <view class="header-btn">¥100元立即开通</view>
 </view>
 <!-- 会员分类 -->
-<view class="bg-fff vip-type-box" wx:if="{{false}}">
+<view class="bg-fff vip-type-box" wx:if="{{level}}">
     <view class="p30">会员分类</view>
     <view class="vip-type flex-box">
         <block wx:for="{{vip.vip_lot}}" wx:key="{{index}}">
@@ -21,7 +21,7 @@
     <view class="vip-type-btn">立即开通</view>
 </view>
 <!-- 会员等级 -->
-<view class="grade">
+<view class="grade" wx:if="{{!level}}">
     <view class="msg">
         <view class="msg-header flex-box">
             <view class="avatar">
