@@ -1,12 +1,15 @@
 <!-- 搜索商品 -->
 <view class="search-box">
-  <van-search placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
-    <view slot="action" bind:tap="onSearch">搜索</view>
+  <van-search placeholder="请输入搜索关键词" bind:search="onSearch">
+    <!-- <view slot="action" bind:tap="onSearch">搜索</view> -->
   </van-search>
 </view>
-
 <view class="commoditys">
   <block wx:for="{{2}}">
     <commodity></commodity>
   </block>
 </view>
+<!-- 悬浮 -->
+<navigator wx:if="{{true}}" class="to-vip" hover-class="none" url="/pages/vip/vip">
+  <image class="vip-img" src="https://s2.ax1x.com/2019/08/05/eczh5V.png" />
+</navigator>

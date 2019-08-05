@@ -10,7 +10,7 @@
       <text class="commodity-price-new">¥{{priceNew}}</text>
       <text class="commodity-price-old">¥{{priceOld}}</text>
       <view>
-        <text>¥16.6</text>
+        <text>¥{{priceVip}}</text>
         <text class="commodity-vip-icon">会员</text>
       </view>
       <view class="commodity-cart"></view>

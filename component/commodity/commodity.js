@@ -24,6 +24,10 @@ Component({
             type: String,
             value: ""
         },
+        priceVip: {
+            type: String,
+            value: ""
+        }
     },
 
     /**
