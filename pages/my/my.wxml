@@ -18,7 +18,5 @@
 </view>
 <!-- 功能列表 -->
 <block wx:for="{{pageData.serve}}" wx:key="index">
-  <van-cell is-link title="{{item.name}}" link-type="navigateTo" url="{{urls[index]}}" custom-class="list-retail" icon="{{item.icon}}" />
+  <van-cell is-link title="{{item.name}}" link-type="navigateTo" url="{{item.address}}" custom-class="list-retail" icon="{{item.icon}}" />
 </block>
-<!-- 退出 -->
-<view class="out">退出当前账号</view>

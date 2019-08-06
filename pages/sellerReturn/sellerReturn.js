@@ -27,9 +27,15 @@ Page({
         this.setData({ show: false });
     },
 
-    onSelect(event) {
+    onSelect(e) {
         this.setData({
             show: false
+        })
+        console.log(e);
+        app.api.ApiTurnDown().then(res => {
+            if (res.error_code === 0) {
+
+            }
         })
     },
     /**

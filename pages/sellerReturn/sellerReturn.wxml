@@ -1,10 +1,10 @@
 <block wx:for="{{lot}}" wx:key="{{index}}">
   <view>
-    <van-card num="2" price="{{item.child.price}}" title="{{item.child.g_name}}" thumb="{{item.child.g_image}}" thumb-link="/pages/index/index" custom-class="card">
+    <van-card num="2" price="{{item.child[0].g_price}}" title="{{item.child[0].g_name}}" thumb="{{item.child[0].g_image}}" thumb-link="/pages/index/index" custom-class="card">
       <view slot="desc">
         <view class="color-8c">
           退款原因:
-          <text>不想买了</text>
+          <text>{{item.explain}}</text>
         </view>
         <view class="color-8c">
           申请时间:

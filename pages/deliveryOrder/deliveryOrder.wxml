@@ -51,4 +51,5 @@
     <textarea class="remark-text" placeholder="请留下你的备注信息~~~" bindinput="changeRemark"></textarea>
 </view>
 <!-- 实付款 -->
-<van-submit-bar price="{{ price.all_price }}" button-text="提交订单" bind:submit="submit" />
+<!-- <van-submit-bar price="{{ price.all_price }}" button-text="提交订单" bind:submit="submit" /> -->
+<van-submit-bar price="{{ price.goods_price*100 }}" button-text="提交订单" bind:submit="submit" />

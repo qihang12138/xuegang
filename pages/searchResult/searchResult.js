@@ -6,15 +6,19 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageData: ''
+        goods: '',
+        key: ''
     },
-    getData() {
+    postData() {
         app.http({
-            url: app.api.ApiGetSerchData
+            url: app.api.ApiSearchGoods,
+            data: {
+                key_text: this.data.key
+            }
         }).then(res => {
             if (res.error_code === 0) {
                 this.setData({
-                    pageData: res.data
+                    goods: res.data.goods
                 })
             }
         })
@@ -25,9 +29,7 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
-        this.getData()
-    },
+    onLoad: function(options) {},
 
     /**
      * 生命周期函数--监听页面初次渲染完成

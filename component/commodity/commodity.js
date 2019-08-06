@@ -27,9 +27,12 @@ Component({
         priceVip: {
             type: String,
             value: ""
-        }
+        },
+        id: {
+            type: String,
+            value: ""
+        },
     },
-
     /**
      * 组件的初始数据
      */

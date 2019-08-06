@@ -1,17 +1,9 @@
+page {
+    background: #fff;
+}
+
 .commoditys {
     display: flex;
     flex-wrap: wrap;
     padding: 0 15rpx;
-}
-
-.to-vip {
-    position: fixed;
-    right: 20rpx;
-    bottom: 200rpx;
-}
-
-.vip-img {
-    height: 90rpx;
-    width: 90rpx;
-    border-radius: 50%;
 }

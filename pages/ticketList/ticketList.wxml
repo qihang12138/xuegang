@@ -1,4 +1,4 @@
-<van-tabs animated>
+<!-- <van-tabs animated>
   <van-tab title="线下优惠券">
     <block wx:for="{{2}}">
       <view class="order">
@@ -23,7 +23,7 @@
       </view>
     </block>
   </van-tab>
-  <van-tab title="线上优惠券" tab-class="on">
+  <van-tab title="线上优惠券" tab-class="on"> -->
     <view class="p30">
       <block wx:for="{{pageData}}" wx:key="index">
         <view class="ticket">
@@ -44,5 +44,5 @@
         </view>
       </block>
     </view>
-  </van-tab>
-</van-tabs>
+  <!-- </van-tab> -->
+<!-- </van-tabs> -->

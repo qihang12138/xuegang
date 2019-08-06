@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        pageData: '',
+        vipShow: false
     },
     getData() {
         app.http({
@@ -14,7 +15,16 @@ Page({
         }).then(res => {
             if (res.error_code === 0) {
                 this.setData({
-                    pageData: res.data
+                    pageData: res.data.goods
+                })
+            }
+        })
+    },
+    share() {
+        app.api.ApiDiscountsList().then(res => {
+            if (res.error_code === 0) {
+                this.setData({
+                    pageData: res.data.lot
                 })
             }
         })
@@ -27,7 +37,21 @@ Page({
      */
     onLoad: function(options) {
         var id = options.id;
-        this.getData();
+        if (id == 3) {
+            this.setData({ vipShow: true })
+            wx.setNavigationBarTitle({
+                title: '团长直供'
+            })
+        } else if (id == 4) {
+            wx.setNavigationBarTitle({
+                title: '商品分享'
+            })
+            this.share()
+        } else {
+            this.getData()
+
+        }
+
     },
 
     /**

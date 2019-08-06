@@ -1,5 +1,6 @@
 // pages/commodityDetails/commodityDetails.js
 const app = getApp()
+import Toast from '../../vant/toast/toast';
 Page({
 
     /**
@@ -18,7 +19,7 @@ Page({
         stepper: 1,
         sid: 0,
         sidIndex: 0,
-        gid: 18,
+        gid: 0,
         siteId: 0,
         btnShow: true
     },
@@ -47,20 +48,6 @@ Page({
                 })
             }
         })
-
-        // 获取地址
-        // app.http({
-        //     url: app.api.ApiAddrLister
-        // }).then(res => {
-        //     if (res.error_code === 0) {
-        //         res.data.list.forEach(item => {
-        //             if (item.default === 1) {
-        //                 this.setData({ siteId: item.id })
-        //                 return;
-        //             }
-        //         });
-        //     }
-        // })
     },
     chengeCollect(e) {
         var gid = e.currentTarget.dataset.gid;
@@ -102,7 +89,12 @@ Page({
             url: app.api.ApiGetCoupon,
             data: { cid: cid }
         }).then(res => {
+            if (res.error_code === 0) {
+                Toast.success(res.msg);
+            } else {
 
+                Toast.fail(res.msg);
+            }
         })
     },
     buy() {
@@ -141,7 +133,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        // this.setData({ gid: options.gid })
+        this.setData({ gid: options.gid })
         this.getData();
     },
 

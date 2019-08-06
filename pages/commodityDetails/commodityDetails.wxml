@@ -141,3 +141,4 @@
     <button class="my-btn">确定</button>
   </navigator>
 </van-popup>
+<van-toast id="van-toast" />

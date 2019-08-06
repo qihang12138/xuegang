@@ -3,7 +3,7 @@
 </view>
 <!-- 会员分类 -->
 <view class="bg-fff vip-type-box" wx:if="{{level}}">
-    <view class="p30">会员分类</view>
+    <view class="p30">{{vipClass?'会员分类':'年费会员'}}</view>
     <view class="vip-type flex-box">
         <block wx:for="{{vip.vip_lot}}" wx:key="{{index}}">
             <view class="vip-type-item {{index==typeOn?'vip-type-on':''}}" bindtap="typeOn" data-on="{{index}}" data-id="{{item.id}}">

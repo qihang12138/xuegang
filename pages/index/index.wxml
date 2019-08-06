@@ -19,9 +19,9 @@
   </block>
 </swiper>
 <!-- 搜索商品 -->
-<view class="search">
+<view class="search" bindtap="search">
   <van-cell-group custom-class="search">
-    <van-field placeholder="搜索商品" left-icon="search" border="{{ false }}" bind:confirm="search"/>
+    <van-field placeholder="搜索商品" left-icon="search" border="{{ false }}" disabled/>
   </van-cell-group>
 </view>
 <!-- 会员 -->
@@ -33,7 +33,7 @@
 <!-- 分类栏 -->
 <view class="sort">
   <view class="sort-son" wx:for="{{pageData.lot_type}}" wx:key="index">
-    <navigator url="/pages/commoditySearch/commoditySearch?tid={{item.type_id}}" hover-class="none">
+    <navigator url="/pages/commoditySearch/commoditySearch?tid={{item.type_id}}&id=0" hover-class="none">
       <image src="{{item.type_image}}" class="sort-img" />
       <view>{{item.type_name}}</view>
     </navigator>
@@ -42,7 +42,7 @@
 <!-- 公告栏 -->
 <van-notice-bar left-icon="volume" text="{{pageData.announcement[0].desc}}" />
 <!-- 广告图 -->
-<navigator hover-class="none">
+<navigator hover-class="none" url="/pages/commoditySearch/commoditySearch?tid=3&id=1">
   <image class="banner" src="{{pageData.task_home_img.image}}" />
 </navigator>
 <!-- 店铺推荐 -->
@@ -68,7 +68,7 @@
   <view class="commoditys">
     <block wx:for="{{pageData.group_pay_goods}}" wx:key="index">
       <navigator url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}" hover-class="none">
-        <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}"></commodity>
+        <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}" id="{{item.gid}}"></commodity>
       </navigator>
     </block>
   </view>

@@ -16,6 +16,6 @@
   <view class="result-cause">余额不足</view>
 </view>
 <!-- 按钮 -->
-<button class="btn-true btn" wx:if="{{bol==1}}">查看订单</button>
-<button class="btn-false btn" wx:else>继续支付</button>
-<button class="btn">返回首页</button>
+<!-- <button class="btn-true btn" wx:if="{{bol==1}}">查看订单</button>
+<button class="btn-false btn" wx:else>继续支付</button> -->
+<button class="btn" bindtap="toIndex">返回首页</button>

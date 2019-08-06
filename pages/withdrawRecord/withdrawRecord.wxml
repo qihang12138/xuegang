@@ -1,5 +1,5 @@
 <view class="p30 bg-fff">提现记录</view>
-<block wx:for="{{3}}" wx:key="index">
+<block wx:for="{{record}}" wx:key="{{index}}">
   <view class="record p30">
     <view class="flex-box">
       <view>提现</view>

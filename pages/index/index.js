@@ -23,22 +23,10 @@ Page({
             }
         })
     },
-    search(e) {
-        var value = e.detail;
-        app.http({
-            url: app.api.ApiSearchGoods,
-            data: {
-                key_text: value
-            },
-            method: 'POST'
-        }).then(res => {
-            if (res.error_code === 0) {
-                wx.navigateTo({
-                    url: '/pages/searchResult/searchResult'
-                })
-            }
+    search() {
+        wx.navigateTo({
+            url: '/pages/searchResult/searchResult'
         })
-
     },
     /**
      * 生命周期函数--监听页面加载

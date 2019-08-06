@@ -40,7 +40,6 @@ Page({
         this.setData({
             [id]: value
         })
-        console.log(this.data);
     },
     change(event) {
         var band = this.data.band;

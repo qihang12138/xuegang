@@ -1,3 +1,7 @@
+page {
+    background: #fff;
+}
+
 .order {
     display: flex;
     padding: 35rpx 30rpx;
@@ -32,7 +36,9 @@
     color: #FF3824;
 }
 
+
 /* 优惠券 */
+
 .ticket {
     display: flex;
     align-items: center;

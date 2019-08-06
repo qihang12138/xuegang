@@ -1,5 +1,28 @@
+page {
+    background: #fff;
+}
+
 .commoditys {
     display: flex;
     flex-wrap: wrap;
     padding: 0 15rpx;
+}
+
+.vip {
+    padding-top: 188rpx;
+    margin-bottom: 20rpx;
+    height: 340rpx;
+    text-align: center;
+    background: url('https://s2.ax1x.com/2019/08/06/efitVU.png') no-repeat 0/100% 100%;
+}
+
+.vip-tit {
+    padding-bottom: 20rpx;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.vip-text {
+    font-size: 12px;
+    color: #fff;
 }

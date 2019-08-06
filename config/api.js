@@ -55,13 +55,15 @@ const api = {
     ApiSiteGetUserOrder: ApiUrl + 'site/get_user_order',
     ApiPublish: ApiUrl + 'site/publish',
     ApiTask: ApiUrl + 'site/task',
-    ApiDiscountsList: ApiUrl + 'site/discounts_list',
     ApiShortcut: ApiUrl + 'site/shortcut',
     ApiWithdraw: params => http({ url: ApiUrl + 'site/withdraw_deposit', data: params }),
     ApiRecharge: params => http({ url: ApiUrl + 'site/price_recharge', data: params }),
     ApiReject: params => http({ url: ApiUrl + 'site/reject', data: params }),
+    ApiTixianRecord: params => http({ url: ApiUrl + 'site/tixian_record', data: params }),
+    ApiDiscountsList: params => http({ url: ApiUrl + 'site/discounts_list', data: params }),
+    ApiTurnDown: params => http({ url: ApiUrl + 'site/turn_down', data: params }),
+
     // vip
-    ApiVip: ApiUrl + 'user/vip',
     ApiVipTest: params => http({ url: ApiUrl + 'user/vip', data: params }),
     ApiProblem: params => http({ url: ApiUrl + 'user/problem', data: params }),
     ApiWallet: params => http({ url: ApiUrl + 'user/wallet', data: params }),
