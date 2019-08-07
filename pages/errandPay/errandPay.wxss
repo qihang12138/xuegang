@@ -86,6 +86,7 @@
 
 .custom {
     opacity: 1!important;
+    margin: 0 5rpx;
     width: 300rpx;
 }
 
@@ -95,6 +96,12 @@
     font-size: 18rpx;
     color: #876226;
     background: #fff;
+}
+
+.custom-value {
+    position: absolute;
+    top: -30rpx;
+    left: 0;
 }
 
 .custom-text {

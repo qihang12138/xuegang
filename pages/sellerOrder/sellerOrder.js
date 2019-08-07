@@ -29,9 +29,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        var type = options.type,
+
+        var type = options.id,
             titles = ['今日订单', '本月订单', '待提货订单', '快捷报单'],
-            title = titles[type]
+            title = titles[type - 1]
         this.setData({ type: type });
         wx.setNavigationBarTitle({
             title: title

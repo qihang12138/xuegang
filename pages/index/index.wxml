@@ -65,11 +65,5 @@
     <view class="line"></view>
   </view>
   <view class="shop-hint">各种品类商品 优美价廉 赶紧抢购吧</view>
-  <view class="commoditys">
-    <block wx:for="{{pageData.group_pay_goods}}" wx:key="index">
-      <navigator url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}" hover-class="none">
-        <commodity src="{{item.g_image}}" name="{{item.g_name}}" weight="{{item.g_amount}}" priceNew="{{item.g_xprice}}" priceOld="{{item.g_yprice}}" id="{{item.gid}}"></commodity>
-      </navigator>
-    </block>
-  </view>
+  <commodity for="{{pageData.group_pay_goods}}"></commodity>
 </view>

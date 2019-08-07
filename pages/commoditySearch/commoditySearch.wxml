@@ -7,7 +7,7 @@
 <view class="commodity">
   <view class="commodity-list flex-box">
     <view>
-      <block wx:for="{{pageData.lot_brand}}" wx:key="index">
+      <block wx:for="{{pageData.lot_brand}}" wx:key="{{index}}">
         <view class="commodity-brand {{index===on?'on':''}}" bindtap="changeOn" data-id='{{index}}'>
           {{item.bname}}
         </view>
@@ -15,8 +15,8 @@
     </view>
     <!-- 商品内容 -->
     <view class="commodity-kind">
-      <block wx:for="{{pageData.lot_brand[on].goods}}" wx:key="num">
-        <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+      <block wx:for="{{pageData.lot_brand[on].goods}}" wx:key="{{num}}">
+        <navigator url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}" hover-class="none" open-type="navigate">
           <view class="commodity-cont">
             <image class="commodity-img" src="{{item.g_image}}"></image>
             <view class="commodity-msg">

@@ -122,7 +122,7 @@
       </view>
     </view>
     <view>规格</view>
-    <block wx:for="{{pageData.spec}}" wx:key="index">
+    <block wx:for="{{pageData.spec}}" wx:key="{{index}}">
       <scroll-view class="cart-specs" scroll-y="{{true}}" scroll-with-animation="{{true}}">
         <view class="cart-spec {{index===sidIndex?'spec-on':''}}" data-sid="{{item.sid}}" bindtap="changeSpec">
           {{item.s_name}}

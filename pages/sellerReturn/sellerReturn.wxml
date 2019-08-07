@@ -12,8 +12,8 @@
         </view>
       </view>
       <view slot="footer">
-        <van-button size="mini">同意</van-button>
-        <van-button size="mini" custom-class="reject" bind:click="cause">驳回</van-button>
+        <van-button size="mini" bind:click="pass" data-oid="{{item.oid}}">同意</van-button>
+        <van-button size="mini" custom-class="reject" bind:click="cause" data-oid="{{item.oid}}">驳回</van-button>
       </view>
     </van-card>
   </view>

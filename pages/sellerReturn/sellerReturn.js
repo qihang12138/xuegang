@@ -8,7 +8,8 @@ Page({
     data: {
         show: false,
         lot: [],
-        actions: []
+        actions: [],
+        oid: 0
     },
     getData() {
         app.api.ApiReject().then(res => {
@@ -20,21 +21,44 @@ Page({
             }
         })
     },
-    cause() {
-        this.setData({ show: true });
+    pass(e) {
+        var oid = e.currentTarget.dataset.oid;
+        app.api.ApiPass(oid).then(res => {
+            if (res.error_code === 0) {
+                app.util.toast({
+                    title: '操作成功'
+                }).then(() => {
+                    this.getData();
+                })
+            }
+        })
+    },
+    cause(e) {
+        var oid = e.currentTarget.dataset.oid;
+        this.setData({
+            show: true,
+            oid: oid
+        });
     },
     onClose() {
         this.setData({ show: false });
     },
 
     onSelect(e) {
-        this.setData({
-            show: false
-        })
-        console.log(e);
-        app.api.ApiTurnDown().then(res => {
+        var msg = {
+            oid: this.data.oid,
+            cause: e.detail.name
+        }
+        app.api.ApiTurnDown(msg).then(res => {
             if (res.error_code === 0) {
-
+                this.setData({
+                    show: false
+                })
+                app.util.toast({
+                    title: '操作成功'
+                }).then(() => {
+                    this.getData();
+                })
             }
         })
     },

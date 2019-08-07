@@ -40,7 +40,7 @@
             </view>
             <view>有效期2019.01.20-2019.05.31</view>
           </view>
-          <navigator class="ticket-right">立即领取</navigator>
+          <view class="ticket-right">已领取</view>
         </view>
       </block>
     </view>

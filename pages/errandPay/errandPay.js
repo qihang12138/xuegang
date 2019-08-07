@@ -1,4 +1,5 @@
 // pages/errandPay/errandPay.js
+const app = getApp()
 Page({
 
     /**
@@ -6,17 +7,32 @@ Page({
      */
     data: {
         currentValue: 30,
-        money: ''
+        money: '',
+
     },
     onInput(e) {
         var money = e.detail;
         this.setData({ money: money })
     },
+    getData() {
+        app.api.ApiWallet().then(res => {
+            if (res.error_code === 0) {
+                var alone = res.data.user_alone;
+                if (alone.level_create != 0) {
+                    alone.level_create = app.util.YMD(new Date(alone.level_create * 1000));
+                }
+                this.setData({
+                    alone: alone,
+                    goal: res.data.goal
+                })
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.getData();
     },
 
     /**

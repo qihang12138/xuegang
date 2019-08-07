@@ -11,16 +11,22 @@ Page({
         checked: true,
         stepper: 1,
         type: 2,
-        del: false
+        del: false,
+        distribution: 0
     },
-    postData() {
+    changeCart(e) {
+        this.setData({ distribution: e.detail.index });
+        this.getData();
+    },
+    getData() {
         app.http({
             url: app.api.ApiCarLister,
             data: {
-                distribution: 1
+                distribution: this.data.distribution
             },
             method: 'POST'
         }).then(res => {
+            this.setData({ type: 2 });
             if (res.error_code === 0) {
                 var data = res.data.car_list;
                 this.setData({ pageData: data });
@@ -140,7 +146,7 @@ Page({
             url: app.api.ApiDeleteCar
         }).then(res => {
             if (res.error_code === 0) {
-                this.postData();
+                this.getData();
             }
         })
     },
@@ -153,56 +159,56 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-        this.postData();
+    onLoad: function(options) {
+
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
-
+    onShow: function() {
+        this.getData();
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload: function() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom: function() {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage: function() {
 
     }
 })

@@ -11,7 +11,8 @@
     <view class="color-8c">当前累计收益 (元)</view>
     <view class="money border-bottom">0.00</view>
   </view>
-  <van-cell is-link title="我的资金" value="立即提现" link-type="navigateTo" url="/pages/withdraw/withdraw" border="{{false}}" />
+  <van-cell is-link title="我的资金" value="立即提现" link-type="navigateTo" url="/pages/withdraw/withdraw"/>
+  <van-cell is-link title="我的下级" link-type="navigateTo" url="/pages/subordinate/subordinate" />
 </view>
 <!-- 订单管理 -->
 <view class="order">

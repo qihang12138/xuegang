@@ -1,3 +1,8 @@
+<van-tabs bind:change="changeCart">
+  <van-tab title="自提商品"></van-tab>
+  <van-tab title="配送商品"></van-tab>
+</van-tabs>
+
 <block wx:for="{{pageData}}" wx:key="index">
   <view class="commodity">
     <van-checkbox value="{{ item.status }}" bind:change="checked" data-id="{{item.id}}"></van-checkbox>

@@ -62,6 +62,7 @@ const api = {
     ApiTixianRecord: params => http({ url: ApiUrl + 'site/tixian_record', data: params }),
     ApiDiscountsList: params => http({ url: ApiUrl + 'site/discounts_list', data: params }),
     ApiTurnDown: params => http({ url: ApiUrl + 'site/turn_down', data: params }),
+    ApiPass: params => http({ url: ApiUrl + 'site/pass', data: params }),
 
     // vip
     ApiVipTest: params => http({ url: ApiUrl + 'user/vip', data: params }),

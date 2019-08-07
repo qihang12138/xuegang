@@ -6,7 +6,7 @@
                 <view class="record">
                     <view class="font-14 flex-item">
                         {{item.descr}}
-                        <view class="font-12 color-8c">2019-08-02 18:00</view>
+                        <view class="font-12 color-8c">{{item.create}}</view>
                     </view>
                     <view class="money">-{{item.money}}</view>
                 </view>
@@ -20,7 +20,7 @@
                 <view class="record">
                     <view class="font-14 flex-item">
                         {{item.sescr}}
-                        <view class="font-12 color-8c">2019-08-02 18:00</view>
+                        <view class="font-12 color-8c">{{item.create}}</view>
                     </view>
                     <view class="money">+{{item.money}}</view>
                 </view>

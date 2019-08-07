@@ -1,14 +1,14 @@
 <view class="bg-fff p30">
     <view class="header box-sizing">
-        <view class="header-tit">消费记录</view>
+        <navigator class="header-tit" hover-class="none" url="/pages/vipRecord/vipRecord">消费记录</navigator>
         <view class="flex-box">
             <view class="header-item">
                 <view>余额</view>
-                <view class="header-money">19.99</view>
+                <view class="header-money">{{alone.price}}</view>
             </view>
             <view class="header-item">
                 <view>消费总额</view>
-                <view class="header-money">19.99</view>
+                <view class="header-money">{{alone.spend_all}}</view>
             </view>
         </view>
     </view>
@@ -17,26 +17,28 @@
 <view class="grade bg-fff">
     <view class="grade-tit p30">会员等级</view>
     <view class="msg">
-        <view class="level">一级会员</view>
+        <!-- <view class="level">一级会员</view> -->
         <view class="msg-header flex-box">
-           <view class="avatar">
+            <view class="avatar">
                 <open-data type="userAvatarUrl"></open-data>
             </view>
             <view class="msg-cont">
                 <view>
                     <open-data type="userNickName" class="msg-name"></open-data>
-                    <text class="msg-grade">lv1</text>
+                    <text class="msg-grade">lv{{alone.level}}</text>
                 </view>
-                <view class="msg-time">2019-06-30充值</view>
+                <view class="msg-time">
+                    {{alone.level_create==0?'暂无充值记录':alone.level_create+'充值'}}
+                </view>
             </view>
         </view>
         <view class="flex-box flex-align custom-box">
-            <text class="custom-button">V1</text>
-            <van-slider value="{{ currentValue }}" disabled use-button-slot custom-class="custom" active-color="#fff" inactive-color="#B9975E">
-                <view class="custom-button" slot="button">{{ currentValue }}</view>
+            <text class="custom-button">V{{alone.level}}</text>
+            <van-slider value="{{ 30/goal.to_price }}" disabled use-button-slot custom-class="custom" active-color="#fff" inactive-color="#B9975E">
+                <view class="custom-button custom-value" slot="button">{{ alone.spend_all }}</view>
             </van-slider>
-            <text class="custom-button">V2</text>
-            <text class="custom-text">成长值 30/500</text>
+            <text class="custom-button">V{{goal.to_level}}</text>
+            <text class="custom-text">成长值 {{alone.spend_all}}/{{goal.to_price}}</text>
         </view>
         <view class="custom-num">NO.000140120101</view>
     </view>
