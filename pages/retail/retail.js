@@ -7,7 +7,8 @@ Page({
      */
     data: {
         pageData: '',
-        vipShow: false
+        vipShow: false,
+        price: 1
     },
     getData() {
         app.http({
@@ -37,8 +38,11 @@ Page({
      */
     onLoad: function(options) {
         var id = options.id;
-        if (id == 3) {
-            this.setData({ vipShow: true })
+        if (id == 2) {
+            this.setData({
+                vipShow: true,
+                price: id
+            })
             wx.setNavigationBarTitle({
                 title: '团长直供'
             })
@@ -49,7 +53,6 @@ Page({
             this.share()
         } else {
             this.getData()
-
         }
 
     },

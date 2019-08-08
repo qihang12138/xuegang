@@ -10,13 +10,15 @@ Page({
         sid: 0,
         num: 0,
         commodity: '',
-        site: '',
+        site: { id: 0 },
         siteId: 0,
         siteBol: false,
         ticket: [],
         remark: '',
-        cart: false,
-        order: ''
+        cart: 1,
+        order: '',
+        type: 0,
+        price_type: 0
     },
     getSite() {
         var siteId = this.data.siteId
@@ -38,59 +40,93 @@ Page({
                             }
                         });
                     }
-
                 }
             })
         }
     },
-    postData() {
-        var msgObj = {
-            gid: this.data.gid,
-            sid: this.data.sid,
-            num: this.data.num
-        }
+    getData() {
+
+        var data = this.data,
+            msgObjToo = {
+                gid: data.gid,
+                sid: data.sid,
+                num: data.num
+            },
+            msgObj = {
+                gid: data.gid,
+                sid: data.sid,
+                num: data.num,
+                name: data.name,
+                phone: data.phone,
+                site_id: data.site_id,
+                price_type: data.price_type
+            },
+            type = data.type
         app.http({
-            url: app.api.ApiQuerenToo,
-            data: msgObj
+            url: type ? app.api.ApiQuerenToo : app.api.ApiQueren,
+            data: type ? msgObjToo : msgObj
         }).then(res => {
             if (res.error_code === 0) {
                 // this.setData({ commodity: res.data.goods })
                 if (res.data.addr !== {}) {
                     this.setData({
                         siteBol: false,
-                        site: res.data.addr,
+                        site: type ? res.data.addr : { id: 1 },
                         commodity: res.data.return_data[0].goods_data[0],
                         price: res.data.return_data[0].price_detail[0]
                     })
-                    console.log(this.data.price);
-
                 }
             }
         })
-
-
     },
+
     changeRemark(e) {
         this.setData({ remark: e.detail.value });
     },
     submit() {
         var data = this.data,
             cart = data.cart,
-            msgObj = {
-                site_id: data.site.id,
-                content: data.remark
-            },
-            userInfo = {
-                site_id: data.site.id,
-                content: data.remark,
-                sid: data.sid,
-                num: data.num,
-                gid: data.gid
-            }
+            msgObjs = [
+                [{
+                        site_id: data.siteId,
+                        name: data.name,
+                        phone: data.phone,
+                        content: data.remark,
+                    },
+                    {
+                        site_id: data.siteId,
+                        name: data.name,
+                        phone: data.phone,
+                        gid: data.gid,
+                        sid: data.sid,
+                        num: data.num,
+                        content: data.remark,
+                        price_type: data.price_type
+                    }
+                ],
+                [{
+                        site_id: data.site.id,
+                        content: data.remark
+                    },
+                    {
+                        site_id: data.site.id,
+                        content: data.remark,
+                        sid: data.sid,
+                        num: data.num,
+                        gid: data.gid
+                    }
+                ]
+            ],
+            Apis = [
+                [app.api.ApiSubmitCar, app.api.ApiSubmitOrder],
+                [app.api.ApiSubmitCarToo, app.api.ApiSubmitOrderToo]
+            ],
+            type = data.type,
+            cart = data.cart;
 
         app.http({
-            url: cart ? app.api.ApiSubmitCarToo : app.api.ApiSubmitOrderToo,
-            data: cart ? msgObj : userInfo,
+            url: Apis[type][cart],
+            data: msgObjs[type][cart],
             method: 'POST'
         }).then(res => {
             if (res.error_code === 0) {
@@ -119,43 +155,63 @@ Page({
                     })
 
                 })
-
             }
         })
     },
-    cartData() {
+    cartTooData() {
+        var data = this.data,
+            msgObj = {
+                name: data.name,
+                phone: data.phone,
+                site_id: data.siteId
+            },
+            type = data.type,
+            gid = this.data.gid;
+
         app.http({
-            url: app.api.ApiCarQuerenToo,
-            data: { gid: this.data.gid }
+            url: type ? app.api.ApiCarQuerenToo : app.api.ApiCarQueren,
+            data: type ? '' : msgObj
         }).then(res => {
             if (res.error_code === 0) {
                 this.setData({
-                    pageData: res.data
-                })
-                if (res.data.addr !== {}) {
-                    this.setData({
+                        pageData: res.data,
                         siteBol: false,
                         site: res.data.addr,
-                        price: res.data.order_data.price_detail
+                        // price: res.data.order_data.price_detail
                     })
-                }
+                    // if (res.data.addr !== {}) {
+                    //     this.setData({
+
+                //     })
+                // }
             }
+
         })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        var type = options.type - 0;
         this.setData({
             gid: options.gid,
-            num: options.stepper,
-            sid: options.sid
+            num: options.num,
+            sid: options.sid,
+            type: options.type - 0,
+            price: options.price - 0
         });
+        if (!type) {
+            this.setData({
+                name: options.name,
+                phone: options.phone,
+                siteId: options.siteId
+            })
+        }
         if (options.cart) {
-            this.setData({ cart: true })
-            this.cartData();
+            this.setData({ cart: 0 })
+            this.cartTooData();
         } else {
-            this.postData();
+            this.getData();
         }
     },
 
@@ -170,7 +226,11 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-        this.getSite();
+        if (this.data.type == 1) {
+            console.log(this.data.type);
+
+            this.getSite();
+        }
     },
 
     /**

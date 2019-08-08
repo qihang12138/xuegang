@@ -9,6 +9,18 @@ Component({
             type: Array,
             value: ""
         },
+        type: {
+            type: String,
+            value: 0
+        },
+        vip: {
+            type: Boolean,
+            value: true
+        },
+        price: {
+            type: String,
+            value: 0
+        }
     },
     /**
      * 组件的初始数据

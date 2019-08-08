@@ -1,6 +1,6 @@
 <view class="commoditys">
   <block wx:for="{{for}}" wx:key="{{index}}">
-    <navigator class="commodity" hover-class="none" url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}">
+    <navigator class="commodity" hover-class="none" url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}&type={{type}}&price={{price}}">
       <image class="commodity-img box-sizing" src="{{item.g_image}}" />
       <view class="commodity-name">{{item.g_name}}</view>
       <view class="commodity-weight">
@@ -10,7 +10,7 @@
       <view class="commodity-price">
         <text class="commodity-price-new">¥{{item.g_xprice}}</text>
         <text class="commodity-price-old">¥{{item.g_yprice}}</text>
-        <view>
+        <view wx:if="{{vip}}">
           <text>¥{{priceVip}}</text>
           <text class="commodity-vip-icon">会员</text>
         </view>

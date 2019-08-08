@@ -1,55 +1,98 @@
-<van-cell is-link title="添加收货地址" link-type="navigateTo" url="/pages/receiving/receiving?flag=1" icon="add-o" custom-class="site" wx:if="{{siteBol}}" />
-<van-cell is-link icon="location-o" label="{{site.place}}{{site.home}}" link-type="navigateTo" url="/pages/receivingList/receivingList?select=1" custom-class="flex-align site" wx:else>
-    <view slot="title" class="flex-box">
-        <view class="van-cell-text">收货人: {{site.name}}</view>
-        <view class="van-cell-text title-phone">{{site.phone}}</view>
-    </view>
-</van-cell>
+<view wx:if="{{type==1}}">
+    <van-cell is-link title="添加收货地址" link-type="navigateTo" url="/pages/receiving/receiving?flag=1" icon="add-o" custom-class="site" wx:if="{{siteBol}}" />
+    <van-cell is-link icon="location-o" label="{{site.place}}{{site.home}}" link-type="navigateTo" url="/pages/receivingList/receivingList?select=1" custom-class="flex-align site" wx:else>
+        <view slot="title" class="flex-box">
+            <view class="van-cell-text">收货人: {{site.name}}</view>
+            <view class="van-cell-text title-phone">{{site.phone}}</view>
+        </view>
+    </van-cell>
+</view>
+<!-- 单件 -->
 <!-- 商品信息 -->
-<view class="public ">
-    <view class="tit">商品信息</view>
-    <view class="line" wx:if="{{!cart}}">
-        {{ commodity.g_name }}
-        <view class="line-right">
-            ¥{{ commodity.g_xprice }}/{{ commodity.g_company }}×{{ commodity.num }}
-        </view>
-    </view>
-    <block wx:for="{{pageData.order_data.goods}}" wx:key="index" wx:if="{{cart}}">
+<view wx:if="{{cart}}">
+    <view class="public ">
+        <view class="tit">商品信息</view>
         <view class="line">
-            {{ item.g_name }}
-            <view class="line-right">¥{{ item.g_xprice }}/{{item.g_company}}×{{ item.num }}</view>
+            {{ commodity.g_name }}
+            <view class="line-right">
+                ¥{{ commodity.g_xprice }}/{{ commodity.g_company }}×{{ commodity.num }}
+            </view>
         </view>
-    </block>
+    </view>
+    <!-- 费用详情 -->
+    <view class="public cost">
+        <view class="tit">费用详情</view>
+        <view class="pick">
+            商品金额
+            <view class="line-right">¥{{ price.goods_price }}</view>
+        </view>
+        <view class="pick">
+            优惠
+            <view class="line-right">-¥{{ price.coupon_price }}</view>
+        </view>
+        <view class="pick">
+            运费
+            <view class="line-right">¥{{ price.freight || price.goods_freight }}</view>
+        </view>
+        <view class="pick">
+            积分
+            <view class="line-right">-¥{{price.integral_price}}</view>
+        </view>
+        <view class="pick">
+            应付
+            <view class="line-right">¥{{ price.now_price }}</view>
+        </view>
+    </view>
 </view>
-<!-- 费用详情 -->
-<view class="public cost">
-    <view class="tit">费用详情</view>
-    <view class="pick">
-        商品金额
-        <view class="line-right">¥{{ price.goods_price }}</view>
+<!-- 购物车 -->
+<block wx:for="{{pageData.order_data}}" wx:key="{{index}}" wx:if="{{!cart}}">
+    <!-- <view class="line">
+        {{ item.goods[0].g_name }}
+        <view class="line-right">
+            ¥{{ item.goods[0].g_xprice }}/{{item.goods[0].g_company}}×{{ item.goods.num }}
+        </view>
+    </view> -->
+    <view class="public ">
+        <view class="tit">商品信息</view>
+        <view class="line">
+            {{ item.goods[0].g_name }}
+            <view class="line-right">
+                ¥{{ item.goods[0].g_xprice }}/{{item.goods[0].g_company}}×{{ item.goods[0].num }}
+            </view>
+        </view>
     </view>
-    <view class="pick">
-        优惠
-        <view class="line-right">-¥{{ price.coupon_price }}</view>
+    <!-- 费用详情 -->
+    <view class="public cost">
+        <view class="tit">费用详情</view>
+        <view class="pick">
+            商品金额
+            <view class="line-right">¥{{ item.price_detail.goods_price }}</view>
+        </view>
+        <view class="pick">
+            优惠
+            <view class="line-right">-¥{{ item.price_detail.coupon_price }}</view>
+        </view>
+        <view class="pick">
+            运费
+            <view class="line-right">
+                ¥{{ item.price_detail.freight || item.price_detail.goods_freight }}
+            </view>
+        </view>
+        <view class="pick">
+            积分
+            <view class="line-right">-¥{{item.price_detail.integral_price}}</view>
+        </view>
+        <view class="pick">
+            应付
+            <view class="line-right">¥{{ item.price_detail.all_price }}</view>
+        </view>
     </view>
-    <view class="pick">
-        运费
-        <view class="line-right">¥{{ price.freight || price.goods_freight }}</view>
+    <!-- 备注 -->
+    <view class="public remark">
+        <view class="tit">备注</view>
+        <textarea class="remark-text" placeholder="请留下你的备注信息~~~" bindinput="changeRemark"></textarea>
     </view>
-    <view class="pick">
-        积分
-        <view class="line-right">-¥{{price.integral_price}}</view>
-    </view>
-    <view class="pick">
-        应付
-        <view class="line-right">¥{{ price.all_price || price.now_price }}</view>
-    </view>
-</view>
-<!-- 备注 -->
-<view class="public remark">
-    <view class="tit">备注</view>
-    <textarea class="remark-text" placeholder="请留下你的备注信息~~~" bindinput="changeRemark"></textarea>
-</view>
+</block>
 <!-- 实付款 -->
-<!-- <van-submit-bar price="{{ price.all_price }}" button-text="提交订单" bind:submit="submit" /> -->
-<van-submit-bar price="{{ price.goods_price*100 }}" button-text="提交订单" bind:submit="submit" />
+<van-submit-bar price="{{ price.now_price*100 }}" custom-class="submit" button-text="提交订单" bind:submit="submit" wx:if="{{cart}}" />
+<van-submit-bar price="{{ pageData.all_goods_price*100 }}" custom-class="submit" button-text="提交订单" bind:submit="submit" wx:if="{{!cart}}" />

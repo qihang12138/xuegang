@@ -19,9 +19,11 @@ Page({
         stepper: 1,
         sid: 0,
         sidIndex: 0,
-        gid: 0,
+        gid: 18,
         siteId: 0,
-        btnShow: true
+        btnShow: true,
+        type: 0,
+        price: 0
     },
     getData() {
         app.http({
@@ -44,7 +46,8 @@ Page({
                 this.setData({
                     pageData: data,
                     collect: data.goods.collect,
-                    sid: data.spec[0].sid
+                    sid: data.spec[0].sid,
+                    type: data.goods.distribution
                 })
             }
         })
@@ -133,7 +136,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.setData({ gid: options.gid })
+        this.setData({
+            gid: options.gid,
+            price: options.price - 0
+        })
         this.getData();
     },
 

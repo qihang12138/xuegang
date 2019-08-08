@@ -27,17 +27,20 @@ const api = {
     ApiGoodsDetail: ApiUrl + 'goods/goods_detail',
     ApiGetMoreComment: ApiUrl + 'goods/get_more_comment',
     ApiCollect: ApiUrl + 'goods/collect',
-    ApiSubmitOrder: ApiUrl + 'goods/submit_order',
     ApiRetail: ApiUrl + 'goods/retail',
-    ApiSubmitOrderToo: ApiUrl + 'goods/submit_order_too',
     ApiQuerenToo: ApiUrl + 'goods/queren_too',
     ApiGetCoupon: ApiUrl + 'goods/get_coupon',
     // 订单
+    ApiSubmitOrder: ApiUrl + 'goods/submit_order',
+    ApiSubmitOrderToo: ApiUrl + 'goods/submit_order_too',
     ApiGetUserOrder: ApiUrl + 'order/get_user_order',
     ApiCancelOrder: ApiUrl + 'order/cancel_order',
     ApiTuiView: ApiUrl + 'order/tui_view',
     ApiOrderDetail: ApiUrl + 'order/order_detail',
     ApiSaveComment: ApiUrl + 'order/save_comment',
+    ApiQueren: ApiUrl + 'goods/queren',
+    ApiReciving: ApiUrl + 'order/reciving',
+    ApiCommentView: ApiUrl + 'order/comment_view',
     //支付
     ApiPay: ApiUrl + 'pay/pay',
     //购物车
@@ -48,6 +51,8 @@ const api = {
     ApiDeleteCar: ApiUrl + 'car/delete_car',
     ApiCarQuerenToo: ApiUrl + 'car/queren_too',
     ApiSubmitCarToo: ApiUrl + 'car/submit_car_too',
+    ApiSubmitCar: ApiUrl + 'car/submit_car',
+    ApiCarQueren: ApiUrl + 'car/queren',
     // 团长
     ApiSiteIndex: ApiUrl + 'site/site_index',
     ApiCompete: ApiUrl + 'site/compete',

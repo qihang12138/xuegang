@@ -13,10 +13,9 @@ Page({
     getData() {
         var never = [],
             type = this.data.type;
-        if (type > 1) { type++ }
         app.http({
             url: app.api.ApiGetUserOrder,
-            data: { type: 3 },
+            data: { type: type },
             method: 'POST'
         }).then(res => {
             if (res.error_code === 0) {
@@ -49,6 +48,45 @@ Page({
         }).catch(() => {
             // on cancel
         });
+    },
+    pay(e) {
+        var oid = e.currentTarget.dataset.oid
+        app.http({
+            url: app.api.ApiPay,
+            data: {
+                oid: oid
+            }
+        }).then(data => {
+            wx.requestPayment({
+                timeStamp: data.timeStamp,
+                nonceStr: data.nonceStr,
+                package: data.package,
+                signType: 'MD5',
+                paySign: data.paySign,
+                success(res) {
+                    wx.reLaunch({
+                        url: '../orderResult/orderResult?bol=1'
+                    })
+                },
+                fail(res) {
+                    wx.reLaunch({
+                        url: '../orderResult/orderResult?bol=0'
+                    })
+                }
+            })
+
+        })
+    },
+    reciving(e) {
+        var oid = e.currentTarget.dataset.oid;
+        app.http({
+            url: app.api.ApiReciving,
+            data: { oid: oid }
+        }).then(res => {
+            if (res.error_code === 0) {
+                this.getData()
+            }
+        })
     },
     evaluate(e) {
         var oid = e.currentTarget.dataset.oid;

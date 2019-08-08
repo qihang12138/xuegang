@@ -151,8 +151,10 @@ Page({
         })
     },
     buy() {
+        var cart = this.data.distribution;
+
         wx.navigateTo({
-            url: '../deliveryOrder/deliveryOrder?cart=1'
+            url: cart ? '/pages/deliveryOrder/deliveryOrder?cart=1&type=1' : '/pages/submitOrder/submitOrder?cart=1'
         })
     },
 

@@ -5,18 +5,42 @@ Page({
      * 页面的初始数据
      */
     data: {
-        value: 3
+        value: 3,
+        assess: []
     },
     onChange(event) {
         this.setData({
             value: event.detail
         });
     },
+    getData(oid) {
+        app.http({
+            url: app.api.ApiCommentView,
+            data: { oid: oid }
+        }).then(res => {
+            if (res.error_code === 0) {
+                this.setData({ order: res.data })
+
+            }
+        })
+    },
+    postData() {
+        var data = this.data
+        app.http({
+            url: app.api.ApiSaveComment,
+            data: { oid: data.oid }
+        }).then(res => {
+            if (res.error_code === 0) {
+                this.setData({ order: res.data })
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.setData({ oid: options.oid })
+        this.getData(options.oid);
     },
 
     /**

@@ -24,7 +24,9 @@ Page({
     onChange({ detail }) {
         // 需要手动对 checked 状态进行更新
         var msgObj = "msgObj.default";
-        this.setData({ [msgObj]: detail });
+        this.setData({
+            [msgObj]: detail
+        });
     },
     site() {
         this.setData({ show: true });
@@ -35,7 +37,9 @@ Page({
     changeMsgObj(e) {
         var kind = e.currentTarget.dataset.kind;
         var msgObj = "msgObj." + kind;
-        this.setData({ [msgObj]: e.detail.value });
+        this.setData({
+            [msgObj]: e.detail.value
+        });
     },
     confirm(e) {
         var msgObj = "msgObj.place";
@@ -79,13 +83,11 @@ Page({
                         delta: 1
                     })
                 } else {
-                    // let pages = getCurrentPages();//获取当前页面js里面的pages里的所有信息。
-                    // let prevPage = pages[pages.length - 2];//prevPage 是获取上一个页面的js里面的pages的所有信息。
-                    // prevPage.setData({
-                    //     siteId: e.currentTarget.dataset.id
+                    // wx.redirectTo({
+                    //     url: '/pages/receivingList/receivingList?select=1'
                     // })
-                    wx.redirectTo({
-                        url: '/pages/receivingList/receivingList?select=1'
+                    wx.navigateBack({
+                        delta: 1
                     })
                 }
 
@@ -111,7 +113,7 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
         if (options.id) {
             this.setData({
                 operate: true,
@@ -125,49 +127,49 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload: function() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom: function() {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage: function() {
 
     }
 })

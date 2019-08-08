@@ -1,11 +1,12 @@
 {
-    "pages": [
+    "pages": [ 
         "pages/index/index",
+        "pages/logIn/logIn",
+        "pages/distributionSites/distributionSites",
         "pages/withdrawRecord/withdrawRecord",
         "pages/sellerReturn/sellerReturn",
         "pages/pay/pay",
         "pages/sellerOrder/sellerOrder",
-        "pages/logIn/logIn",
         "pages/seller/seller",
         "pages/vip/vip",
         "pages/vipRecord/vipRecord",
@@ -29,7 +30,6 @@
         "pages/integral/integral",
         "pages/collect/collect",
         "pages/submitOrder/submitOrder",
-        "pages/distributionSites/distributionSites",
         "pages/afterSale/afterSale",
         "pages/evaluateAll/evaluateAll",
         "pages/signIn/signIn",
@@ -92,6 +92,11 @@
                 "selectedIconPath": "/images/my-on.png"
             }
         ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {

@@ -38,11 +38,13 @@
               <text>{{item.target}}</text>
               元可使用
             </view>
-            <view>有效期2019.01.20-2019.05.31</view>
+            <view>有效期{{item.start}}-{{item.end}}</view>
           </view>
-          <view class="ticket-right">已领取</view>
+          <view class="ticket-right" bindtap="getCoupon" data-cid="{{item.id}}">立即领取</view>
         </view>
       </block>
     </view>
+
   <!-- </van-tab> -->
 <!-- </van-tabs> -->
+<van-toast id="van-toast" />

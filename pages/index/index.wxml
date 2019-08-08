@@ -1,5 +1,5 @@
 <!-- 地址 -->
-<view class="location">
+<!-- <view class="location">
   <navigator>
     <view class="location-site">郑州</view>
   </navigator>
@@ -7,7 +7,7 @@
     <text>还未选择配送地点</text>
     <text>[切换]</text>
   </navigator>
-</view>
+</view> -->
 <!-- 轮播图 -->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" class="swiper">
   <block wx:for="{{pageData.lot_banner}}" wx:key="index">

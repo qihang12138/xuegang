@@ -4,7 +4,7 @@
   <view class="msg">
     <view class="pick">
       取货二维码:
-      <view class="pick-code"></view>
+      <image url="{{order.qr_code}}" class="pick-code"></image>
     </view>
     <view class="pick">
       <view>
@@ -28,9 +28,9 @@
 </view>
 <!-- 自提站点 -->
 <view class="public site">
-  <view class="tit">自提站点</view>
+  <!-- <view class="tit">自提站点</view> -->
   <view class="line">
-    自提地址
+    地址
     <view class="line-right">{{order.site}}{{order.addr}}</view>
   </view>
   <view class="line">
@@ -55,23 +55,23 @@
   <view class="tit">费用详情</view>
   <view class="pick">
     商品金额
-    <view class="line-right">¥1.68</view>
+    <view class="line-right">¥{{order.money}}</view>
   </view>
   <view class="pick">
     优惠
-    <view class="line-right">-¥0.00</view>
+    <view class="line-right">-¥{{order.discounts}}</view>
   </view>
   <view class="pick">
     运费
-    <view class="line-right">¥0.00</view>
+    <view class="line-right">¥{{order.freight}}</view>
   </view>
   <view class="pick">
     积分
-    <view class="line-right">¥0.00</view>
+    <view class="line-right">-¥{{order.integral}}</view>
   </view>
   <view class="pick">
     应付
-    <view class="line-right">¥1.00</view>
+    <view class="line-right">¥{{order.zprice}}</view>
   </view>
 </view>
 <!-- 备注 -->

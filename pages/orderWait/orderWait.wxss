@@ -5,8 +5,8 @@
 
 .btns {
     position: absolute;
-    left: 480rpx;
     top: 145rpx;
+    right: 30rpx;
 }
 
 .btn {
@@ -19,9 +19,6 @@
 .pick-btns {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 430rpx;
-    top: 145rpx;
 }
 
 .pick-btn {

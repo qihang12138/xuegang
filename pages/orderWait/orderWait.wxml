@@ -1,6 +1,6 @@
 <block wx:for="{{ never }}" wx:key="index">
   <view class="order">
-    <navigator url="/pages/orderDetails/orderDetails?oid={{item.oid}}">
+    <navigator url="/pages/orderDetails/orderDetails?oid={{item.oid}}" hover-class="none">
       <order state="等待买家付款" src="{{ item.child[0].g_image }}" name="{{ item.child[0].g_name }}" price="{{ item.child[0].g_price }}" unit="{{ item.child[0].g_company }}" num="{{ item.child[0].o_num }}"></order>
     </navigator>
     <!-- 待付款 -->
@@ -8,17 +8,22 @@
       <van-button type="default" custom-class="btn" size="mini" bind:click="cancel" data-oid="{{item.oid}}">
         取消订单
       </van-button>
-      <van-button type="danger" size="mini" bind:click="pay">付款</van-button>
+      <van-button type="danger" size="mini" bind:click="pay" data-oid="{{item.oid}}">付款</van-button>
     </view>
     <!-- 待取货 -->
-    <view class="pick-btns" wx:elif="{{ type===1 || type===2}}">
-      <van-button type="default" custom-class="pick-btn" size="mini">退款</van-button>
-      <view class="pick-code">取货二维码</view>
+    <view class="pick-btns btns" wx:elif="{{ type===1 || type===2}}">
+      <!-- <navigator hover-class="none" url="/pages/orderRebate/orderRebate?oid={{item.oid}}">
+        <van-button type="default" custom-class="pick-btn" size="mini">退款</van-button>
+      </navigator> -->
+      <!-- <view class="pick-code" bindtap="reciving" data-oid="{{item.oid}}">取货二维码</view> -->
+      <van-button type="danger" size="mini" bind:click="reciving" data-oid="{{item.oid}}">确认收货</van-button>
     </view>
     <!-- 待评价3 -->
     <view class="btns" wx:elif="{{ type===3 }}">
       <van-button type="default" custom-class="btn" size="mini">查看订单</van-button>
-      <van-button type="danger" size="mini" bindtap="evaluate" data-oid="{{item.oid}}">评价</van-button>
+      <van-button type="danger" size="mini" bindtap="evaluate" data-oid="{{item.oid}}">
+        评价
+      </van-button>
     </view>
     <!-- 已完成4 -->
     <!-- 退货5 -->
