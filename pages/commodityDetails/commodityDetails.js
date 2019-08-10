@@ -19,7 +19,7 @@ Page({
         stepper: 1,
         sid: 0,
         sidIndex: 0,
-        gid: 18,
+        gid: 0,
         siteId: 0,
         btnShow: true,
         type: 0,
@@ -32,7 +32,7 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                data.goods.g_content = data.goods.g_content.replace(/style=""/gi, '<img style="max-width:100%;height:auto" ')
+                data.goods.g_content = data.goods.g_content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
                 data.comment.forEach(item => {
                     item.create = app.util.formatTime(new Date(item.create * 1000))
                 })
@@ -53,7 +53,7 @@ Page({
         })
     },
     chengeCollect(e) {
-        var gid = e.currentTarget.dataset.gid;
+        var gid = this.data.gid;
         var collect = this.data.collect;
         app.http({
             url: app.api.ApiCollect,

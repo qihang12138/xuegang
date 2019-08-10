@@ -1,5 +1,5 @@
-<block wx:for="{{pageData}}" wx:key="index">
-  <navigator class="line border-bottom">
+<block wx:for="{{pageData}}" wx:key="{{index}}">
+  <navigator class="line border-bottom" url="/pages/commodityDetails/commodityDetails?gid={{item.gid}}">
     <order src="{{item.g_image}}" name="{{item.g_name}}" price="{{item.g_xprice}}" unit="{{item.g_company}}"></order>
   </navigator>
 </block>

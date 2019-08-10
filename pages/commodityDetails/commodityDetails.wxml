@@ -29,7 +29,7 @@
       份
     </view>
   </view>
-  <view class="brief-collect" bindtap="chengeCollect" data-gid="18">
+  <view class="brief-collect" bindtap="chengeCollect">
     <image class="brief-collect-img" src="{{ collect?'/images/collect-on.png':'/images/collect.png' }}"></image>
     <view>收藏宝贝</view>
   </view>

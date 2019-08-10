@@ -15,7 +15,7 @@ const http = function({ url, method = 'GET', data = {} } = option) {
                 console.log(res.data);
                 if (res.statusCode === 200) {
                     resolve(res.data);
-                    if (res.data.error_code === 501) {
+                    if (res.data.error_code === 501 || res.data.error_code === 502) {
                         wx.redirectTo({
                             url: '/pages/logIn/logIn'
                         })

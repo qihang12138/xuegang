@@ -39,6 +39,14 @@
             <view class="line-right">-¥{{price.integral_price}}</view>
         </view>
         <view class="pick">
+            折扣
+            <view class="line-right">-¥{{price.discount}}</view>
+        </view>
+        <view class="pick">
+            会员余额
+            <view class="line-right">-¥{{price.deduction_price}}</view>
+        </view>
+        <view class="pick">
             应付
             <view class="line-right">¥{{ price.now_price }}</view>
         </view>
@@ -86,6 +94,14 @@
         <view class="pick">
             积分
             <view class="line-right">-¥{{item.price_detail.integral_price}}</view>
+        </view>
+        <view class="pick">
+            折扣
+            <view class="line-right">-¥{{item.price_detail.discount}}</view>
+        </view>
+        <view class="pick">
+            会员余额
+            <view class="line-right">-¥{{item.price_detail.deduction_price}}</view>
         </view>
         <view class="pick">
             应付
