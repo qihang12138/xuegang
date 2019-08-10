@@ -98,11 +98,11 @@ Page({
                             })
                         } else {
                             app.util.toast({
-                                    title: '申请失败',
-                                    icon: 'none'
-                                }
+                                title: '申请失败',
+                                icon: 'none'
 
                             })
+                        }
                     },
                     getData() {
                         app.http({
