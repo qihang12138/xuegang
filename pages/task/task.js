@@ -28,7 +28,8 @@ Page({
             time: '',
             content: ''
         },
-        status: ''
+        status: '',
+        flag: 1
     },
     changeMsg(e) {
         var id = e.currentTarget.dataset.id,
@@ -49,14 +50,54 @@ Page({
         this.changeShow();
     },
     submit() {
-        var msgObj = this.data.msgObj;
-        app.http({
-            url: app.api.ApiPublish,
-            data: msgObj,
-            method: 'POST'
-        }).then(res => {
+        var msgObj = this.data.msgObj,
+            flag = true
+        for (const key in msgObj) {
+            if (msgObj.hasOwnProperty(key)) {
+                const element = msgObj[key];
+                if (element === '' || element.length === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
 
-        })
+        if (!flag) {
+            app.util.toast({
+                title: '请填写完整资料',
+                icon: 'none'
+            }).then(() => {
+                flag = true
+            })
+            return
+        }
+        if (flag) {
+            this.setData({ flag: 0 })
+            app.util.verifyPhone(msgObj.gain_phone).then(res => {
+                app.util.verifyPhone(msgObj.phone).then(res => {
+                    app.http({
+                        url: app.api.ApiPublish,
+                        data: msgObj,
+                        method: 'POST'
+                    }).then(res => {
+                        if (res.error_code === 0) {
+                            app.util.toast({
+                                title: '任务发布成功'
+                            }).then(() => {
+                                wx.navigateBack({
+                                    delta: 1
+                                })
+                            })
+                        }
+                        this.setData({
+                            flag: 1
+                        })
+                    })
+                })
+
+            })
+        }
+
     },
     task(e) {
         var index = e.detail.index;
@@ -69,7 +110,7 @@ Page({
                     var data = res.data
                     this.setData({
                         task: data.lot,
-                        status: status[data.status]
+                        status: status[data.lot[0].status]
                     })
                 }
             })

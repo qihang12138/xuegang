@@ -15,7 +15,9 @@
 </view>
 
 <!-- 按钮 -->
-<button class="btn">提交</button>
+<view class="fixed-bottom">
+    <button class="my-btn" bindtap="submit">提交</button>
+</view>
 
 <!-- 弹出层 -->
 <van-action-sheet show="{{ show }}" actions= "{{ causes }}" bind:close="onClose" bind:select="onSelect" title="请选择退款原因"/>

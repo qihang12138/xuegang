@@ -1,21 +1,40 @@
 // pages/withdraw/withdraw.js
 const app = getApp()
+import Toast from '../../vant/toast/toast';
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        money: ''
     },
     getData() {
-        app.api.ApiWithdraw().then(res => {
+        app.http({
+            url: app.api.ApiGetUserData
+        }).then(res => {
             if (res.error_code === 0) {
                 this.setData({
-                    vip: res.data
+                    profit: res.data.user.profit
                 })
             }
         })
+
+    },
+    onChange(e) {
+        this.setData({ money: e.detail })
+    },
+    submit() {
+        var money = this.data.money;
+        if (money != '') {
+            app.api.ApiWithdraw(money).then(res => {
+                if (res.error_code === 0) {
+                    Toast.success('申请成功');
+                } else {
+                    Toast.fail('申请失败');
+                }
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面加载

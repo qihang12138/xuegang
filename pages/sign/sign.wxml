@@ -1,7 +1,14 @@
-<view class="sign">
+<view class="sign" bindtap="signIn">
   <view class="sign-btn">
-    <view>立即签到</view>
-    <view class="sign-num">10积分</view>
+    <view>{{signTxt}}</view>
+    <view class="sign-num">3积分</view>
   </view>
-  <view>明天可领20积分</view>
 </view>
+
+<view class='bg-fff'>
+  <calendar speciallist="{{speciallist}}" txt_style='{{txt_style}}' circle_show="{{false}}"/>
+</view>
+
+<!-- <view class="p12 align_center">
+  <van-button type="danger" bindtap='signIn' size='large'>{{signTxt}}</van-button>
+</view> -->

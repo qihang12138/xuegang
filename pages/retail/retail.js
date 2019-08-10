@@ -8,15 +8,17 @@ Page({
     data: {
         pageData: '',
         vipShow: false,
-        price: 1
+        price: 1,
+        id: 0
     },
     getData() {
+        var apis = [app.api.ApiRetail, app.api.ApiColonel]
         app.http({
-            url: app.api.ApiRetail
+            url: apis[this.data.id]
         }).then(res => {
             if (res.error_code === 0) {
                 this.setData({
-                    pageData: res.data.goods
+                    pageData: res.data
                 })
             }
         })
@@ -38,15 +40,17 @@ Page({
      */
     onLoad: function(options) {
         var id = options.id;
-        if (id == 2) {
-            this.setData({
-                vipShow: true,
-                price: id
-            })
+        this.setData({ id: id })
+        if (id == 1) {
+            // this.setData({
+            //     vipShow: true,
+            //     price: id
+            // })
             wx.setNavigationBarTitle({
                 title: '团长直供'
             })
-        } else if (id == 4) {
+            this.getData();
+        } else if (id == 2) {
             wx.setNavigationBarTitle({
                 title: '商品分享'
             })

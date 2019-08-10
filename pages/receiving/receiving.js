@@ -70,29 +70,53 @@ Page({
         })
     },
     postData() {
-        var url = this.data.operate ? app.api.ApiUpdateAddr : app.api.ApiSaveAddr;
-        var msgObj = this.data.msgObj;
-        app.http({
-            url: url,
-            data: msgObj,
-            method: 'POST'
-        }).then(res => {
-            if (res.error_code === 0) {
-                if (this.data.flag) {
-                    wx.navigateBack({
-                        delta: 1
-                    })
-                } else {
-                    // wx.redirectTo({
-                    //     url: '/pages/receivingList/receivingList?select=1'
-                    // })
-                    wx.navigateBack({
-                        delta: 1
-                    })
+        var url = this.data.operate ? app.api.ApiUpdateAddr : app.api.ApiSaveAddr,
+            msgObj = this.data.msgObj,
+            flag = true;
+        for (const key in msgObj) {
+            if (msgObj.hasOwnProperty(key)) {
+                const element = msgObj[key];
+                if (element === '' || element.length === 0) {
+                    flag = false;
+                    break;
                 }
-
             }
-        })
+        }
+
+        if (!flag) {
+            app.util.toast({
+                title: '请填写完整资料',
+                icon: 'none'
+            }).then(() => {
+                flag = true
+            })
+            return
+        }
+        if (flag) {
+            app.util.verifyPhone(msgObj.phone).then(res => {
+                app.http({
+                    url: url,
+                    data: msgObj,
+                    method: 'POST'
+                }).then(res => {
+                    if (res.error_code === 0) {
+                        if (this.data.flag) {
+                            wx.navigateBack({
+                                delta: 1
+                            })
+                        } else {
+                            // wx.redirectTo({
+                            //     url: '/pages/receivingList/receivingList?select=1'
+                            // })
+                            wx.navigateBack({
+                                delta: 1
+                            })
+                        }
+
+                    }
+                })
+            })
+        }
     },
     getData() {
         app.http({

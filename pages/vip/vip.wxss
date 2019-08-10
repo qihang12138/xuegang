@@ -144,6 +144,12 @@ page {
     background: #fff;
 }
 
+.custom-value {
+    position: absolute;
+    top: -30rpx;
+    left: 0;
+}
+
 .custom-text {
     margin-top: -5rpx;
     padding-left: 15rpx;

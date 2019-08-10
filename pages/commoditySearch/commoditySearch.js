@@ -18,7 +18,7 @@ Page({
             on: id
         });
     },
-    postData() {
+    getData() {
         app.http({
             url: app.api.ApiGetBrandGoods,
             data: {
@@ -32,6 +32,7 @@ Page({
                     pageData: res.data
                 })
             }
+            wx.stopPullDownRefresh()
         })
     },
     /**
@@ -42,7 +43,7 @@ Page({
             tid: options.tid,
             id: options.id
         });
-        this.postData();
+        this.getData();
     },
 
     /**
@@ -77,7 +78,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-
+        this.getData()
     },
 
     /**

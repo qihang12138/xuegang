@@ -4,6 +4,7 @@
     <view slot="action" bind:tap="onSearch">搜索</view>
   </van-search>
 </view>
+<!-- 商品列表 -->
 <view class="commodity">
   <view class="commodity-list flex-box">
     <view>
@@ -21,10 +22,9 @@
             <image class="commodity-img" src="{{item.g_image}}"></image>
             <view class="commodity-msg">
               <view class="commodity-name">
-                <view class="text-hide commodity-text">{{item.g_name}}</view>
-                <view>250ml*16盒</view>
+                <view class="commodity-text">{{item.g_name}}</view>
               </view>
-              <view class="commodity-price">¥48.80</view>
+              <view class="commodity-price">¥{{item.g_xprice}}</view>
             </view>
           </view>
         </navigator>

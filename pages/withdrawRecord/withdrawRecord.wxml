@@ -3,16 +3,12 @@
   <view class="record p30">
     <view class="flex-box">
       <view>提现</view>
-      <view class="flex-item flex-right record-time">2019-01-01</view>
+      <view class="flex-item flex-right record-time">{{item.create}}</view>
     </view>
     <view class="flex-box">
-      <view>
-        余额
-        <text>100.00</text>
-      </view>
       <view class="flex-item flex-right record-money">
         -
-        <text>1.00</text>
+        <text>{{item.money}}</text>
       </view>
     </view>
   </view>

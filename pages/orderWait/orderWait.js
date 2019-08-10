@@ -5,7 +5,8 @@ const app = getApp()
 Page({
     data: {
         type: 0,
-        never: []
+        never: [],
+        tips: ''
     },
     /**
      * 页面的初始数据
@@ -88,26 +89,33 @@ Page({
             }
         })
     },
+    rebate(e) {
+        var oid = e.currentTarget.dataset.oid;
+        wx.navigateTo({
+            url: '../orderRebate/orderRebate?oid=' + oid
+        })
+    },
     evaluate(e) {
         var oid = e.currentTarget.dataset.oid;
-        app.http({
-            url: app.api.ApiSaveComment,
-            data: { oid: oid }
-        }).then(res => {
-            if (res.error_code === 0) {
-                this.getData()
-            }
+        wx.navigateTo({
+            url: '../orderComment/orderComment?oid=' + oid
         })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        console.log(options);
-
         var type = options.type - 0;
+        if (type === 0) {
+            this.setData({ tips: '等待买家付款' })
+        } else if (type === 1) {
+            this.setData({ tips: '等待卖家发货' })
+        } else if (type === 2) {
+            this.setData({ tips: '等待买家取货' })
+        } else if (type === 4) {
+            this.setData({ tips: '交易成功' })
+        }
         this.setData({ type: type })
-        this.getData();
     },
 
     /**
@@ -121,7 +129,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        this.getData();
     },
 
     /**

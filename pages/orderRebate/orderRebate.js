@@ -8,25 +8,10 @@ Page({
     data: {
         show: false,
         order: '',
+        oid: '',
         child: '',
+        cause: '',
         causes: ''
-            // cause: '请选择退款原因',
-            // actions: [{
-            //         name: '我不想买了'
-            //     },
-            //     {
-            //         name: '信息填写错误，重新买'
-            //     },
-            //     {
-            //         name: '卖家缺货'
-            //     },
-            //     {
-            //         name: '运费不合适'
-            //     },
-            //     {
-            //         name: '其他'
-            //     },
-            // ]
     },
     cause() {
         this.setData({ show: true });
@@ -55,11 +40,25 @@ Page({
             }
         })
     },
+    submit() {
+        app.http({
+            url: app.api.ApiTui,
+            data: { oid: this.data.oid, reason: this.data.cause },
+            method: 'POST'
+        }).then(res => {
+            if (res.error_code === 0) {
+                wx.navigateBack({
+                    delta: 1
+                })
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
         var oid = options.oid
+        this.setData({ oid: oid })
         this.getData(oid);
     },
 

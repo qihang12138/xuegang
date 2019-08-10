@@ -25,7 +25,11 @@
 }
 
 .task-btn {
-    position: absolute!important;
-    bottom: 30rpx!important;
-    right: 40rpx!important;
+    position: absolute;
+    bottom: 30rpx;
+    right: 40rpx;
+    padding: 10rpx 15rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 10rpx;
+    font-size: 14px;
 }

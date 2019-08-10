@@ -30,20 +30,20 @@
             <view class="msg-cont">
                 <view>
                     <open-data type="userNickName" class="msg-name"></open-data>
-                    <text class="msg-grade">lv1</text>
+                    <text class="msg-grade">lv{{vip.user_alone.level}}</text>
                 </view>
-                <view class="msg-time">2019-06-30充值</view>
+                <view class="msg-time">{{'暂无充值记录'}}</view>
             </view>
         </view>
         <view class="flex-box flex-align custom-box">
-            <text class="custom-button">V1</text>
-            <van-slider value="{{ currentValue }}" disabled use-button-slot custom-class="custom" active-color="#fff" inactive-color="#B9975E">
-                <view class="custom-button" slot="button">{{ currentValue }}</view>
+            <text class="custom-button">V{{vip.user_alone.level}}</text>
+            <van-slider value="{{ vip.user_alone.level_create/vip.goal.to_price }}" disabled use-button-slot custom-class="custom" active-color="#fff" inactive-color="#B9975E">
+                <view class="custom-button custom-value" slot="button">{{ vip.user_alone.level_create/vip.goal.to_price }}</view>
             </van-slider>
-            <text class="custom-button">V2</text>
-            <text class="custom-text">成长值 30/500</text>
+            <text class="custom-button">V{{vip.goal.to_level}}</text>
+            <text class="custom-text">成长值 {{vip.user_alone.level_create}}/{{vip.goal.to_price}}</text>
         </view>
-        <view class="custom-num">NO.000140120101</view>
+        <!-- <view class="custom-num">NO.000140120101</view> -->
     </view>
 </view>
 <!-- 会员特权 -->

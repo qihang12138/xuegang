@@ -32,6 +32,11 @@
 
 /* 标签页 */
 
+.tabs-box {
+    margin-top: -100rpx;
+    padding: 0 30rpx;
+}
+
 .tab-active {
     color: #3C93FF!important;
 }
@@ -57,9 +62,15 @@
     color: #FD1200;
 }
 
+
 /* 无记录提示 */
 
-.hint{
+.tab-detail,
+.hint {
+    padding-bottom: 200rpx;
+}
+
+.hint {
     padding-top: 30rpx;
     text-align: center;
     color: #8c8c8c;

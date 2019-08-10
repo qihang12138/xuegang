@@ -2,21 +2,12 @@ page {
     height: 100%;
 }
 
-/* 搜索 */
-.search-box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
 
 /* 商品列表 */
+
 .commodity {
-    position: fixed;
-    top: 120rpx;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    margin-top: 20rpx;
+    height: 100%;
 }
 
 .commodity-list {
@@ -32,6 +23,8 @@ page {
 
 .commodity-kind {
     flex: 1;
+    width: 750rpx;
+    min-height: 100%;
     background: #fff;
 }
 
@@ -41,6 +34,7 @@ page {
 .commodity-cont {
     display: flex;
     padding: 20rpx 40rpx 12rpx 30rpx;
+    background: #fff;
 }
 
 .commodity-img {
@@ -62,6 +56,10 @@ page {
 }
 
 .commodity-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     max-width: 320rpx;
 }
 

@@ -1,23 +1,21 @@
 <view class="withdraw bg-fff">
-  <view class="flex-box p30 border-bottom">
-    <view class="withdraw-text">可提现金额</view>
-    <view class="flex-item">1000</view>
-  </view>
-  <view class="flex-box p30">
-    <view class="withdraw-text">本次提现</view>
-    <view class="flex-item">100</view>
-  </view>
+  <van-cell-group>
+    <van-field label="可提现金额" disabled value="{{profit}}" />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field label="本次提现" placeholder="请输入提现金额" type="number" bind:change="onChange" />
+  </van-cell-group>
+  <!-- </view> -->
 </view>
 <!-- 提现账户 -->
 <view class="flex-box p30 withdraw-account bg-fff">
   <view class="withdraw-text">提现账户</view>
   <view class="flex-item">微信零钱包</view>
 </view>
-
 <!-- 提现按钮 -->
-<button class="withdraw-btn">提现</button>
-
+<button class="withdraw-btn" bindtap="submit">提现</button>
 <!-- 提示 -->
 <view class="withdraw-hint">金额低于1元不可提现</view>
 <view class="withdraw-hint">预计三个工作日可到账</view>
 <view class="withdraw-hint">未实名认证的微信用户,将无提现到微信零钱包</view>
+<van-toast id="van-toast" />

@@ -16,7 +16,10 @@
 /* 提现按钮 */
 
 .withdraw-btn {
+    padding: 20rpx;
+    border-radius: 10rpx;
     margin: 25rpx 25rpx;
+    text-align: center;
     color: #fff;
     background: #05BF02;
 }

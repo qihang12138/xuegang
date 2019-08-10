@@ -20,6 +20,8 @@ Page({
                     goods: res.data.goods[0]
                 })
             }
+            console.log(res.data.order);
+
         })
     },
     /**

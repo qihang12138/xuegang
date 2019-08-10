@@ -41,7 +41,8 @@
             送达地址：
             <text>{{ item.end }}</text>
           </view>
-          <van-button size="small" custom-class="task-btn">{{ status }}</van-button>
+          <view class="task-btn">{{ status }}</view>
+          <!-- <van-button size="small" custom-class="task-btn">{{ status }}</van-button> -->
         </view>
       </block>
     </view>

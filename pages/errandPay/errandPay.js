@@ -1,5 +1,6 @@
 // pages/errandPay/errandPay.js
 const app = getApp()
+import Toast from '../../vant/toast/toast';
 Page({
 
     /**
@@ -24,6 +25,37 @@ Page({
                 this.setData({
                     alone: alone,
                     goal: res.data.goal
+                })
+            }
+        })
+    },
+    submit() {
+        var postObj = {
+            type: 1,
+            price: this.data.money
+        }
+        app.api.ApiAddVipOrder(postObj).then(res => {
+            if (res.error_code === 0) {
+                app.http({
+                    url: app.api.ApiVipPay,
+                    data: {
+                        id: res.data.id
+                    }
+                }).then(data => {
+                    wx.requestPayment({
+                        timeStamp: data.timeStamp,
+                        nonceStr: data.nonceStr,
+                        package: data.package,
+                        signType: 'MD5',
+                        paySign: data.paySign,
+                        success(res) {
+                            Toast.success('充值成功');
+                        },
+                        fail(res) {
+                            Toast.fail('充值失败');
+                        }
+                    })
+
                 })
             }
         })

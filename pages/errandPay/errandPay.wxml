@@ -40,7 +40,7 @@
             <text class="custom-button">V{{goal.to_level}}</text>
             <text class="custom-text">成长值 {{alone.spend_all}}/{{goal.to_price}}</text>
         </view>
-        <view class="custom-num">NO.000140120101</view>
+        <!-- <view class="custom-num">NO.000140120101</view> -->
     </view>
 </view>
 <!-- 充值 -->
@@ -48,8 +48,9 @@
     <van-field label="充值金额" placeholder="请输入想要充值的金额" bind:input="onInput" type="number" />
 </van-cell-group>
 <!-- 提示 -->
-<view class="hint">充值规则如下：充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则</view>
+<!-- <view class="hint">充值规则如下：充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则充值规则</view> -->
 <!-- 按钮 -->
 <view class="fixed-bottom">
     <button class="my-btn" bindtap="submit">提交</button>
 </view>
+<van-toast id="van-toast" />

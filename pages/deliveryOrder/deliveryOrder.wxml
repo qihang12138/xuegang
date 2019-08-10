@@ -42,6 +42,11 @@
             应付
             <view class="line-right">¥{{ price.now_price }}</view>
         </view>
+        <!-- 备注 -->
+        <view class="public remark">
+            <view class="tit">备注</view>
+            <textarea class="remark-text" placeholder="请留下你的备注信息~~~" bindinput="changeRemark"></textarea>
+        </view>
     </view>
 </view>
 <!-- 购物车 -->

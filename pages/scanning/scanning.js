@@ -1,30 +1,31 @@
-// pages/withdrawRecord/withdrawRecord.js
-const app = getApp()
+// pages/scanning/scanning.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        record: ''
+
     },
-    getData() {
-        app.api.ApiTixianRecord().then(res => {
-            if (res.error_code === 0) {
-                res.data.lot.forEach(item => {
-                    item.create = app.util.YMD(new Date(item.create * 1000));
-                });
+    takePhoto() {
+        const ctx = wx.createCameraContext()
+        ctx.takePhoto({
+            quality: 'high',
+            success: (res) => {
                 this.setData({
-                    record: res.data.lot
+                    src: res.tempImagePath
                 })
             }
         })
+    },
+    error(e) {
+        console.log(e.detail)
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
+
     },
 
     /**
@@ -38,7 +39,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        this.takePhoto()
     },
 
     /**

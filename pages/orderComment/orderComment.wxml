@@ -2,7 +2,7 @@
   <view class="comment">
     <image class="comment-img" src="{{item.g_image}}" />
     <view class="comment-tit">商品评价</view>
-    <van-rate value="{{ value }}" bind:change="onChange" color="#FF341F" />
+    <van-rate value="{{ 3 }}" bind:change="onChange" data-id="{{index}}" color="#FF341F" />
     <view class="comment-text">
       <view wx:if="{{value===1}}">不好</view>
       <view wx:elif="{{value===2}}">不太好</view>
@@ -12,7 +12,9 @@
     </view>
   </view>
   <!-- 文字评价 -->
-  <textarea class="text" placeholder="满足自己的期待了吗？说说它的优点缺点吧"></textarea>
+  <textarea class="text" placeholder="满足自己的期待了吗？说说它的优点缺点吧" bindinput="changeContent" data-id="{{index}}"></textarea>
 </block>
 <!-- 提交评价 -->
-<button class="btn">提交评价</button>
+<view class="fixed-bottom">
+  <button class="my-btn" bindtap="submit">提交</button>
+</view>

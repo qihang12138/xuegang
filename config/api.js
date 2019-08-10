@@ -1,5 +1,5 @@
 const http = require('./http')
-let ApiUrl = 'http://xuegang.dd371.com/api/';
+let ApiUrl = 'https://xuegang.dd371.com/api/';
 // let ApiUrl = 'http://192.168.101.205/api/';
 const api = {
     ApiWechat: ApiUrl + 'login/wechat',
@@ -17,6 +17,7 @@ const api = {
     ApiUsercollect: ApiUrl + 'user/collect',
     ApiGuiZe: ApiUrl + 'user/ji_fen_gui_ze',
     ApiGetSiteRecord: ApiUrl + 'user/get_site_record',
+    ApiSign: ApiUrl + 'user/sign',
     // 地址
     ApiSaveAddr: ApiUrl + 'user/save_addr',
     ApiAddrLister: ApiUrl + 'user/addr_lister',
@@ -36,6 +37,7 @@ const api = {
     ApiGetUserOrder: ApiUrl + 'order/get_user_order',
     ApiCancelOrder: ApiUrl + 'order/cancel_order',
     ApiTuiView: ApiUrl + 'order/tui_view',
+    ApiTui: ApiUrl + 'order/tui',
     ApiOrderDetail: ApiUrl + 'order/order_detail',
     ApiSaveComment: ApiUrl + 'order/save_comment',
     ApiQueren: ApiUrl + 'goods/queren',
@@ -43,6 +45,8 @@ const api = {
     ApiCommentView: ApiUrl + 'order/comment_view',
     //支付
     ApiPay: ApiUrl + 'pay/pay',
+    ApiVipPay: ApiUrl + 'pay/vip_pay',
+    ApiYearVipPay: ApiUrl + 'pay/year_vip_pay',
     //购物车
     ApiSaveCar: ApiUrl + 'car/save_car',
     ApiCarLister: ApiUrl + 'car/car_lister',
@@ -61,6 +65,7 @@ const api = {
     ApiPublish: ApiUrl + 'site/publish',
     ApiTask: ApiUrl + 'site/task',
     ApiShortcut: ApiUrl + 'site/shortcut',
+    ApiColonel: ApiUrl + 'site/colonel',
     ApiWithdraw: params => http({ url: ApiUrl + 'site/withdraw_deposit', data: params }),
     ApiRecharge: params => http({ url: ApiUrl + 'site/price_recharge', data: params }),
     ApiReject: params => http({ url: ApiUrl + 'site/reject', data: params }),
@@ -73,7 +78,7 @@ const api = {
     ApiVipTest: params => http({ url: ApiUrl + 'user/vip', data: params }),
     ApiProblem: params => http({ url: ApiUrl + 'user/problem', data: params }),
     ApiWallet: params => http({ url: ApiUrl + 'user/wallet', data: params }),
-    ApiAddVipOrder: params => http({ url: ApiUrl + 'user/add_vip_order', data: params }),
+    ApiAddVipOrder: params => http({ url: ApiUrl + 'user/add_vip_order', data: params, method: 'POST' }),
     ApiPriceRecord: params => http({ url: ApiUrl + 'user/price_record', data: params })
 
 

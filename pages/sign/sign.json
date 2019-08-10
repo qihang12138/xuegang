@@ -3,5 +3,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "签到",
     "navigationBarTextStyle": "black",
-    "usingComponents": {}
+    "usingComponents": {
+        "calendar": "plugin://calendar/calendar"
+    }
+
 }

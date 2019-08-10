@@ -10,7 +10,8 @@ Page({
         autoplay: true,
         interval: 5000,
         duration: 1000,
-        pageData: {}
+        pageData: {},
+        site: '还未选择配送地点',
     },
     getData() {
         app.http({
@@ -21,6 +22,7 @@ Page({
                     pageData: res.data
                 })
             }
+            wx.stopPullDownRefresh()
         })
     },
     search() {
@@ -67,7 +69,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-
+        this.getData();
     },
 
     /**

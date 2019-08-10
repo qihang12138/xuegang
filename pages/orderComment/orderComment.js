@@ -1,16 +1,25 @@
 // pages/orderComment/orderComment.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        value: 3,
         assess: []
     },
-    onChange(event) {
+    onChange(e) {
+        var id = e.currentTarget.dataset.id,
+            number = 'assess[' + id + '].number'
         this.setData({
-            value: event.detail
+            [number]: e.detail,
+        });
+    },
+    changeContent(e) {
+        var id = e.currentTarget.dataset.id,
+            content = 'assess[' + id + '].content'
+        this.setData({
+            [content]: e.detail.value
         });
     },
     getData(oid) {
@@ -19,19 +28,28 @@ Page({
             data: { oid: oid }
         }).then(res => {
             if (res.error_code === 0) {
-                this.setData({ order: res.data })
-
+                var assess = [];
+                res.data.child.forEach(item => {
+                    assess.push({ gid: item.gid, number: 3, content: '' })
+                });
+                this.setData({ order: res.data, assess: assess })
             }
         })
     },
-    postData() {
+    submit() {
         var data = this.data
         app.http({
             url: app.api.ApiSaveComment,
-            data: { oid: data.oid }
+            data: {
+                oid: data.oid,
+                assess: data.assess
+            },
+            method: 'POST'
         }).then(res => {
             if (res.error_code === 0) {
-                this.setData({ order: res.data })
+                wx.navigateBack({
+                    delta: 1
+                })
             }
         })
     },
