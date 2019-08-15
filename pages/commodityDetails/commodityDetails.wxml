@@ -137,10 +137,10 @@
   <view class="fixed-bottom">
     <button class="my-btn" bindtap="submit" wx:if="{{ btnShow }}">确定</button>
   </view>
-  <navigator class="fixed-bottom" url="/pages/deliveryOrder/deliveryOrder?gid={{gid}}&sid={{sid}}&num={{stepper}}&type=1&price={{price}}" wx:if="{{ !btnShow && type }}" hover-class="none">
+  <navigator class="fixed-bottom" url="/pages/deliveryOrder/deliveryOrder?gid={{gid}}&sid={{sid}}&num={{stepper}}&type=1&price={{price}}&cart=0" wx:if="{{ !btnShow && type }}" hover-class="none">
     <button class="my-btn">确定</button>
   </navigator>
-  <navigator class="fixed-bottom" url="/pages/submitOrder/submitOrder?gid={{gid}}&sid={{sid}}&num={{stepper}}" wx:if="{{ !btnShow && !type }}" hover-class="none">
+  <navigator class="fixed-bottom" url="/pages/submitOrder/submitOrder?gid={{gid}}&sid={{sid}}&num={{stepper}}&cart=0" wx:if="{{ !btnShow && !type }}" hover-class="none">
     <button class="my-btn">确定</button>
   </navigator>
 </van-popup>

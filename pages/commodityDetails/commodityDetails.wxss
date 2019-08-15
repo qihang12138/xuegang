@@ -136,10 +136,11 @@ page {
 }
 
 .evaluate-img {
-    padding-right: 20rpx;
+    margin-right: 20rpx;
     border-radius: 50%;
     height: 80rpx;
     width: 80rpx;
+    border: 1px solid #ccc;
 }
 
 .evaluate-cont {

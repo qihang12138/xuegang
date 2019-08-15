@@ -7,12 +7,12 @@ Page({
      */
     data: {
         msgObj: {
-            site_id: 0,
+            site_id: '',
             name: '',
             phone: ''
         },
         site: '请选择自提站点',
-        pageData: ''
+        cart: 0
     },
     change(e) {
         var value = e.detail.value,
@@ -24,12 +24,34 @@ Page({
     },
     next() {
         var msgObj = this.data.msgObj,
-            data = this.data;
-        app.util.verifyPhone(msgObj.phone).then(res => {
-            wx.navigateTo({
-                url: '/pages/deliveryOrder/deliveryOrder?type=0&gid=' + data.gid + '&sid=' + data.sid + '&num=' + data.num + '&type=0&siteId=' + data.msgObj.site_id + '&name=' + data.msgObj.name + '&phone=' + data.msgObj.phone
+            data = this.data,
+            flag = true;
+        for (const key in msgObj) {
+            if (msgObj.hasOwnProperty(key)) {
+                const element = msgObj[key];
+                if (element === '' || element.length === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if (!flag) {
+            app.util.toast({
+                title: '请填写完整资料',
+                icon: 'none'
+            }).then(() => {
+                flag = true
             })
-        })
+            return
+        }
+        if (flag) {
+            app.util.verifyPhone(msgObj.phone).then(res => {
+                wx.navigateTo({
+                    url: '/pages/deliveryOrder/deliveryOrder?type=0&gid=' + data.gid + '&sid=' + data.sid + '&num=' + data.num + '&type=0&siteId=' + data.msgObj.site_id + '&name=' + data.msgObj.name + '&phone=' + data.msgObj.phone + '&cart=' + data.cart
+                })
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面加载
@@ -38,8 +60,11 @@ Page({
         this.setData({
             gid: options.gid,
             num: options.num,
-            sid: options.sid
+            sid: options.sid,
         });
+        if (options.cart) {
+            this.setData({ cart: options.cart })
+        }
     },
 
     /**

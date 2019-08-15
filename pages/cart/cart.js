@@ -152,10 +152,21 @@ Page({
     },
     buy() {
         var cart = this.data.distribution;
-
-        wx.navigateTo({
-            url: cart ? '/pages/deliveryOrder/deliveryOrder?cart=1&type=1' : '/pages/submitOrder/submitOrder?cart=1'
+        app.http({
+            url: app.api.ApiCarLister,
+            data: {
+                distribution: cart
+            },
+            method: 'POST'
+        }).then(res => {
+            var car_list = res.data.car_list.length;
+            if (car_list !== 0) {
+                wx.navigateTo({
+                    url: cart ? '/pages/deliveryOrder/deliveryOrder?cart=1&type=1' : '/pages/submitOrder/submitOrder?cart=1'
+                })
+            }
         })
+
     },
 
     /**

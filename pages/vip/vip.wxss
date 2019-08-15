@@ -6,7 +6,6 @@ page {
     position: relative;
     text-align: center;
     height: 370rpx;
-    /* background: url('https://s2.ax1x.com/2019/07/31/etOFaT.png') no-repeat 0 0/750rpx 370rpx; */
 }
 
 .header-btn {
@@ -85,7 +84,7 @@ page {
 
 .grade {
     padding: 80rpx 0 10rpx;
-    background: url('https://s2.ax1x.com/2019/08/02/edc9L4.png') no-repeat 0 0/750rpx 370rpx;
+    background: url('https://s2.ax1x.com/2019/08/02/edc9L4.png') no-repeat bottom /750rpx 370rpx;
 }
 
 .grade-tit {

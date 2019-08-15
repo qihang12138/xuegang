@@ -16,6 +16,7 @@ Page({
                 name: '加急'
             }
         ],
+        btnShow: true,
         show: false,
         msgObj: {
             g_name: '',
@@ -101,7 +102,9 @@ Page({
     },
     task(e) {
         var index = e.detail.index;
+        this.setData({ btnShow: true })
         if (index === 1) {
+            this.setData({ btnShow: false })
             app.http({
                 url: app.api.ApiTask
             }).then(res => {

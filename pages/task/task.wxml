@@ -20,7 +20,7 @@
       <view>每超过3公里，需加收5元，不足3公里按3公里计算。</view>
     </view>
     <!-- 提交按钮 -->
-    <view class="fixed-bottom">
+    <view class="fixed-bottom" wx:if="{{btnShow}}">
       <button class="my-btn" bindtap="submit">提交</button>
     </view>
   </van-tab>

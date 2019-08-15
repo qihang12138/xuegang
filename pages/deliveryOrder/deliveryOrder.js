@@ -15,7 +15,7 @@ Page({
         siteBol: false,
         ticket: [],
         remark: '',
-        cart: 1,
+        cart: 0,
         order: '',
         type: 0,
         price_type: 0
@@ -45,26 +45,25 @@ Page({
         }
     },
     getData() {
-
         var data = this.data,
-            msgObjToo = {
-                gid: data.gid,
-                sid: data.sid,
-                num: data.num
-            },
-            msgObj = {
+            msgObjs = [{
+                site_id: data.siteId,
+                name: data.name,
+                phone: data.phone,
                 gid: data.gid,
                 sid: data.sid,
                 num: data.num,
-                name: data.name,
-                phone: data.phone,
-                site_id: data.site_id,
                 price_type: data.price_type
-            },
-            type = data.type
+            }, {
+                gid: data.gid,
+                sid: data.sid,
+                num: data.num
+            }],
+            type = data.type;
+
         app.http({
             url: type ? app.api.ApiQuerenToo : app.api.ApiQueren,
-            data: type ? msgObjToo : msgObj
+            data: msgObjs[type],
         }).then(res => {
             if (res.error_code === 0) {
                 // this.setData({ commodity: res.data.goods })
@@ -84,42 +83,39 @@ Page({
         this.setData({ remark: e.detail.value });
     },
     submit() {
-        var data = this.data,
+        var _this = this,
+            data = this.data,
             cart = data.cart,
             msgObjs = [
                 [{
-                        site_id: data.siteId,
-                        name: data.name,
-                        phone: data.phone,
-                        content: data.remark,
-                    },
-                    {
-                        site_id: data.siteId,
-                        name: data.name,
-                        phone: data.phone,
-                        gid: data.gid,
-                        sid: data.sid,
-                        num: data.num,
-                        content: data.remark,
-                        price_type: data.price_type
-                    }
-                ],
+                    site_id: data.siteId,
+                    name: data.name,
+                    phone: data.phone,
+                    gid: data.gid,
+                    sid: data.sid,
+                    num: data.num,
+                    content: data.remark,
+                    price_type: data.price_type
+                }, {
+                    site_id: data.siteId,
+                    name: data.name,
+                    phone: data.phone,
+                    content: data.remark,
+                }],
                 [{
-                        site_id: data.site.id,
-                        content: data.remark
-                    },
-                    {
-                        site_id: data.site.id,
-                        content: data.remark,
-                        sid: data.sid,
-                        num: data.num,
-                        gid: data.gid
-                    }
-                ]
+                    site_id: data.site.id,
+                    content: data.remark,
+                    sid: data.sid,
+                    num: data.num,
+                    gid: data.gid
+                }, {
+                    site_id: data.site.id,
+                    content: data.remark
+                }]
             ],
             Apis = [
-                [app.api.ApiSubmitCar, app.api.ApiSubmitOrder],
-                [app.api.ApiSubmitCarToo, app.api.ApiSubmitOrderToo]
+                [app.api.ApiSubmitOrder, app.api.ApiSubmitCar],
+                [app.api.ApiSubmitOrderToo, app.api.ApiSubmitCarToo]
             ],
             type = data.type,
             cart = data.cart;
@@ -143,8 +139,10 @@ Page({
                         signType: 'MD5',
                         paySign: data.paySign,
                         success(res) {
+                            var price = cart ? _this.data.pageData.all_goods_price : _this.data.price.now_price
+                            console.log(price);
                             wx.reLaunch({
-                                url: '../orderResult/orderResult?bol=1'
+                                url: '../orderResult/orderResult?bol=1&price=' + price
                             })
                         },
                         fail(res) {
@@ -174,16 +172,12 @@ Page({
         }).then(res => {
             if (res.error_code === 0) {
                 this.setData({
-                        pageData: res.data,
-                        siteBol: false,
-                        site: res.data.addr,
-                        // price: res.data.order_data.price_detail
-                    })
-                    // if (res.data.addr !== {}) {
-                    //     this.setData({
-
-                //     })
-                // }
+                    pageData: res.data,
+                    siteBol: false,
+                    site: res.data.addr,
+                    price: res.data.price_detail
+                })
+                console.log(this.data.price);
             }
 
         })
@@ -192,13 +186,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        var type = options.type - 0;
+
+        var type = options.type - 0,
+            cart = options.cart - 0;
+        console.log(cart);
+
         this.setData({
             gid: options.gid,
             num: options.num,
             sid: options.sid,
-            type: options.type - 0,
-            price: options.price - 0
+            price: options.price - 0,
+            type: type,
+            cart: cart
         });
         if (!type) {
             this.setData({
@@ -207,8 +206,8 @@ Page({
                 siteId: options.siteId
             })
         }
-        if (options.cart) {
-            this.setData({ cart: 0 })
+        if (cart) {
+            // this.setData({ cart: 0 })
             this.cartTooData();
         } else {
             this.getData();
@@ -227,8 +226,6 @@ Page({
      */
     onShow: function() {
         if (this.data.type == 1) {
-            console.log(this.data.type);
-
             this.getSite();
         }
     },

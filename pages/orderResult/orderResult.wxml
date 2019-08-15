@@ -8,12 +8,12 @@
   <view>下单成功</view>
   <view>
     成功支付
-    <text class="result-money">¥1.68</text>
+    <text class="result-money">¥{{price}}</text>
   </view>
 </view>
 <view class="result" wx:else>
   <view>下单失败</view>
-  <view class="result-cause">余额不足</view>
+  <!-- <view class="result-cause">余额不足</view> -->
 </view>
 <!-- 按钮 -->
 <!-- <button class="btn-true btn" wx:if="{{bol==1}}">查看订单</button>

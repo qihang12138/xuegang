@@ -1,5 +1,5 @@
 <!-- 选项卡 -->
-<van-tabs bind:change="change" animated>
+<van-tabs bind:change="change">
   <van-tab title="申请团长">
     <view class="msg" wx:if="{{schedule}}">
       <van-cell-group>

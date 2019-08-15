@@ -79,10 +79,7 @@ const api = {
     ApiProblem: params => http({ url: ApiUrl + 'user/problem', data: params }),
     ApiWallet: params => http({ url: ApiUrl + 'user/wallet', data: params }),
     ApiAddVipOrder: params => http({ url: ApiUrl + 'user/add_vip_order', data: params, method: 'POST' }),
-    ApiPriceRecord: params => http({ url: ApiUrl + 'user/price_record', data: params })
-
-
-
-
+    ApiPriceRecord: params => http({ url: ApiUrl + 'user/price_record', data: params }),
+    ApiVipPay: params => http({ url: ApiUrl + 'pay/vip_pay', data: params, method: 'POST' })
 }
 module.exports = api;

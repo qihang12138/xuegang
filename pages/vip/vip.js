@@ -15,7 +15,10 @@ Page({
     typeOn(e) {
         var on = e.currentTarget.dataset.on,
             id = e.currentTarget.dataset.id
-        this.setData({ typeOn: on, vid: id });
+        this.setData({
+            typeOn: on,
+            vid: id
+        });
 
     },
     getData() {
@@ -28,21 +31,50 @@ Page({
                     this.setData({ level: true })
                 }
                 this.setData({
-                    vip: res.data
+                    vip: res.data,
+                    vid: res.data.vip_lot[0].id
                 })
             }
         })
-
-
-        // app.http({
-        //     url: app.api.ApiVip
-        // }).then(res => {
-        //     if (res.error_code === 0) {
-        //         this.setData({
-        //             vip: res.data
-        //         })
-        //     }
-        // })
+    },
+    pay() {
+        var _this = this,
+            data = this.data,
+            payObj = {
+                type: 0,
+                vid: data.vid
+            }
+        app.api.ApiAddVipOrder(payObj).then(res => {
+            if (res.error_code === 0) {
+                var id = {
+                    id: res.data.id
+                }
+                app.api.ApiVipPay(id).then(data => {
+                    wx.requestPayment({
+                        timeStamp: data.timeStamp,
+                        nonceStr: data.nonceStr,
+                        package: data.package,
+                        signType: 'MD5',
+                        paySign: data.paySign,
+                        success(res) {
+                            app.util.toast({
+                                title: '充值成功'
+                            }).then(() => {
+                                _this.getData()
+                            })
+                        },
+                        fail(res) {
+                            app.util.toast({
+                                title: '充值失败',
+                                icon: 'none'
+                            }).then(() => {
+                                _this.getData()
+                            })
+                        }
+                    })
+                })
+            }
+        })
     },
     /**
      * 生命周期函数--监听页面加载
