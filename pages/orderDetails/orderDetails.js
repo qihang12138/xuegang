@@ -15,6 +15,7 @@ Page({
             data: { oid: oid }
         }).then(res => {
             if (res.error_code === 0) {
+                res.data.order.create = app.util.formatTime(new Date(res.data.order.create * 1000))
                 this.setData({
                     order: res.data.order,
                     goods: res.data.goods[0]

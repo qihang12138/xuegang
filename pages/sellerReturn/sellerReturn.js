@@ -14,6 +14,9 @@ Page({
     getData() {
         app.api.ApiReject().then(res => {
             if (res.error_code === 0) {
+                res.data.lot.forEach(item => {
+                    item.t_create = app.util.formatTime(new Date(item.t_create * 1000))
+                });
                 this.setData({
                     lot: res.data.lot,
                     actions: res.data.cause,

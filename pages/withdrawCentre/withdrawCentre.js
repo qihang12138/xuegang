@@ -9,13 +9,13 @@ Page({
 
     },
     getData() {
-        app.api.ApiProblem().then(res => {
-            if (res.error_code === 0) {
-                this.setData({
-                    rules: res.data[id]
-                })
-            }
-        })
+        // app.api.ApiProblem().then(res => {
+        //     if (res.error_code === 0) {
+        //         this.setData({
+        //             rules: res.data[id]
+        //         })
+        //     }
+        // })
         app.http({
             url: app.api.ApiGetUserData
         }).then(res => {

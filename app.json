@@ -1,8 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/scanning/scanning",
         "pages/logIn/logIn",
+        "pages/scanning/scanning",
         "pages/distributionSites/distributionSites",
         "pages/withdrawRecord/withdrawRecord",
         "pages/sellerReturn/sellerReturn",

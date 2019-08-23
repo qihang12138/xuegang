@@ -8,8 +8,8 @@ Page({
     data: {
         tag: '交易成功',
         leftBtn: '收货完成',
-        centerBtn: '取货完成',
         rightBtn: '取货完成',
+        remindBtn: '提醒取货',
         type: 0
     },
 
@@ -21,6 +21,24 @@ Page({
             if (res.error_code === 0) {
                 this.setData({
                     pageData: res.data.lot
+                })
+            }
+        })
+    },
+    remind(e) {
+        var oid = e.currentTarget.dataset.oid,
+            data = {
+                oid: oid
+            };
+        app.api.Apiremind(data).then(res => {
+            if (res.error_code === 0) {
+                app.util.toast({
+                    title: '提醒成功'
+                })
+            } else {
+                app.util.toast({
+                    title: '请勿重复提醒',
+                    icon: 'none'
                 })
             }
         })

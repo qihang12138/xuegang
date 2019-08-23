@@ -73,7 +73,7 @@ const api = {
     ApiDiscountsList: params => http({ url: ApiUrl + 'site/discounts_list', data: params }),
     ApiTurnDown: params => http({ url: ApiUrl + 'site/turn_down', data: params }),
     ApiPass: params => http({ url: ApiUrl + 'site/pass', data: params }),
-
+    Apiremind: params => http({ url: ApiUrl + 'order/remind_user', data: params }),
     // vip
     ApiVipTest: params => http({ url: ApiUrl + 'user/vip', data: params }),
     ApiProblem: params => http({ url: ApiUrl + 'user/problem', data: params }),

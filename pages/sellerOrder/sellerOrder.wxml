@@ -3,8 +3,8 @@
   <van-card num="{{ item.child.o_num }}" tag="{{tag}}" price="{{ item.child.g_price }}" desc="地址: {{ item.child.addr }}" title="{{ item.child.g_name }}" thumb="{{ item.child.g_image }}" custom-class="card">
     <view slot="footer">
       <van-button size="mini">{{leftBtn}}</van-button>
-      <van-button size="mini" wx:if="{{fales}}" custom-class="btn">{{centerBtn}}</van-button>
-      <van-button size="mini" custom-class="btn">{{rightBtn}}</van-button>
+      <van-button size="mini" wx:if="{{item.service && type==3}}" custom-class="btn" catchtap="remind" data-oid="{{item.oid}}">{{remindBtn}}</van-button>
+      <van-button size="mini" wx:else custom-class="btn">{{rightBtn}}</van-button>
     </view>
   </van-card>
 </block>

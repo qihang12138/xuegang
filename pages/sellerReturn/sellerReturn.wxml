@@ -1,5 +1,5 @@
 <block wx:for="{{lot}}" wx:key="{{index}}">
-  <view>
+  <navigator hover-class="none" url="/pages/orderDetails/orderDetails?oid={{item.oid}}">
     <van-card num="2" price="{{item.child[0].g_price}}" title="{{item.child[0].g_name}}" thumb="{{item.child[0].g_image}}" thumb-link="/pages/index/index" custom-class="card">
       <view slot="desc">
         <view class="color-8c">
@@ -8,15 +8,15 @@
         </view>
         <view class="color-8c">
           申请时间:
-          <text>2019-7-22 12:00</text>
+          <text>{{item.t_create}}</text>
         </view>
       </view>
       <view slot="footer">
-        <van-button size="mini" bind:click="pass" data-oid="{{item.oid}}">同意</van-button>
-        <van-button size="mini" custom-class="reject" bind:click="cause" data-oid="{{item.oid}}">驳回</van-button>
+        <van-button size="mini" catch:click="pass" data-oid="{{item.oid}}">同意</van-button>
+        <van-button size="mini" custom-class="reject" catch:click="cause" data-oid="{{item.oid}}">驳回</van-button>
       </view>
     </van-card>
-  </view>
+  </navigator>
 </block>
 <!-- 弹出层 -->
 <van-action-sheet show="{{ show }}" actions= "{{ actions }}" bind:close="onClose" bind:select="onSelect" title="请选择退款原因"/>

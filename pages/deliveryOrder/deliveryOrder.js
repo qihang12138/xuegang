@@ -119,7 +119,6 @@ Page({
             ],
             type = data.type,
             cart = data.cart;
-
         app.http({
             url: Apis[type][cart],
             data: msgObjs[type][cart],
@@ -139,7 +138,7 @@ Page({
                         signType: 'MD5',
                         paySign: data.paySign,
                         success(res) {
-                            var price = cart ? _this.data.pageData.all_goods_price : _this.data.price.now_price
+                            var price = cart ? _this.data.pageData.price_detail.all_price : _this.data.price.now_price;
                             console.log(price);
                             wx.reLaunch({
                                 url: '../orderResult/orderResult?bol=1&price=' + price
